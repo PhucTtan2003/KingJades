@@ -1,0 +1,4071 @@
+:root {
+
+
+
+  --kj-navy: #253065;
+
+
+
+  --kj-royal-blue: #1c2042;
+
+
+
+  --kj-navy-deep: #1c2042;
+
+
+
+  --kj-gold: #d9b21d;
+
+
+
+  --kj-gold-light: #f8d169;
+
+
+
+  --kj-gold-dark: #d9b21d;
+
+
+
+  --kj-pearl: #fbf8f4;
+
+
+
+  --kj-porcelain: #f2ede0;
+
+
+
+  --kj-white: #ffffff;
+
+
+
+  --kj-ink: #111111;
+
+
+
+  --kj-cream: #f2ede0;
+
+
+
+  --kj-ivory: #fbf8f4;
+
+
+
+  --kj-warm-white: #fbf8f4;
+
+
+
+
+
+
+
+  --kj-footer-display: "Warbler", "Cormorant Garamond", Georgia,
+
+
+
+    "Times New Roman", serif;
+
+
+
+  --kj-footer-condensed: "SVN-GILROY", "Gilroy", "Poppins",
+
+
+
+    "Barlow Condensed", "Arial Narrow", sans-serif;
+
+
+
+  --kj-footer-body: "SVN-GILROY", "Gilroy", "Poppins", "Inter",
+
+
+
+    "Segoe UI", Arial, sans-serif;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer,
+
+
+
+.kj-footer *,
+
+
+
+.kj-footer *::before,
+
+
+
+.kj-footer *::after {
+
+
+
+  box-sizing: border-box;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer {
+
+
+
+  position: relative;
+
+
+
+  overflow: hidden;
+
+
+
+  isolation: isolate;
+
+
+
+  padding-top: 1px;
+
+
+
+  border-top: 1px solid rgba(217, 178, 29, 0.34);
+
+
+
+  background:
+
+
+
+    radial-gradient(
+
+
+
+      circle at 8% 0%,
+
+
+
+      rgba(248, 209, 105, 0.14),
+
+
+
+      transparent 27%
+
+
+
+    ),
+
+
+
+    radial-gradient(
+
+
+
+      circle at 92% 100%,
+
+
+
+      rgba(217, 178, 29, 0.12),
+
+
+
+      transparent 30%
+
+
+
+    ),
+
+
+
+    linear-gradient(
+
+
+
+      145deg,
+
+
+
+      var(--kj-royal-blue) 0%,
+
+
+
+      var(--kj-navy) 52%,
+
+
+
+      var(--kj-ink) 100%
+
+
+
+    );
+
+
+
+  color: rgba(251, 248, 244, 0.78);
+
+
+
+  font-family: var(--kj-footer-body);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer a {
+
+
+
+  text-decoration: none;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer img {
+
+
+
+  display: block;
+
+
+
+  max-width: 100%;
+
+
+
+  border-radius: 10px;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.kj-footer button,
+
+
+
+.kj-footer input {
+
+
+
+  font: inherit;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer svg {
+
+
+
+  fill: none;
+
+
+
+  stroke: currentColor;
+
+
+
+  stroke-linecap: round;
+
+
+
+  stroke-linejoin: round;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-pattern {
+
+
+
+  position: absolute;
+
+
+
+  inset: 0;
+
+
+
+  z-index: -3;
+
+
+
+  pointer-events: none;
+
+
+
+  opacity: 0.34;
+
+
+
+  background-image:
+
+
+
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+
+
+
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+
+
+
+  background-size: 42px 42px;
+
+
+
+  mask-image: linear-gradient(
+
+
+
+    to bottom,
+
+
+
+    rgba(0, 0, 0, 0.8),
+
+
+
+    transparent 88%
+
+
+
+  );
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-orbit {
+
+
+
+  position: absolute;
+
+
+
+  z-index: -2;
+
+
+
+  width: 440px;
+
+
+
+  height: 440px;
+
+
+
+  border: 1px solid rgba(217, 178, 29, 0.09);
+
+
+
+  border-radius: 50%;
+
+
+
+  pointer-events: none;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-orbit::before,
+
+
+
+.kj-footer-orbit::after {
+
+
+
+  content: "";
+
+
+
+  position: absolute;
+
+
+
+  inset: 58px;
+
+
+
+  border: 1px solid rgba(217, 178, 29, 0.075);
+
+
+
+  border-radius: inherit;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-orbit::after {
+
+
+
+  inset: 118px;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-orbit-left {
+
+
+
+  left: -260px;
+
+
+
+  bottom: -240px;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-orbit-right {
+
+
+
+  right: -250px;
+
+
+
+  top: -265px;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-container {
+
+
+
+  position: relative;
+
+
+
+  width: min(1380px, calc(100% - 48px));
+
+
+
+  margin: 0 auto;
+
+
+
+  padding: 76px 0 48px;
+
+
+
+  display: grid;
+
+
+
+  grid-template-columns:
+
+
+
+    minmax(280px, 1.28fr)
+
+
+
+    minmax(150px, 0.62fr)
+
+
+
+    minmax(160px, 0.68fr)
+
+
+
+    minmax(280px, 1.05fr);
+
+
+
+  gap: clamp(34px, 4vw, 70px);
+
+
+
+  align-items: stretch;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-brand {
+
+
+
+  max-width: 470px;
+
+
+
+}
+
+
+
+/* Footer alignment only — giữ nguyên toàn bộ màu/background hiện tại. */
+
+.kj-footer-brand,
+
+.kj-footer-link-group,
+
+.kj-footer-private-card {
+
+  min-height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+
+
+.kj-footer-brand-actions {
+
+  margin-top: auto;
+
+  padding-top: 26px;
+
+}
+
+
+
+.kj-footer-link-group nav {
+
+  flex: 1;
+
+  align-content: start;
+
+}
+
+
+
+.kj-footer-private-card .kj-footer-company-box {
+
+  margin-top: auto;
+
+}
+
+
+
+
+
+
+
+
+
+.kj-footer-logo {
+
+
+
+  display: inline-flex;
+
+
+
+  width: min(270px, 100%);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-logo img {
+
+
+
+  width: 100%;
+
+
+
+  height: auto;
+
+
+
+  max-height: 68px;
+
+
+
+  object-fit: contain;
+
+
+
+  object-position: left center;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-tagline {
+
+
+
+  margin: 28px 0 12px;
+
+
+
+  color: var(--kj-gold-light);
+
+
+
+  font-family: var(--kj-footer-display);
+
+
+
+  font-size: clamp(22px, 2vw, 29px);
+
+
+
+  font-weight: 600;
+
+
+
+  line-height: 1.1;
+
+
+
+  letter-spacing: 0.015em;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-description {
+
+
+
+  max-width: 440px;
+
+
+
+  margin: 0;
+
+
+
+  color: rgba(251, 248, 244, 0.68);
+
+
+
+  font-size: 14px;
+
+
+
+  line-height: 1.9;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-brand-actions {
+
+
+
+  display: flex;
+
+
+
+  align-items: center;
+
+
+
+  gap: 10px;
+
+
+
+  flex-wrap: wrap;
+
+
+
+  }
+
+
+
+
+
+
+
+.kj-footer-zalo,
+
+
+
+.kj-footer-outline-action {
+
+
+
+  min-height: 45px;
+
+
+
+  padding: 0 17px;
+
+
+
+  border-radius: 999px;
+
+
+
+  display: inline-flex;
+
+
+
+  align-items: center;
+
+
+
+  justify-content: center;
+
+
+
+  gap: 8px;
+
+
+
+  font-family: var(--kj-footer-condensed);
+
+
+
+  font-size: 14px;
+
+
+
+  font-weight: 700;
+
+
+
+  letter-spacing: 0.07em;
+
+
+
+  text-transform: uppercase;
+
+
+
+  transition:
+
+
+
+    transform 180ms ease,
+
+
+
+    border-color 180ms ease,
+
+
+
+     background 180ms ease;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-zalo {
+
+
+
+  border: 1px solid rgba(217, 178, 29, 0.32);
+
+
+
+  background: linear-gradient(
+
+
+
+    135deg,
+
+
+
+    var(--kj-gold-light),
+
+
+
+    var(--kj-gold),
+
+
+
+    var(--kj-gold-dark)
+
+
+
+  );
+
+
+
+  color: var(--kj-navy-deep);
+
+
+
+  box-shadow: 0 12px 28px rgba(217, 178, 29, 0.16);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-outline-action {
+
+
+
+  border: 1px solid rgba(251, 248, 244, 0.22);
+
+
+
+  background: rgba(255, 255, 255, 0.035);
+
+
+
+  color: var(--kj-warm-white);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-zalo:hover,
+
+
+
+.kj-footer-outline-action:hover {
+
+
+
+  transform: translateY(-2px);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-outline-action:hover {
+
+
+
+  border-color: rgba(217, 178, 29, 0.58);
+
+
+
+  background: rgba(255, 255, 255, 0.06);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-zalo svg,
+
+
+
+.kj-footer-subscribe button svg {
+
+
+
+  width: 17px;
+
+
+
+  height: 17px;
+
+
+
+  stroke-width: 1.8;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-kicker {
+
+
+
+  display: block;
+
+
+
+  margin-bottom: 8px;
+
+
+
+  color: var(--kj-gold);
+
+
+
+  font-family: var(--kj-footer-condensed);
+
+
+
+  font-size: 11px;
+
+
+
+  font-weight: 700;
+
+
+
+  line-height: 1;
+
+
+
+  letter-spacing: 0.17em;
+
+
+
+  text-transform: uppercase;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-link-group h2,
+
+
+
+.kj-footer-private-card h2 {
+
+
+
+  margin: 0 0 22px;
+
+
+
+  color: var(--kj-warm-white);
+
+
+
+  font-family: var(--kj-footer-display);
+
+
+
+  font-size: 25px;
+
+
+
+  font-weight: 600;
+
+
+
+  line-height: 1.1;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-link-group nav {
+
+
+
+  display: grid;
+
+
+
+  gap: 13px;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-link-group a,
+
+
+
+.kj-footer-bottom a {
+
+
+
+  width: fit-content;
+
+
+
+  color: rgba(251, 248, 244, 0.66);
+
+
+
+  font-size: 13px;
+
+
+
+  line-height: 1.55;
+
+
+
+  transition:
+
+
+
+    color 180ms ease,
+
+
+
+    transform 180ms ease;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-link-group a:hover,
+
+
+
+.kj-footer-bottom a:hover {
+
+
+
+  color: var(--kj-gold-light);
+
+
+
+  transform: translateX(3px);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-private-card {
+
+
+
+  padding: 25px;
+
+
+
+  border: 1px solid rgba(217, 178, 29, 0.26);
+
+
+
+  border-radius: 24px;
+
+
+
+  background: linear-gradient(
+
+
+
+    145deg,
+
+
+
+    rgba(255, 255, 255, 0.075),
+
+
+
+    rgba(255, 255, 255, 0.025)
+
+
+
+  );
+
+
+
+  box-shadow:
+
+
+
+    0 18px 46px rgba(0, 0, 0, 0.12),
+
+
+
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+
+
+  backdrop-filter: blur(8px);
+
+
+
+  -webkit-backdrop-filter: blur(8px);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-private-card h2 {
+
+
+
+  margin-bottom: 12px;
+
+
+
+  font-size: 27px;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-private-card > p {
+
+
+
+  margin: 0;
+
+
+
+  color: rgba(251, 248, 244, 0.65);
+
+
+
+  font-size: 13px;
+
+
+
+  line-height: 1.75;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-subscribe {
+
+
+
+  min-height: 50px;
+
+
+
+  display: grid;
+
+
+
+  grid-template-columns: minmax(0, 1fr) auto;
+
+
+
+  gap: 5px;
+
+
+
+  margin-top: 20px;
+
+
+
+  padding: 5px;
+
+
+
+  border: 1px solid rgba(217, 178, 29, 0.28);
+
+
+
+  border-radius: 16px;
+
+
+
+  background: rgba(255, 255, 255, 0.055);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-subscribe input {
+
+
+
+  min-width: 0;
+
+
+
+  border: 0;
+
+
+
+  outline: 0;
+
+
+
+  padding: 0 12px;
+
+
+
+  background: transparent;
+
+
+
+  color: var(--kj-warm-white);
+
+
+
+  font-family: var(--kj-footer-body);
+
+
+
+  font-size: 13px;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-subscribe input::placeholder {
+
+
+
+  color: rgba(251, 248, 244, 0.43);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-subscribe button {
+
+
+
+  min-width: 84px;
+
+
+
+  border: 0;
+
+
+
+  border-radius: 12px;
+
+
+
+  display: inline-flex;
+
+
+
+  align-items: center;
+
+
+
+  justify-content: center;
+
+
+
+  gap: 6px;
+
+
+
+  background: linear-gradient(
+
+
+
+    135deg,
+
+
+
+    var(--kj-gold-light),
+
+
+
+    var(--kj-gold)
+
+
+
+  );
+
+
+
+  color: var(--kj-navy-deep);
+
+
+
+  cursor: pointer;
+
+
+
+  font-family: var(--kj-footer-condensed);
+
+
+
+  font-size: 13px;
+
+
+
+  font-weight: 700;
+
+
+
+  letter-spacing: 0.07em;
+
+
+
+  text-transform: uppercase;
+
+
+
+  transition:
+
+
+
+    transform 180ms ease,
+
+
+
+    filter 180ms ease;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-subscribe button:hover {
+
+
+
+  filter: brightness(1.06);
+
+
+
+  transform: translateY(-1px);
+
+
+
+}
+
+
+
+
+
+
+
+/* COMPANY BOX */
+
+
+
+.kj-footer-company-box {
+
+
+
+  display: grid;
+
+
+
+  grid-template-columns: 52px minmax(0, 1fr);
+
+
+
+  column-gap: 14px;
+
+
+
+  align-items: center;
+
+
+
+  margin-top: 18px;
+
+
+
+  padding-top: 18px;
+
+
+
+  border-top: 1px solid rgba(217, 178, 29, 0.15);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-company-mark {
+
+
+
+  width: 52px;
+
+
+
+  height: 52px;
+
+
+
+  padding: 0;
+
+
+
+  border: 1px solid rgba(217, 178, 29, 0.42);
+
+
+
+  border-radius: 50%;
+
+
+
+  display: grid;
+
+
+
+  place-items: center;
+
+
+
+  justify-self: center;
+
+
+
+  align-self: center;
+
+
+
+  overflow: hidden;
+
+
+
+  line-height: 0;
+
+
+
+  background:
+
+
+
+    radial-gradient(
+
+
+
+      circle at 50% 38%,
+
+
+
+      rgba(248, 209, 105, 0.16),
+
+
+
+      transparent 42%
+
+
+
+    ),
+
+
+
+    var(--kj-royal-blue);
+
+
+
+  color: var(--kj-gold);
+
+
+
+  box-shadow:
+
+
+
+    0 0 0 1px rgba(248, 209, 105, 0.05),
+
+
+
+    0 14px 30px rgba(17, 17, 17, 0.18);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-brand-icon,
+
+
+
+.kj-footer-brand-icon * {
+
+
+
+  fill: none !important;
+
+
+
+  stroke: currentColor !important;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-brand-icon {
+
+
+
+  display: block;
+
+
+
+  width: 38px;
+
+
+
+  height: 38px;
+
+
+
+  margin: 0;
+
+
+
+  color: var(--kj-gold);
+
+
+
+  stroke-width: 3.6;
+
+
+
+  stroke-linecap: round;
+
+
+
+  stroke-linejoin: round;
+
+
+
+  overflow: visible;
+
+
+
+  transform: none;
+
+
+
+  vector-effect: non-scaling-stroke;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-company-info {
+
+
+
+  min-width: 0;
+
+
+
+  display: flex;
+
+
+
+  flex-direction: column;
+
+
+
+  justify-content: center;
+
+
+
+  align-items: flex-start;
+
+
+
+  gap: 4px;
+
+
+
+  transform: none;
+
+
+
+  line-height: 1.2;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-company-info strong {
+
+
+
+  display: block;
+
+
+
+  margin: 0;
+
+
+
+  color: var(--kj-warm-white);
+
+
+
+  font-family: var(--kj-footer-body);
+
+
+
+  font-size: 12px;
+
+
+
+  font-weight: 700;
+
+
+
+  line-height: 1.15;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-company-info span {
+
+
+
+  display: block;
+
+
+
+  margin: 0;
+
+
+
+  color: rgba(251, 248, 244, 0.52);
+
+
+
+  font-size: 10px;
+
+
+
+  font-weight: 600;
+
+
+
+  line-height: 1.35;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-contact-strip {
+
+
+
+  position: relative;
+
+
+
+  width: min(1380px, calc(100% - 48px));
+
+
+
+  margin: 0 auto;
+
+
+
+  padding: 22px 0;
+
+
+
+  border-top: 1px solid rgba(217, 178, 29, 0.16);
+
+
+
+  border-bottom: 1px solid rgba(217, 178, 29, 0.16);
+
+
+
+  display: grid;
+
+
+
+  grid-template-columns: 1.55fr 0.9fr 0.85fr;
+
+
+
+  gap: 24px;
+
+
+
+  align-items: stretch;
+
+}
+
+
+
+
+
+
+
+.kj-footer-contact-item {
+
+
+
+  min-width: 0;
+
+
+
+    height: 100%;
+
+display: grid;
+
+
+
+  grid-template-columns: 38px minmax(0, 1fr);
+
+
+
+  gap: 13px;
+
+
+
+  align-items: center;
+
+
+
+  color: inherit;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-contact-icon {
+
+
+
+  width: 38px;
+
+
+
+  height: 38px;
+
+
+
+  border: 1px solid rgba(217, 178, 29, 0.25);
+
+
+
+  border-radius: 50%;
+
+
+
+  display: inline-flex;
+
+
+
+  align-items: center;
+
+
+
+  justify-content: center;
+
+
+
+  color: var(--kj-gold-light);
+
+
+
+  background: rgba(255, 255, 255, 0.035);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-contact-icon svg {
+
+
+
+  width: 18px;
+
+
+
+  height: 18px;
+
+
+
+  stroke-width: 1.65;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-contact-item small {
+
+
+
+  display: block;
+
+
+
+  margin-bottom: 4px;
+
+
+
+  color: var(--kj-gold);
+
+
+
+  font-family: var(--kj-footer-condensed);
+
+
+
+  font-size: 10px;
+
+
+
+  font-weight: 700;
+
+
+
+  letter-spacing: 0.13em;
+
+
+
+  text-transform: uppercase;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-contact-item p {
+
+
+
+  margin: 0;
+
+
+
+  overflow-wrap: anywhere;
+
+
+
+  color: rgba(251, 248, 244, 0.66);
+
+
+
+  font-size: 12px;
+
+
+
+  line-height: 1.55;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-bottom {
+
+
+
+  position: relative;
+
+
+
+  width: min(1380px, calc(100% - 48px));
+
+
+
+  margin: 0 auto;
+
+
+
+  padding: 22px 0 25px;
+
+
+
+  display: flex;
+
+
+
+  align-items: center;
+
+
+
+  justify-content: space-between;
+
+
+
+  gap: 24px;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-bottom p {
+
+
+
+  margin: 0;
+
+
+
+  color: rgba(251, 248, 244, 0.4);
+
+
+
+  font-size: 11px;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-bottom nav {
+
+
+
+  display: flex;
+
+
+
+  align-items: center;
+
+
+
+  justify-content: flex-end;
+
+
+
+  gap: 9px;
+
+
+
+  flex-wrap: wrap;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-bottom a {
+
+
+
+  font-size: 11px;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-footer-bottom span {
+
+
+
+  color: rgba(217, 178, 29, 0.35);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-visually-hidden {
+
+
+
+  position: absolute !important;
+
+
+
+  width: 1px !important;
+
+
+
+  height: 1px !important;
+
+
+
+  padding: 0 !important;
+
+
+
+  margin: -1px !important;
+
+
+
+  overflow: hidden !important;
+
+
+
+  clip: rect(0, 0, 0, 0) !important;
+
+
+
+  white-space: nowrap !important;
+
+
+
+  border: 0 !important;
+
+
+
+}
+
+
+
+
+
+
+
+@media (max-width: 1120px) {
+
+
+
+  .kj-footer-container {
+
+
+
+    grid-template-columns:
+
+
+
+      minmax(280px, 1.2fr)
+
+
+
+      minmax(150px, 0.7fr)
+
+
+
+      minmax(260px, 1fr);
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-footer-link-group:nth-of-type(3) {
+
+
+
+    display: none;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-footer-contact-strip {
+
+
+
+    grid-template-columns: 1fr 1fr;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-footer-contact-item:first-child {
+
+
+
+    grid-column: 1 / -1;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+@media (max-width: 780px) {
+
+
+
+  .kj-footer-container {
+
+
+
+    width: min(100% - 32px, 680px);
+
+
+
+    padding: 58px 0 38px;
+
+
+
+    grid-template-columns: 1fr 1fr;
+
+
+
+    gap: 38px 26px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-footer-brand,
+
+
+
+  .kj-footer-private-card {
+
+
+
+    grid-column: 1 / -1;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-footer-link-group:nth-of-type(3) {
+
+
+
+    display: block;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-footer-contact-strip,
+
+
+
+  .kj-footer-bottom {
+
+
+
+    width: min(100% - 32px, 680px);
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-footer-contact-strip {
+
+
+
+    grid-template-columns: 1fr;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-footer-contact-item:first-child {
+
+
+
+    grid-column: auto;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-footer-bottom {
+
+
+
+    align-items: flex-start;
+
+
+
+    flex-direction: column;
+
+
+
+    gap: 12px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-footer-bottom nav {
+
+
+
+    justify-content: flex-start;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+@media (max-width: 520px) {
+
+
+
+  .kj-footer-container {
+
+
+
+    grid-template-columns: 1fr;
+
+
+
+    gap: 32px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-footer-brand,
+
+
+
+  .kj-footer-private-card {
+
+
+
+    grid-column: auto;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-footer-logo {
+
+
+
+    width: min(235px, 84vw);
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-footer-tagline {
+
+
+
+    font-size: 24px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-footer-link-group h2,
+
+
+
+  .kj-footer-private-card h2 {
+
+
+
+    font-size: 24px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-footer-private-card {
+
+
+
+    padding: 21px;
+
+
+
+    border-radius: 20px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-footer-company-box {
+
+
+
+    grid-template-columns: 48px minmax(0, 1fr);
+
+
+
+    column-gap: 12px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-footer-company-mark {
+
+
+
+    width: 48px;
+
+
+
+    height: 48px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-footer-brand-icon {
+
+
+
+    width: 35px;
+
+
+
+    height: 35px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-footer-subscribe {
+
+
+
+    grid-template-columns: 1fr;
+
+
+
+    padding: 6px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-footer-subscribe input {
+
+
+
+    min-height: 44px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-footer-subscribe button {
+
+
+
+    min-height: 43px;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+@media (prefers-reduced-motion: reduce) {
+
+
+
+  .kj-footer *,
+
+
+
+  .kj-footer *::before,
+
+
+
+  .kj-footer *::after {
+
+
+
+    scroll-behavior: auto !important;
+
+
+
+    transition-duration: 0.01ms !important;
+
+
+
+    animation-duration: 0.01ms !important;
+
+
+
+    animation-iteration-count: 1 !important;
+
+
+
+  }
+
+
+
+}
+
+
+
+/* =========================================================
+
+   FOOTER — 3 PHONE CONTACTS
+
+   Sale Trinh / Hotline / Ái Mi
+
+   Không đổi màu footer, chỉ chỉnh bố cục + icon.
+
+   ========================================================= */
+
+
+
+.kj-footer-contact-item--phones {
+
+  display: block;
+
+  height: 100%;
+
+}
+
+
+
+.kj-footer-phone-list {
+
+  height: 100%;
+
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  align-content: center;
+
+  gap: 7px;
+
+}
+
+
+
+.kj-footer-phone-row {
+
+  width: 100%;
+
+  min-height: 52px;
+
+  display: grid;
+
+  grid-template-columns: 38px minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: 11px;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  transition:
+
+    color 180ms ease,
+
+    transform 180ms ease;
+
+}
+
+
+
+.kj-footer-phone-row:hover {
+
+  color: var(--kj-gold-light);
+
+  transform: translateX(2px);
+
+}
+
+
+
+.kj-footer-phone-row .kj-footer-contact-icon {
+
+  width: 38px;
+
+  height: 38px;
+
+  flex: 0 0 38px;
+
+}
+
+
+
+.kj-footer-phone-copy {
+
+  min-width: 0;
+
+  display: grid;
+
+  align-content: center;
+
+  gap: 3px;
+
+}
+
+
+
+.kj-footer-phone-copy small {
+
+  margin: 0;
+
+  color: var(--kj-gold);
+
+  font-family: var(--kj-footer-condensed);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.13em;
+
+  line-height: 1.2;
+
+  text-transform: uppercase;
+
+}
+
+
+
+.kj-footer-phone-copy strong {
+
+  display: block;
+
+  margin: 0;
+
+  color: rgba(251, 248, 244, 0.72);
+
+  font-family: var(--kj-footer-body);
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  line-height: 1.45;
+
+}
+
+
+
+/* Tablet/mobile: sau khi các cột xếp chồng thì trả về chiều cao tự nhiên. */
+
+@media (max-width: 1120px) {
+
+  .kj-footer-brand,
+
+  .kj-footer-link-group,
+
+  .kj-footer-private-card {
+
+    min-height: 0;
+
+  }
+
+
+
+  .kj-footer-contact-item--phones {
+
+    height: auto;
+
+  }
+
+}
+
+
+
+@media (max-width: 780px) {
+
+  .kj-footer-container {
+
+    align-items: start;
+
+  }
+
+
+
+  .kj-footer-brand,
+
+  .kj-footer-link-group,
+
+  .kj-footer-private-card {
+
+    height: auto;
+
+    min-height: 0;
+
+  }
+
+
+
+  .kj-footer-brand-actions {
+
+    margin-top: 26px;
+
+    padding-top: 0;
+
+  }
+
+
+
+  .kj-footer-private-card .kj-footer-company-box {
+
+    margin-top: 18px;
+
+  }
+
+
+
+  .kj-footer-contact-item,
+
+  .kj-footer-phone-list {
+
+    height: auto;
+
+  }
+
+}
+
+
+
+@media (max-width: 520px) {
+
+  .kj-footer-phone-list {
+
+    gap: 8px;
+
+  }
+
+
+
+  .kj-footer-phone-row {
+
+    min-height: 54px;
+
+  }
+
+
+
+  .kj-footer-phone-copy strong {
+
+    font-size: 13px;
+
+  }
+
+}
+
+/* Giữ tiêu đề King Jades trên 1 dòng */
+
+#footer-explore-title {
+
+  white-space: nowrap;
+
+  word-break: keep-all;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   FOOTER — EMAIL SUBSCRIBE COMPACT
+
+   Thu gọn riêng ô "Email của quý khách" + nút Gửi.
+
+   Không ảnh hưởng các phần footer khác.
+
+   ========================================================= */
+
+
+
+.kj-footer-private-card .kj-footer-subscribe {
+
+  width: min(100%, 315px);
+
+  min-height: 44px;
+
+  margin-top: 14px;
+
+  padding: 4px;
+
+  gap: 4px;
+
+  border-radius: 14px;
+
+}
+
+
+
+.kj-footer-private-card .kj-footer-subscribe input {
+
+  min-height: 36px;
+
+  padding: 0 10px;
+
+  font-size: 12px;
+
+}
+
+
+
+.kj-footer-private-card .kj-footer-subscribe button {
+
+  min-width: 72px;
+
+  min-height: 36px;
+
+  padding: 0 12px;
+
+  border-radius: 10px;
+
+  font-size: 12px;
+
+  gap: 4px;
+
+}
+
+
+
+.kj-footer-private-card .kj-footer-subscribe button svg {
+
+  width: 15px;
+
+  height: 15px;
+
+}
+
+
+
+/* Mobile vẫn full width để dễ nhập/chạm */
+
+@media (max-width: 520px) {
+
+  .kj-footer-private-card .kj-footer-subscribe {
+
+    width: 100%;
+
+  }
+
+
+
+  .kj-footer-private-card .kj-footer-subscribe input {
+
+    min-height: 40px;
+
+  }
+
+
+
+  .kj-footer-private-card .kj-footer-subscribe button {
+
+    min-height: 40px;
+
+  }
+
+}
+
+
+
+
+
+/* =========================================================
+
+   FOOTER — PHONE CONTACTS HORIZONTAL / COMPACT
+
+   Mục tiêu:
+
+   - Desktop: 3 hotline hiện ngang để footer bớt dài.
+
+   - Tablet/mobile: tự quay về dạng dọc cho dễ đọc.
+
+   ========================================================= */
+
+
+
+/* Desktop / laptop lớn */
+
+@media (min-width: 1181px) {
+
+  .kj-footer-contact-strip {
+
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+
+    gap: 18px 28px;
+
+    align-items: start;
+
+  }
+
+
+
+  /* Địa chỉ */
+
+  .kj-footer-contact-item:first-child {
+
+    grid-column: 1 / 2;
+
+    grid-row: 1;
+
+  }
+
+
+
+  /* Email */
+
+  .kj-footer-contact-strip > .kj-footer-contact-item:last-child {
+
+    grid-column: 2 / 3;
+
+    grid-row: 1;
+
+  }
+
+
+
+  /* Cụm 3 số điện thoại nằm trọn hàng dưới */
+
+  .kj-footer-contact-item--phones {
+
+    grid-column: 1 / -1;
+
+    grid-row: 2;
+
+    margin-top: 2px;
+
+  }
+
+
+
+  .kj-footer-phone-list {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 14px;
+
+    align-content: start;
+
+  }
+
+
+
+  .kj-footer-phone-row {
+
+    min-height: 0;
+
+    padding: 10px 12px;
+
+    border: 1px solid rgba(217, 178, 29, 0.16);
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.03);
+
+    grid-template-columns: 34px minmax(0, 1fr);
+
+    gap: 10px;
+
+  }
+
+
+
+  .kj-footer-phone-row .kj-footer-contact-icon {
+
+    width: 34px;
+
+    height: 34px;
+
+    flex: 0 0 34px;
+
+  }
+
+
+
+  .kj-footer-phone-row .kj-footer-contact-icon svg {
+
+    width: 16px;
+
+    height: 16px;
+
+  }
+
+
+
+  .kj-footer-phone-copy {
+
+    gap: 2px;
+
+  }
+
+
+
+  .kj-footer-phone-copy small {
+
+    font-size: 9px;
+
+    letter-spacing: 0.11em;
+
+  }
+
+
+
+  .kj-footer-phone-copy strong {
+
+    font-size: 12px;
+
+    line-height: 1.35;
+
+  }
+
+}
+
+
+
+/* Màn trung bình: vẫn cho ngang nhưng 2 cột để đỡ chật */
+
+@media (min-width: 781px) and (max-width: 1180px) {
+
+  .kj-footer-contact-item--phones {
+
+    grid-column: 1 / -1;
+
+  }
+
+
+
+  .kj-footer-phone-list {
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 10px 14px;
+
+  }
+
+
+
+  .kj-footer-phone-row {
+
+    min-height: 48px;
+
+    padding: 8px 10px;
+
+    border: 1px solid rgba(217, 178, 29, 0.14);
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+  }
+
+}
+
+
+
+/* Mobile: quay lại 1 cột để dễ bấm */
+
+@media (max-width: 780px) {
+
+  .kj-footer-phone-list {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+
+  .kj-footer-phone-row {
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 0;
+
+    background: transparent;
+
+  }
+
+}
+
+
+
+
+
+/* =========================================================
+
+   FOOTER — BRAND ACTIONS CLOSER TO DESCRIPTION
+
+   Đưa 2 nút TƯ VẤN ZALO / ĐẶT LỊCH RIÊNG lên gần đoạn mô tả.
+
+   ========================================================= */
+
+
+
+.kj-footer-brand-actions {
+
+  margin-top: 20px !important;
+
+  padding-top: 0 !important;
+
+}
+
+
+
+/* Không để flex column của cột brand đẩy nút xuống đáy */
+
+.kj-footer-brand {
+
+  justify-content: flex-start !important;
+
+}
+
+
+
+@media (max-width: 780px) {
+
+  .kj-footer-brand-actions {
+
+    margin-top: 18px !important;
+
+    padding-top: 0 !important;
+
+  }
+
+}
+
+
+
+
+
+/* =========================================================
+
+   FOOTER — OPTION B
+
+   1 hàng: SHOWROOM | 3 HOTLINE | EMAIL
+
+   Desktop gọn, bỏ 3 card hotline lớn.
+
+   ========================================================= */
+
+
+
+@media (min-width: 1025px) {
+
+  .kj-footer-contact-strip {
+
+    display: grid !important;
+
+    grid-template-columns:
+
+      minmax(300px, 1.25fr)
+
+      minmax(520px, 2fr)
+
+      minmax(230px, 0.9fr) !important;
+
+    gap: 0 !important;
+
+    align-items: center !important;
+
+    padding: 18px 0 !important;
+
+  }
+
+
+
+  .kj-footer-contact-strip > .kj-footer-contact-item:first-child {
+
+    grid-column: 1 !important;
+
+    grid-row: 1 !important;
+
+  }
+
+
+
+  .kj-footer-contact-item--phones {
+
+    grid-column: 2 !important;
+
+    grid-row: 1 !important;
+
+    margin: 0 !important;
+
+    padding: 0 22px !important;
+
+    border-left: 1px solid rgba(217, 178, 29, 0.14);
+
+    border-right: 1px solid rgba(217, 178, 29, 0.14);
+
+  }
+
+
+
+  .kj-footer-contact-strip > .kj-footer-contact-item:last-child {
+
+    grid-column: 3 !important;
+
+    grid-row: 1 !important;
+
+    padding-left: 22px !important;
+
+  }
+
+
+
+  .kj-footer-phone-list {
+
+    display: grid !important;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+
+    gap: 0 !important;
+
+    align-items: center !important;
+
+    height: auto !important;
+
+  }
+
+
+
+  .kj-footer-phone-row {
+
+    position: relative;
+
+    min-width: 0;
+
+    min-height: 46px !important;
+
+    padding: 0 16px !important;
+
+    display: grid !important;
+
+    grid-template-columns: 30px minmax(0, 1fr) !important;
+
+    gap: 9px !important;
+
+    align-items: center !important;
+
+    border: 0 !important;
+
+    border-radius: 0 !important;
+
+    background: transparent !important;
+
+    box-shadow: none !important;
+
+  }
+
+
+
+  .kj-footer-phone-row:first-child {
+
+    padding-left: 0 !important;
+
+  }
+
+
+
+  .kj-footer-phone-row:last-child {
+
+    padding-right: 0 !important;
+
+  }
+
+
+
+  .kj-footer-phone-row + .kj-footer-phone-row::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 8px;
+
+    bottom: 8px;
+
+    width: 1px;
+
+    background: rgba(217, 178, 29, 0.13);
+
+  }
+
+
+
+  .kj-footer-phone-row .kj-footer-contact-icon {
+
+    width: 30px !important;
+
+    height: 30px !important;
+
+    flex: 0 0 30px !important;
+
+    border-color: rgba(217, 178, 29, 0.25) !important;
+
+  }
+
+
+
+  .kj-footer-phone-row .kj-footer-contact-icon svg {
+
+    width: 14px !important;
+
+    height: 14px !important;
+
+  }
+
+
+
+  .kj-footer-phone-copy {
+
+    min-width: 0;
+
+    gap: 2px !important;
+
+  }
+
+
+
+  .kj-footer-phone-copy small {
+
+    margin: 0 !important;
+
+    font-size: 9px !important;
+
+    line-height: 1.15 !important;
+
+    letter-spacing: 0.1em !important;
+
+    white-space: nowrap;
+
+  }
+
+
+
+  .kj-footer-phone-copy strong {
+
+    margin: 0 !important;
+
+    font-size: 11px !important;
+
+    line-height: 1.3 !important;
+
+    white-space: nowrap;
+
+  }
+
+
+
+  .kj-footer-contact-item {
+
+    min-height: 48px;
+
+  }
+
+
+
+  .kj-footer-contact-item > .kj-footer-contact-icon {
+
+    width: 34px;
+
+    height: 34px;
+
+  }
+
+
+
+  .kj-footer-contact-item > .kj-footer-contact-icon svg {
+
+    width: 16px;
+
+    height: 16px;
+
+  }
+
+
+
+  .kj-footer-contact-item small {
+
+    margin-bottom: 3px;
+
+    font-size: 9px;
+
+  }
+
+
+
+  .kj-footer-contact-item p {
+
+    font-size: 11px;
+
+    line-height: 1.4;
+
+  }
+
+}
+
+
+
+@media (min-width: 781px) and (max-width: 1024px) {
+
+  .kj-footer-contact-strip {
+
+    grid-template-columns: 1fr 1fr !important;
+
+    gap: 16px 22px !important;
+
+  }
+
+
+
+  .kj-footer-contact-item--phones {
+
+    grid-column: 1 / -1 !important;
+
+    padding: 12px 0 0 !important;
+
+    border-top: 1px solid rgba(217, 178, 29, 0.12);
+
+  }
+
+
+
+  .kj-footer-phone-list {
+
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+
+    gap: 12px !important;
+
+  }
+
+
+
+  .kj-footer-phone-row {
+
+    min-height: 44px !important;
+
+    padding: 0 10px !important;
+
+    border: 0 !important;
+
+    background: transparent !important;
+
+  }
+
+}
+
+
+
+@media (max-width: 780px) {
+
+  .kj-footer-phone-list {
+
+    grid-template-columns: 1fr !important;
+
+  }
+
+
+
+  .kj-footer-phone-row {
+
+    padding: 0 !important;
+
+    border: 0 !important;
+
+    background: transparent !important;
+
+  }
+
+}
+
+/* =========================================================
+   FOOTER — MACBOOK / SMALL LAPTOP RESPONSIVE FIX
+   - 900–1180px: giữ SHOWROOM | 3 HOTLINE | EMAIL trên 1 hàng.
+   - 781–899px: SHOWROOM + EMAIL cùng hàng, 3 HOTLINE ở hàng dưới.
+   - Reset rule cũ <=1120px làm showroom chiếm nguyên 1 hàng.
+   ========================================================= */
+
+@media (min-width: 900px) and (max-width: 1180px) {
+  .kj-footer-contact-strip {
+    display: grid !important;
+    grid-template-columns:
+      minmax(210px, 1.05fr)
+      minmax(0, 1.9fr)
+      minmax(170px, 0.8fr) !important;
+    gap: 0 !important;
+    align-items: center !important;
+    padding: 18px 0 !important;
+  }
+
+  .kj-footer-contact-strip > .kj-footer-contact-item:first-child {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    min-width: 0;
+    padding-right: 14px !important;
+  }
+
+  .kj-footer-contact-item--phones {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    min-width: 0;
+    margin: 0 !important;
+    padding: 0 12px !important;
+    border-top: 0 !important;
+    border-left: 1px solid rgba(217, 178, 29, 0.14) !important;
+    border-right: 1px solid rgba(217, 178, 29, 0.14) !important;
+  }
+
+  .kj-footer-contact-strip > .kj-footer-contact-item:last-child {
+    grid-column: 3 !important;
+    grid-row: 1 !important;
+    min-width: 0;
+    padding-left: 14px !important;
+  }
+
+  .kj-footer-phone-list {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 0 !important;
+    align-items: center !important;
+    height: auto !important;
+  }
+
+  .kj-footer-phone-row {
+    position: relative;
+    min-width: 0;
+    min-height: 44px !important;
+    padding: 0 8px !important;
+    display: grid !important;
+    grid-template-columns: 28px minmax(0, 1fr) !important;
+    gap: 7px !important;
+    align-items: center !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .kj-footer-phone-row:first-child {
+    padding-left: 0 !important;
+  }
+
+  .kj-footer-phone-row:last-child {
+    padding-right: 0 !important;
+  }
+
+  .kj-footer-phone-row + .kj-footer-phone-row::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: rgba(217, 178, 29, 0.13);
+  }
+
+  .kj-footer-phone-row .kj-footer-contact-icon {
+    width: 28px !important;
+    height: 28px !important;
+    flex: 0 0 28px !important;
+  }
+
+  .kj-footer-phone-row .kj-footer-contact-icon svg {
+    width: 13px !important;
+    height: 13px !important;
+  }
+
+  .kj-footer-phone-copy {
+    min-width: 0;
+    gap: 2px !important;
+  }
+
+  .kj-footer-phone-copy small {
+    margin: 0 !important;
+    font-size: 8px !important;
+    line-height: 1.15 !important;
+    letter-spacing: 0.08em !important;
+    white-space: nowrap;
+  }
+
+  .kj-footer-phone-copy strong {
+    margin: 0 !important;
+    font-size: 10px !important;
+    line-height: 1.25 !important;
+    white-space: nowrap;
+  }
+
+  .kj-footer-contact-item {
+    min-height: 46px !important;
+  }
+
+  .kj-footer-contact-item > .kj-footer-contact-icon {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .kj-footer-contact-item > .kj-footer-contact-icon svg {
+    width: 15px !important;
+    height: 15px !important;
+  }
+
+  .kj-footer-contact-item small {
+    margin-bottom: 3px !important;
+    font-size: 8px !important;
+  }
+
+  .kj-footer-contact-item p {
+    font-size: 10px !important;
+    line-height: 1.35 !important;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (min-width: 781px) and (max-width: 899px) {
+  .kj-footer-contact-strip {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.3fr) minmax(220px, 0.7fr) !important;
+    gap: 14px 22px !important;
+    align-items: center !important;
+  }
+
+  .kj-footer-contact-strip > .kj-footer-contact-item:first-child {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+  }
+
+  .kj-footer-contact-strip > .kj-footer-contact-item:last-child {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    padding-left: 0 !important;
+  }
+
+  .kj-footer-contact-item--phones {
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
+    margin: 0 !important;
+    padding: 12px 0 0 !important;
+    border-top: 1px solid rgba(217, 178, 29, 0.12) !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+  }
+
+  .kj-footer-phone-list {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+
+  .kj-footer-phone-row {
+    min-width: 0;
+    min-height: 44px !important;
+    padding: 0 8px !important;
+    border: 0 !important;
+    background: transparent !important;
+  }
+}
+
+
+
+/* King Jades - chi an 2 nhom lien ket tren dien thoai; tablet/PC giu nguyen */
+@media screen and (max-width: 767px) {
+  .kj-footer .kj-footer-link-group.kj-footer-mobile-hidden {
+    display: none !important;
+  }
+  .kj-footer .kj-footer-container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+}
+
+
+/* ================================================================
+   GOOGLE MAPS REVIEWS: CHI HIEN BEN TRONG FOOTER O MOBILE
+   - Desktop va tablet >= 768px: van hien KHAM PHA + DONG HANH
+   - Mobile <= 767px: an 2 nhom links, thay bang Google reviews
+   ================================================================ */
+.kj-footer .kj-footer-google-reviews-mobile {
+  display: none;
+}
+
+/* Rules footer cu co the an cot Dich vu tren tablet. Bat lai ro rang. */
+@media screen and (min-width: 768px) and (max-width: 1120px) {
+  .kj-footer .kj-footer-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+  .kj-footer .kj-footer-container > .kj-footer-brand,
+  .kj-footer .kj-footer-container > .kj-footer-private-card {
+    grid-column: 1 / -1;
+  }
+  .kj-footer .kj-footer-container > .kj-footer-link-group.kj-footer-mobile-hidden {
+    display: flex !important;
+  }
+  .kj-footer .kj-footer-container > .kj-footer-google-reviews-mobile {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .kj-footer .kj-footer-container {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 24px;
+  }
+  .kj-footer .kj-footer-container > .kj-footer-link-group.kj-footer-mobile-hidden {
+    display: none !important;
+  }
+  .kj-footer .kj-footer-container > .kj-footer-google-reviews-mobile {
+    display: block !important;
+    grid-column: 1 / -1;
+    width: 100%;
+    min-width: 0;
+  }
+  /* Giữ khối đánh giá gọn, nằm TRONG footer chứ không thành một section HomePage */
+  .kj-footer-google-reviews-mobile .kj-gr-section {
+    padding: 8px 0 4px;
+    background: transparent;
+    color: var(--kj-warm-white);
+  }
+  .kj-footer-google-reviews-mobile .kj-gr-shell {
+    width: 100%;
+    max-width: 100%;
+  }
+  .kj-footer-google-reviews-mobile .kj-gr-heading h2 {
+    color: var(--kj-warm-white);
+    font-size: clamp(28px, 8.2vw, 38px);
+  }
+  .kj-footer-google-reviews-mobile .kj-gr-heading p,
+  .kj-footer-google-reviews-mobile .kj-gr-toolbar,
+  .kj-footer-google-reviews-mobile .kj-gr-attribution {
+    color: rgba(251, 248, 244, 0.74);
+  }
+  .kj-footer-google-reviews-mobile .kj-gr-google-link,
+  .kj-footer-google-reviews-mobile .kj-gr-attribution a {
+    color: var(--kj-gold-light);
+  }
+  .kj-footer-google-reviews-mobile .kj-gr-summary__rating strong {
+    color: var(--kj-warm-white);
+  }
+  .kj-footer-google-reviews-mobile .kj-gr-summary__rating small {
+    color: rgba(251, 248, 244, 0.72);
+  }
+  .kj-footer-google-reviews-mobile .kj-gr-empty {
+    min-height: 145px;
+    padding: 22px 16px;
+    background: rgba(255, 255, 255, 0.96);
+  }
+  .kj-footer-google-reviews-mobile .kj-gr-card {
+    background: #fbf8f4;
+  }
+}

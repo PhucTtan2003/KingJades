@@ -1,0 +1,38 @@
+# React / TypeScript
+node_modules/
+dist/
+build/
+coverage/
+.vite/
+*.tsbuildinfo
+
+# ASP.NET Core
+bin/
+obj/
+.vs/
+TestResults/
+*.user
+*.suo
+
+# Secrets
+.env
+.env.*
+!.env.example
+appsettings.Development.json
+appsettings.Production.json
+secrets.json
+*.pfx
+*.p12
+
+# Logs
+logs/
+*.log
+*.tmp
+
+# Generated output
+out/
+publish/
+
+# OS
+.DS_Store
+Thumbs.db

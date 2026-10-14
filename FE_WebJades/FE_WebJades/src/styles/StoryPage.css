@@ -1,0 +1,7216 @@
+:root {
+
+
+
+  --story-navy: #1c2042;
+
+
+
+  --story-navy-2: #142543;
+
+
+
+  --story-gold: #d9b21d;
+
+
+
+  --story-gold-light: #f8d169;
+
+
+
+  --story-cream: #f2ede0;
+
+
+
+  --story-ivory: #fbf8f4;
+
+
+
+  --story-text: #42485b;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-page {
+
+
+
+  min-height: 100vh;
+
+
+
+  overflow-x: hidden;
+
+
+
+  background:
+
+
+
+    radial-gradient(
+
+
+
+      circle at 5% 5%,
+
+
+
+      rgba(217, 178, 29, 0.08),
+
+
+
+      transparent 22%
+
+
+
+    ),
+
+
+
+    #fbf8f4;
+
+
+
+  color: var(--story-navy);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-page main {
+
+
+
+  padding-top: 0;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-container {
+
+
+
+  width: min(1240px, calc(100% - 48px));
+
+
+
+  margin: 0 auto;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-container--narrow {
+
+
+
+  width: min(920px, calc(100% - 48px));
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-eyebrow,
+
+
+
+.kj-story-section-heading > span {
+
+
+
+  display: block;
+
+
+
+  margin-bottom: 14px;
+
+
+
+  color: #b48b0c;
+
+
+
+  font-family:
+
+
+
+    "SVN-GILROY",
+
+
+
+    "Gilroy",
+
+
+
+    "Inter",
+
+
+
+    sans-serif;
+
+
+
+  font-size: 11px;
+
+
+
+  font-weight: 900;
+
+
+
+  letter-spacing: 0.18em;
+
+
+
+  text-transform: uppercase;
+
+
+
+}
+
+
+
+
+
+
+
+/* =========================================================
+
+
+
+   HERO
+
+
+
+   ========================================================= */
+
+
+
+
+
+
+
+.kj-story-hero {
+
+
+
+  position: relative;
+
+
+
+  min-height: 830px;
+
+
+
+  padding: 190px 0 100px;
+
+
+
+  overflow: hidden;
+
+
+
+
+
+
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(248, 244, 233, 0.10) 0%,
+      rgba(255, 253, 248, 0.03) 44%,
+      rgba(239, 233, 217, 0.00) 100%
+    ),
+
+
+
+    url("../assets/story/story-hero-background.png");
+
+
+
+
+
+
+
+  background-size: cover;
+
+
+
+  background-position: center center;
+
+
+
+  background-repeat: no-repeat;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-hero::after {
+
+
+
+  content: "";
+
+
+
+  position: absolute;
+
+
+
+  top: 100px;
+
+
+
+  right: -150px;
+
+
+
+  width: 580px;
+
+
+
+  height: 580px;
+
+
+
+  border: 1px solid rgba(217, 178, 29, 0.18);
+
+
+
+  border-radius: 50%;
+
+
+
+  box-shadow:
+
+
+
+    0 0 0 70px rgba(217, 178, 29, 0.035),
+
+
+
+    0 0 0 140px rgba(217, 178, 29, 0.025);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-hero__glow {
+
+
+
+  position: absolute;
+
+
+
+  border-radius: 50%;
+
+
+
+  filter: blur(80px);
+
+
+
+  pointer-events: none;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-hero__glow--left {
+
+
+
+  width: 420px;
+
+
+
+  height: 420px;
+
+
+
+  top: 120px;
+
+
+
+  left: -160px;
+
+
+
+  background: rgba(139, 177, 155, 0.12);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-hero__glow--right {
+
+
+
+  width: 500px;
+
+
+
+  height: 500px;
+
+
+
+  right: -120px;
+
+
+
+  bottom: -180px;
+
+
+
+  background: rgba(217, 178, 29, 0.10);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-hero .kj-story-container {
+
+
+
+  position: relative;
+
+
+
+  z-index: 2;
+
+
+
+  display: grid;
+
+
+
+  grid-template-columns:
+
+
+
+    minmax(0, 1.1fr)
+
+
+
+    minmax(330px, 0.9fr);
+
+
+
+  align-items: center;
+
+
+
+  gap: 70px;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-hero__content h1 {
+
+
+
+  max-width: 790px;
+
+
+
+  margin: 0;
+
+
+
+  font-family:
+
+
+
+    "Warbler",
+
+
+
+    "Cormorant Garamond",
+
+
+
+    Georgia,
+
+
+
+    serif;
+
+
+
+  font-size: clamp(58px, 6.5vw, 108px);
+
+
+
+  font-weight: 500;
+
+
+
+  line-height: 0.9;
+
+
+
+  letter-spacing: -0.055em;
+
+
+
+}
+
+
+
+
+
+
+
+/* Dòng 1 của H1: có thể đổi màu độc lập tại đây */
+
+.kj-story-hero__title-main {
+
+  display: block;
+
+  color: #ffffff;
+
+}
+
+
+
+/* Dòng 2 của H1: giữ màu vàng King Jades */
+
+.kj-story-hero__title-sub {
+
+  display: block;
+
+  margin-top: 12px;
+
+  color: #b9951a;
+
+  font-size: 0.62em;
+
+  letter-spacing: -0.035em;
+
+}
+
+
+
+
+
+
+
+.kj-story-hero__quote {
+
+
+
+  max-width: 610px;
+
+
+
+  margin-top: 44px;
+
+
+
+  padding-top: 26px;
+
+
+
+  border-top: 1px solid rgba(28, 32, 66, 0.15);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-hero__motto {
+
+
+
+  display: block;
+
+
+
+  margin-bottom: 14px;
+
+
+
+  font-size: 17px;
+
+
+
+  letter-spacing: 0.04em;
+
+
+
+  text-transform: uppercase;
+
+
+
+
+  color: #ffffff;
+}
+
+
+
+
+
+
+
+.kj-story-hero__proverb {
+  margin: 0;
+  color: #ffffff;
+
+  font-family:
+    "Lora",
+    Georgia,
+    "Times New Roman",
+    serif !important;
+
+  font-size: 19px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.7;
+
+  letter-spacing: -0.01em;
+  word-spacing: 0;
+
+  font-kerning: normal;
+  font-feature-settings: "kern" 1;
+  text-rendering: optimizeLegibility;
+}
+
+.kj-story-hero__proverb-line {
+  display: block;
+}
+
+
+
+.kj-story-hero__actions,
+
+
+
+.kj-story-future__actions {
+
+
+
+  display: flex;
+
+
+
+  flex-wrap: wrap;
+
+
+
+  gap: 12px;
+
+
+
+  margin-top: 34px;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-button {
+
+
+
+  min-height: 52px;
+
+
+
+  padding: 0 22px;
+
+
+
+  border-radius: 999px;
+
+
+
+  display: inline-flex;
+
+
+
+  align-items: center;
+
+
+
+  justify-content: center;
+
+
+
+  gap: 14px;
+
+
+
+  text-decoration: none;
+
+
+
+  font-size: 12px;
+
+
+
+  font-weight: 900;
+
+
+
+  letter-spacing: 0.04em;
+
+
+
+  text-transform: uppercase;
+
+
+
+  transition:
+
+
+
+    transform 0.2s ease,
+
+
+
+    box-shadow 0.2s ease,
+
+
+
+    background 0.2s ease;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-button:hover {
+
+
+
+  transform: translateY(-2px);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-button--primary,
+
+
+
+.kj-story-button--gold {
+
+
+
+  background:
+
+
+
+    linear-gradient(
+
+
+
+      135deg,
+
+
+
+      var(--story-gold-light),
+
+
+
+      var(--story-gold)
+
+
+
+    );
+
+
+
+  color: var(--story-navy);
+
+
+
+  box-shadow:
+
+
+
+    0 14px 30px rgba(217, 178, 29, 0.2);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-button--light {
+
+
+
+  border: 1px solid rgba(28, 32, 66, 0.14);
+
+
+
+  background: rgba(255, 255, 255, 0.78);
+
+
+
+  color: var(--story-navy);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-button--outline-light {
+
+
+
+  border: 1px solid rgba(255, 255, 255, 0.32);
+
+
+
+  color: #ffffff;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-hero__visual {
+
+
+
+  display: flex;
+
+
+
+  align-items: center;
+
+
+
+  justify-content: center;
+
+
+
+  min-height: 390px;
+
+
+
+}
+
+
+
+
+
+
+
+/*
+
+
+
+ * Logo card lấy cảm hứng trực tiếp từ logo pill ở Header:
+
+
+
+ * - nền trắng/ivory
+
+
+
+ * - bo góc lớn
+
+
+
+ * - viền vàng rất nhẹ
+
+
+
+ * - không có vòng tròn trang trí
+
+
+
+ */
+
+
+
+.kj-story-logo-card {
+
+
+
+  position: relative;
+
+
+
+
+
+
+
+  width:
+
+
+
+    min(
+
+
+
+      520px,
+
+
+
+      100%
+
+
+
+    );
+
+
+
+
+
+
+
+  min-height: 170px;
+
+
+
+
+
+
+
+  padding:
+
+
+
+    34px
+
+
+
+    42px;
+
+
+
+
+
+
+
+
+
+
+
+  border-radius:
+
+
+
+    48px;
+
+
+
+
+
+
+
+  display: flex;
+
+
+
+  align-items: center;
+
+
+
+  justify-content: center;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-logo-card::before {
+
+
+
+  content: "";
+
+
+
+
+
+
+
+  position: absolute;
+
+
+
+
+
+
+
+  inset:
+
+
+
+    auto
+
+
+
+    -70px
+
+
+
+    -95px
+
+
+
+    auto;
+
+
+
+
+
+
+
+  width: 210px;
+
+
+
+  height: 210px;
+
+
+
+
+
+
+
+  border-radius: 50%;
+
+
+
+
+
+
+
+  background:
+
+
+
+    radial-gradient(
+
+
+
+      circle,
+
+
+
+      rgba(
+
+
+
+        248,
+
+
+
+        209,
+
+
+
+        105,
+
+
+
+        0.16
+
+
+
+      ),
+
+
+
+      transparent 70%
+
+
+
+    );
+
+
+
+
+
+
+
+  pointer-events: none;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-logo-card__image {
+
+
+
+  position: relative;
+
+
+
+  z-index: 1;
+
+
+
+
+
+
+
+  display: block;
+
+
+
+
+
+
+
+  width: 100%;
+
+
+
+  max-width: 430px;
+
+
+
+
+
+
+
+  height: auto;
+
+
+
+
+
+
+
+  object-fit: contain;
+
+
+
+
+
+
+
+  filter:
+
+
+
+    drop-shadow(
+
+
+
+      0
+
+
+
+      8px
+
+
+
+      18px
+
+
+
+      rgba(
+
+
+
+        28,
+
+
+
+        32,
+
+
+
+        66,
+
+
+
+        0.08
+
+
+
+      )
+
+
+
+    );
+
+
+
+}
+
+
+
+
+
+
+
+/* =========================================================
+
+
+
+   GLOBAL SECTION
+
+
+
+   ========================================================= */
+
+
+
+
+
+
+
+.kj-story-section {
+
+
+
+  padding: 110px 0;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-section-heading {
+
+
+
+  max-width: 760px;
+
+
+
+  margin-bottom: 54px;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-section-heading--center {
+
+
+
+  margin-right: auto;
+
+
+
+  margin-left: auto;
+
+
+
+  text-align: center;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-section-heading h2 {
+
+
+
+  margin: 0;
+
+
+
+  font-family:
+
+
+
+    "Warbler",
+
+
+
+    "Cormorant Garamond",
+
+
+
+    Georgia,
+
+
+
+    serif;
+
+
+
+  font-size: clamp(42px, 5vw, 72px);
+
+
+
+  font-weight: 500;
+
+
+
+  line-height: 0.98;
+
+
+
+  letter-spacing: -0.04em;
+
+
+
+}
+
+
+
+
+
+
+
+/* =========================================================
+
+
+
+   EDITORIAL JOURNEY
+
+
+
+   ========================================================= */
+
+
+
+
+
+
+
+.kj-story-section--journey {
+
+
+
+  background: #ffffff;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-editorial {
+
+
+
+  color: var(--story-text);
+
+
+
+  font-size: 17px;
+
+
+
+  line-height: 1.95;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-editorial p {
+
+
+
+  margin: 0 0 30px;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-dropcap::first-letter {
+
+
+
+  float: left;
+
+
+
+  margin: 9px 10px 0 0;
+
+
+
+  color: var(--story-navy);
+
+
+
+  font-family: Georgia, serif;
+
+
+
+  font-size: 76px;
+
+
+
+  line-height: 0.7;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-editorial__accent {
+
+
+
+  margin: 60px 0;
+
+
+
+  padding: 30px 0;
+
+
+
+  border-top: 1px solid rgba(28, 32, 66, 0.14);
+
+
+
+  border-bottom: 1px solid rgba(28, 32, 66, 0.14);
+
+
+
+  display: grid;
+
+
+
+  grid-template-columns: 160px 1fr;
+
+
+
+  align-items: center;
+
+
+
+  gap: 30px;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-editorial__accent span {
+
+
+
+  color: var(--story-gold);
+
+
+
+  font-family: Georgia, serif;
+
+
+
+  font-size: 66px;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-editorial__accent strong {
+
+
+
+  max-width: 520px;
+
+
+
+  color: var(--story-navy);
+
+
+
+
+
+
+
+  /*
+
+
+
+    Playfair Display hỗ trợ dấu tiếng Việt ổn định hơn.
+
+
+
+    Tránh tình trạng font display/fallback trộn glyph làm chữ
+
+
+
+    như “nguồn” bị hở hoặc tách ký tự.
+
+
+
+  */
+
+
+
+  font-family:
+
+
+
+  "Lora",
+
+
+
+  "Times New Roman",
+
+
+
+  serif !important;
+
+
+
+
+
+
+
+  font-size: clamp(30px, 3vw, 38px);
+
+
+
+  font-weight: 500;
+
+
+
+  line-height: 1.22;
+
+
+
+  letter-spacing: -0.02em;
+
+
+
+  .kj-story-testimonial blockquote {
+
+
+
+  margin: 0;
+
+
+
+  color: #ffffff;
+
+
+
+
+
+
+
+  font-family:
+
+
+
+    "Lora",
+
+
+
+    "Times New Roman",
+
+
+
+    serif !important;
+
+
+
+
+
+
+
+  font-size: clamp(28px, 3vw, 42px);
+
+
+
+  font-style: normal;
+
+
+
+  font-weight: 500;
+
+
+
+  line-height: 1.4;
+
+
+
+
+
+
+
+  letter-spacing: -0.02em;
+
+
+
+
+
+
+
+  font-kerning: normal;
+
+
+
+  font-feature-settings: "kern" 1;
+
+
+
+  text-rendering: optimizeLegibility;
+
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-testimonial {
+
+
+
+  margin: 60px -60px;
+
+
+
+  padding: 42px 50px;
+
+
+
+  border-radius: 26px;
+
+
+
+  background:
+
+
+
+    linear-gradient(
+
+
+
+      135deg,
+
+
+
+      #1b2447,
+
+
+
+      #10182f
+
+
+
+    );
+
+
+
+  color: #ffffff;
+
+
+
+  box-shadow:
+
+
+
+    0 26px 70px rgba(28, 32, 66, 0.18);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-testimonial > span {
+
+
+
+  display: block;
+
+
+
+  margin-bottom: 18px;
+
+
+
+  color: var(--story-gold-light);
+
+
+
+  font-size: 10px;
+
+
+
+  font-weight: 900;
+
+
+
+  letter-spacing: 0.18em;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-testimonial blockquote {
+
+
+
+  margin: 0;
+
+
+
+
+
+
+
+  color: #ffffff;
+
+
+
+
+
+
+
+  font-family:
+
+
+
+    "Lora",
+
+
+
+    "Times New Roman",
+
+
+
+    serif !important;
+
+
+
+
+
+
+
+  font-size: clamp(28px, 3vw, 42px);
+
+
+
+  font-style: normal;
+
+
+
+  font-weight: 500;
+
+
+
+  line-height: 1.4;
+
+
+
+
+
+
+
+  letter-spacing: -0.02em;
+
+
+
+  word-spacing: 0;
+
+
+
+
+
+
+
+  font-kerning: normal;
+
+
+
+  font-feature-settings: "kern" 1;
+
+
+
+  text-rendering: optimizeLegibility;
+
+
+
+}
+
+
+
+
+
+
+
+/* =========================================================
+
+
+
+   BRAND BIRTH
+
+
+
+   ========================================================= */
+
+
+
+
+
+
+
+.kj-story-brand-birth {
+
+
+
+  background:
+
+
+
+    linear-gradient(
+
+
+
+      180deg,
+
+
+
+      #f4efe3,
+
+
+
+      #fbf8f4
+
+
+
+    );
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-brand-birth__card {
+
+
+
+  padding: 70px;
+
+
+
+  border: 1px solid rgba(217, 178, 29, 0.23);
+
+
+
+  border-radius: 32px;
+
+
+
+  display: grid;
+
+
+
+  grid-template-columns:
+
+
+
+    minmax(0, 1fr)
+
+
+
+    minmax(320px, 0.8fr);
+
+
+
+  gap: 70px;
+
+
+
+  background: rgba(255, 255, 255, 0.64);
+
+
+
+  box-shadow:
+
+
+
+    0 26px 70px rgba(28, 32, 66, 0.07);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-brand-birth h2 {
+
+
+
+  margin: 0;
+
+
+
+  font-family: Georgia, serif;
+
+
+
+  font-size: clamp(42px, 5vw, 68px);
+
+
+
+  font-weight: 500;
+
+
+
+  line-height: 1.02;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-brand-birth__copy {
+
+
+
+  color: var(--story-text);
+
+
+
+  font-size: 16px;
+
+
+
+  line-height: 1.9;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-brand-birth__copy p {
+
+
+
+  margin: 0 0 20px;
+
+
+
+}
+
+
+
+
+
+
+
+/* =========================================================
+
+
+
+   MISSION
+
+
+
+   ========================================================= */
+
+
+
+
+
+
+
+.kj-story-mission-grid {
+
+
+
+  display: grid;
+
+
+
+  grid-template-columns:
+
+
+
+    repeat(3, minmax(0, 1fr));
+
+
+
+  gap: 22px;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-mission-grid article {
+
+
+
+  min-height: 390px;
+
+
+
+  padding: 30px;
+
+
+
+  border: 1px solid rgba(28, 32, 66, 0.10);
+
+
+
+  border-radius: 24px;
+
+
+
+  background: #ffffff;
+
+
+
+  box-shadow:
+
+
+
+    0 18px 50px rgba(28, 32, 66, 0.055);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-mission-grid article > span,
+
+
+
+.kj-story-values article > span {
+
+
+
+  color: var(--story-gold);
+
+
+
+  font-size: 11px;
+
+
+
+  font-weight: 900;
+
+
+
+  letter-spacing: 0.14em;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-mission-grid h3,
+
+
+
+.kj-story-values h3 {
+
+
+
+  margin: 46px 0 18px;
+
+
+
+  font-family: Georgia, serif;
+
+
+
+  font-size: 29px;
+
+
+
+  font-weight: 500;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-mission-grid p,
+
+
+
+.kj-story-values p {
+
+
+
+  margin: 0;
+
+
+
+  color: var(--story-text);
+
+
+
+  font-size: 15px;
+
+
+
+  line-height: 1.8;
+
+
+
+}
+
+
+
+
+
+
+
+/* =========================================================
+
+
+
+   VISION
+
+
+
+   ========================================================= */
+
+
+
+
+
+
+
+.kj-story-vision {
+
+
+
+  background:
+
+
+
+    linear-gradient(
+
+
+
+      130deg,
+
+
+
+      #17213f,
+
+
+
+      #0e172d
+
+
+
+    );
+
+
+
+  color: #ffffff;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-vision .kj-story-container {
+
+
+
+  display: grid;
+
+
+
+  grid-template-columns:
+
+
+
+    0.75fr
+
+
+
+    1.25fr;
+
+
+
+  align-items: center;
+
+
+
+  gap: 80px;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-vision__number {
+
+
+
+  position: relative;
+
+
+
+  display: flex;
+
+
+
+  justify-content: center;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-vision__number::before {
+
+
+
+  content: "";
+
+
+
+  position: absolute;
+
+
+
+  inset: 50% auto auto 50%;
+
+
+
+  width: 320px;
+
+
+
+  height: 320px;
+
+
+
+  border: 1px solid rgba(248, 209, 105, 0.20);
+
+
+
+  border-radius: 50%;
+
+
+
+  transform: translate(-50%, -50%);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-vision__number span {
+
+
+
+  position: relative;
+
+
+
+  z-index: 2;
+
+
+
+  color: var(--story-gold-light);
+
+
+
+  font-family: Georgia, serif;
+
+
+
+  font-size: clamp(80px, 10vw, 150px);
+
+
+
+  letter-spacing: -0.06em;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-vision__content .kj-story-eyebrow {
+
+
+
+  color: var(--story-gold-light);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-vision__content h2 {
+
+
+
+  margin: 0 0 26px;
+
+
+
+  font-family: Georgia, serif;
+
+
+
+  font-size: clamp(42px, 5vw, 68px);
+
+
+
+  font-weight: 500;
+
+
+
+  line-height: 1.02;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-vision__content p {
+
+
+
+  max-width: 680px;
+
+
+
+  margin: 0;
+
+
+
+  color: rgba(255, 255, 255, 0.70);
+
+
+
+  font-size: 16px;
+
+
+
+  line-height: 1.9;
+
+
+
+}
+
+
+
+
+
+
+
+/* =========================================================
+
+
+
+   CORE VALUES
+
+
+
+   ========================================================= */
+
+
+
+
+
+
+
+.kj-story-values {
+
+
+
+  border-top: 1px solid rgba(28, 32, 66, 0.12);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-values article {
+
+
+
+  padding: 32px 0;
+
+
+
+  border-bottom: 1px solid rgba(28, 32, 66, 0.12);
+
+
+
+  display: grid;
+
+
+
+  grid-template-columns:
+
+
+
+    90px
+
+
+
+    220px
+
+
+
+    1fr;
+
+
+
+  gap: 30px;
+
+
+
+  align-items: start;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-values h3 {
+
+
+
+  margin: 0;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-values p {
+
+
+
+  max-width: 760px;
+
+
+
+}
+
+
+
+
+
+
+
+/* =========================================================
+
+
+
+   FUTURE
+
+
+
+   ========================================================= */
+
+
+
+
+
+
+
+.kj-story-future {
+
+
+
+  padding-top: 70px;
+
+
+
+  padding-bottom: 130px;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-future__panel {
+
+
+
+  padding: 80px;
+
+
+
+  border-radius: 34px;
+
+
+
+  background:
+
+
+
+    radial-gradient(
+
+
+
+      circle at 90% 10%,
+
+
+
+      rgba(248, 209, 105, 0.16),
+
+
+
+      transparent 30%
+
+
+
+    ),
+
+
+
+    linear-gradient(
+
+
+
+      135deg,
+
+
+
+      #17213f,
+
+
+
+      #0e172d
+
+
+
+    );
+
+
+
+  color: #ffffff;
+
+
+
+  box-shadow:
+
+
+
+    0 32px 90px rgba(28, 32, 66, 0.2);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-future__panel .kj-story-eyebrow {
+
+
+
+  color: var(--story-gold-light);
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-future__panel h2 {
+
+
+
+  max-width: 780px;
+
+
+
+  margin: 0 0 28px;
+
+
+
+  font-family: Georgia, serif;
+
+
+
+  font-size: clamp(44px, 5.5vw, 76px);
+
+
+
+  font-weight: 500;
+
+
+
+  line-height: 0.98;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-future__panel p {
+
+
+
+  max-width: 850px;
+
+
+
+  margin: 0 0 18px;
+
+
+
+  color: rgba(255, 255, 255, 0.72);
+
+
+
+  font-size: 16px;
+
+
+
+  line-height: 1.85;
+
+
+
+}
+
+
+
+
+
+
+
+/* =========================================================
+
+
+
+   RESPONSIVE
+
+
+
+   ========================================================= */
+
+
+
+
+
+
+
+@media (max-width: 1080px) {
+
+
+
+  .kj-story-hero {
+
+
+
+    min-height: auto;
+
+
+
+    padding-top: 150px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero .kj-story-container,
+
+
+
+  .kj-story-brand-birth__card,
+
+
+
+  .kj-story-vision .kj-story-container {
+
+
+
+    grid-template-columns: 1fr;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__visual {
+
+
+
+    margin-top: 30px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-brand-birth__card,
+
+
+
+  .kj-story-future__panel {
+
+
+
+    padding: 50px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-mission-grid {
+
+
+
+    grid-template-columns: 1fr;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-mission-grid article {
+
+
+
+    min-height: auto;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-vision {
+
+
+
+    text-align: center;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-vision__content p {
+
+
+
+    margin-right: auto;
+
+
+
+    margin-left: auto;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+@media (max-width: 1080px) {
+
+
+
+  .kj-story-logo-card {
+
+
+
+    width:
+
+
+
+      min(
+
+
+
+        560px,
+
+
+
+        86vw
+
+
+
+      );
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+@media (max-width: 760px) {
+
+
+
+  .kj-story-logo-card {
+
+
+
+    min-height: 130px;
+
+
+
+
+
+
+
+    padding:
+
+
+
+      24px
+
+
+
+      28px;
+
+
+
+
+
+
+
+    border-radius:
+
+
+
+      34px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-logo-card__image {
+
+
+
+    max-width: 330px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-container,
+
+
+
+  .kj-story-container--narrow {
+
+
+
+    width: min(100% - 28px, 1240px);
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero {
+
+
+
+    padding:
+
+
+
+      125px
+
+
+
+      0
+
+
+
+      70px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__content h1 {
+
+
+
+    font-size:
+
+
+
+      clamp(
+
+
+
+        48px,
+
+
+
+        16vw,
+
+
+
+        74px
+
+
+
+      );
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__quote {
+
+
+
+    margin-top: 30px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-section {
+
+
+
+    padding: 75px 0;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-section-heading {
+
+
+
+    margin-bottom: 36px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-editorial {
+
+
+
+    font-size: 15px;
+
+
+
+    line-height: 1.85;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-editorial__accent {
+
+
+
+    grid-template-columns: 1fr;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-testimonial {
+
+
+
+    margin:
+
+
+
+      42px
+
+
+
+      0;
+
+
+
+    padding:
+
+
+
+      30px
+
+
+
+      24px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-brand-birth__card,
+
+
+
+  .kj-story-future__panel {
+
+
+
+    padding:
+
+
+
+      34px
+
+
+
+      24px;
+
+
+
+    border-radius: 24px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-values article {
+
+
+
+    grid-template-columns:
+
+
+
+      46px
+
+
+
+      1fr;
+
+
+
+    gap: 12px 18px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-values article p {
+
+
+
+    grid-column:
+
+
+
+      2;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+@media (max-width: 520px) {
+
+
+
+  .kj-story-logo-card {
+
+
+
+    min-height: 110px;
+
+
+
+
+
+
+
+    padding:
+
+
+
+      20px
+
+
+
+      22px;
+
+
+
+
+
+
+
+    border-radius:
+
+
+
+      28px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-logo-card__image {
+
+
+
+    max-width: 280px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__actions,
+
+
+
+  .kj-story-future__actions {
+
+
+
+    flex-direction: column;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-button {
+
+
+
+    width: 100%;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+/* =========================================================
+
+
+
+   STORY PAGE — MOBILE CTA ALIGNMENT FIX
+
+
+
+   2026-09-18
+
+
+
+
+
+
+
+   Fix:
+
+
+
+   - width: 100% không còn cộng thêm horizontal padding gây tràn.
+
+
+
+   - Hai nút luôn thẳng hàng trên mobile.
+
+
+
+   - Text luôn nằm đúng tâm nút.
+
+
+
+   - Mũi tên của nút vàng được neo bên phải, không đẩy text lệch tâm.
+
+
+
+   - Không thay đổi typography/layout của các section khác.
+
+
+
+========================================================= */
+
+
+
+
+
+
+
+.kj-story-button {
+
+
+
+  position: relative;
+
+
+
+  box-sizing: border-box;
+
+
+
+}
+
+
+
+
+
+
+
+/* Nút có arrow: text vẫn center tuyệt đối */
+
+
+
+.kj-story-button > span {
+
+
+
+  flex: 0 0 auto;
+
+
+
+}
+
+
+
+
+
+
+
+/* =========================================================
+
+
+
+   MOBILE / SMALL TABLET
+
+
+
+========================================================= */
+
+
+
+@media (max-width: 760px) {
+
+
+
+  .kj-story-hero__actions,
+
+
+
+  .kj-story-future__actions {
+
+
+
+    width: 100%;
+
+
+
+    align-items: stretch;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-button {
+
+
+
+    box-sizing: border-box;
+
+
+
+    max-width: 100%;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+/* =========================================================
+
+
+
+   MOBILE <= 520px
+
+
+
+========================================================= */
+
+
+
+@media (max-width: 520px) {
+
+
+
+  .kj-story-hero__actions,
+
+
+
+  .kj-story-future__actions {
+
+
+
+    display: grid;
+
+
+
+    grid-template-columns: minmax(0, 1fr);
+
+
+
+    width: 100%;
+
+
+
+    gap: 12px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-button {
+
+
+
+    width: 100%;
+
+
+
+    max-width: 100%;
+
+
+
+    min-width: 0;
+
+
+
+    margin: 0;
+
+
+
+    padding-right: 22px;
+
+
+
+    padding-left: 22px;
+
+
+
+    box-sizing: border-box;
+
+
+
+    justify-content: center;
+
+
+
+    text-align: center;
+
+
+
+  }
+
+
+
+
+
+
+
+  /* Arrow không tham gia vào phép căn giữa text */
+
+
+
+  .kj-story-button--primary > span,
+
+
+
+  .kj-story-button--gold > span {
+
+
+
+    position: absolute;
+
+
+
+    right: 22px;
+
+
+
+    top: 50%;
+
+
+
+    margin: 0;
+
+
+
+    transform: translateY(-50%);
+
+
+
+    line-height: 1;
+
+
+
+  }
+
+
+
+
+
+
+
+  /* Nút không có arrow vẫn center tuyệt đối */
+
+
+
+  .kj-story-button--light,
+
+
+
+  .kj-story-button--outline-light {
+
+
+
+    justify-content: center;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+/* =========================================================
+
+
+
+   VERY SMALL MOBILE <= 390px
+
+
+
+   Samsung A55 / iPhone / Android nhỏ
+
+
+
+========================================================= */
+
+
+
+@media (max-width: 390px) {
+
+
+
+  .kj-story-button {
+
+
+
+    padding-right: 18px;
+
+
+
+    padding-left: 18px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-button--primary > span,
+
+
+
+  .kj-story-button--gold > span {
+
+
+
+    right: 18px;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+/* =========================================================
+
+
+
+   STORY PAGE — MOBILE CTA OVERFLOW HARD FIX
+
+
+
+   2026-09-18
+
+
+
+
+
+
+
+   DevTools case:
+
+
+
+   - viewport Samsung Galaxy A55 = 360px
+
+
+
+   - primary CTA was rendered ~355.2px and overflowed its visual container
+
+
+
+
+
+
+
+   Root fix:
+
+
+
+   1) Cho phép grid/flex ancestors thật sự co nhỏ bằng min-width: 0.
+
+
+
+   2) Không cho nội dung CTA tạo min-content width lớn hơn container.
+
+
+
+   3) Ép CTA lấy đúng 100% content width của parent.
+
+
+
+   4) Arrow absolute, không tham gia tính intrinsic width.
+
+
+
+========================================================= */
+
+
+
+
+
+
+
+@media (max-width: 760px) {
+
+
+
+  .kj-story-hero .kj-story-container,
+
+
+
+  .kj-story-hero__content,
+
+
+
+  .kj-story-hero__actions,
+
+
+
+  .kj-story-future .kj-story-container,
+
+
+
+  .kj-story-future__panel,
+
+
+
+  .kj-story-future__actions {
+
+
+
+    min-width: 0 !important;
+
+
+
+    max-width: 100% !important;
+
+
+
+    box-sizing: border-box !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  /* 1fr mặc định có auto min-size; minmax(0,1fr) mới cho phép co thật */
+
+
+
+  .kj-story-hero .kj-story-container {
+
+
+
+    grid-template-columns: minmax(0, 1fr) !important;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+@media (max-width: 520px) {
+
+
+
+  .kj-story-hero__content,
+
+
+
+  .kj-story-hero__actions,
+
+
+
+  .kj-story-future__panel,
+
+
+
+  .kj-story-future__actions {
+
+
+
+    width: 100% !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__actions,
+
+
+
+  .kj-story-future__actions {
+
+
+
+    display: flex !important;
+
+
+
+    flex-direction: column !important;
+
+
+
+    align-items: stretch !important;
+
+
+
+    gap: 12px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-button {
+
+
+
+    position: relative !important;
+
+
+
+
+
+
+
+    display: flex !important;
+
+
+
+    flex: 0 0 auto !important;
+
+
+
+
+
+
+
+    width: 100% !important;
+
+
+
+    min-width: 0 !important;
+
+
+
+    max-width: 100% !important;
+
+
+
+
+
+
+
+    margin: 0 !important;
+
+
+
+    padding-left: 18px !important;
+
+
+
+    padding-right: 18px !important;
+
+
+
+
+
+
+
+    box-sizing: border-box !important;
+
+
+
+    overflow: hidden !important;
+
+
+
+
+
+
+
+    justify-content: center !important;
+
+
+
+    align-items: center !important;
+
+
+
+
+
+
+
+    gap: 0 !important;
+
+
+
+    text-align: center !important;
+
+
+
+    white-space: normal !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  /*
+
+
+
+    Arrow không còn tham gia flex/min-content width.
+
+
+
+    Vì vậy CTA vàng và CTA trắng sẽ có đúng cùng chiều rộng.
+
+
+
+  */
+
+
+
+  .kj-story-button--primary > span,
+
+
+
+  .kj-story-button--gold > span {
+
+
+
+    position: absolute !important;
+
+
+
+    top: 50% !important;
+
+
+
+    right: 18px !important;
+
+
+
+    margin: 0 !important;
+
+
+
+    transform: translateY(-50%) !important;
+
+
+
+
+
+
+
+    width: auto !important;
+
+
+
+    min-width: 0 !important;
+
+
+
+    flex: none !important;
+
+
+
+
+
+
+
+    line-height: 1 !important;
+
+
+
+    pointer-events: none;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-button--light,
+
+
+
+  .kj-story-button--outline-light {
+
+
+
+    padding-right: 18px !important;
+
+
+
+    padding-left: 18px !important;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+/* Samsung A55 360px / iPhone mini-size guard */
+
+
+
+@media (max-width: 390px) {
+
+
+
+  .kj-story-button {
+
+
+
+    padding-left: 16px !important;
+
+
+
+    padding-right: 16px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-button--primary > span,
+
+
+
+  .kj-story-button--gold > span {
+
+
+
+    right: 16px !important;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+/* =========================================================
+
+
+
+   STORY PAGE — DESKTOP/TABLET COMPACT SPACING
+
+
+
+   2026-09-18
+
+
+
+
+
+
+
+   Mục tiêu:
+
+
+
+   - Giảm khoảng trắng quá rộng giữa các section trên desktop.
+
+
+
+   - Giữ bố cục sang, thoáng nhưng không bị "rỗng".
+
+
+
+   - Không phá mobile CTA fix đã có.
+
+
+
+========================================================= */
+
+
+
+
+
+
+
+/* Desktop lớn */
+
+
+
+@media (min-width: 1081px) {
+
+
+
+  .kj-story-hero {
+
+
+
+    min-height: 680px;
+
+
+
+    padding-top: 145px;
+
+
+
+    padding-bottom: 70px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero .kj-story-container {
+
+
+
+    gap: 54px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__quote {
+
+
+
+    margin-top: 32px;
+
+
+
+    padding-top: 22px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__actions {
+
+
+
+    margin-top: 26px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-section {
+
+
+
+    padding-top: 78px;
+
+
+
+    padding-bottom: 78px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-section-heading {
+
+
+
+    margin-bottom: 38px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-editorial p {
+
+
+
+    margin-bottom: 22px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-editorial__accent {
+
+
+
+    margin-top: 42px;
+
+
+
+    margin-bottom: 42px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-testimonial {
+
+
+
+    margin-top: 42px;
+
+
+
+    margin-bottom: 42px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-brand-birth__card {
+
+
+
+    padding: 54px 58px;
+
+
+
+    gap: 52px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-mission-grid article {
+
+
+
+    min-height: 330px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-mission-grid h3,
+
+
+
+  .kj-story-values h3 {
+
+
+
+    margin-top: 34px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-future {
+
+
+
+    padding-top: 58px;
+
+
+
+    padding-bottom: 88px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-future__panel {
+
+
+
+    padding: 64px 68px;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+/* Laptop/tablet ngang */
+
+
+
+@media (min-width: 761px) and (max-width: 1080px) {
+
+
+
+  .kj-story-hero {
+
+
+
+    min-height: auto;
+
+
+
+    padding-top: 125px;
+
+
+
+    padding-bottom: 64px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-section {
+
+
+
+    padding-top: 68px;
+
+
+
+    padding-bottom: 68px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-section-heading {
+
+
+
+    margin-bottom: 32px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-brand-birth__card,
+
+
+
+  .kj-story-future__panel {
+
+
+
+    padding: 42px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-editorial__accent,
+
+
+
+  .kj-story-testimonial {
+
+
+
+    margin-top: 36px;
+
+
+
+    margin-bottom: 36px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-future {
+
+
+
+    padding-top: 54px;
+
+
+
+    padding-bottom: 76px;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+/* Hero 3 CTA: giữ gọn, không bị kéo quá rộng. */
+
+
+
+.kj-story-hero__actions {
+
+
+
+  align-items: center;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-hero__actions .kj-story-button {
+
+
+
+  min-width: 0;
+
+
+
+}
+
+
+
+
+
+
+
+/* Mobile: 3 nút vẫn full-width và thẳng hàng như hard-fix cũ. */
+
+
+
+@media (max-width: 520px) {
+
+
+
+  .kj-story-hero__actions {
+
+
+
+    gap: 10px !important;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+/* =========================================================
+
+
+
+   STORY PAGE — CTA 3 BUTTONS + EXTRA COMPACT SPACING
+
+
+
+   2026-09-18
+
+
+
+
+
+
+
+   - Chính sách bảo hành + Chính sách bảo mật cùng style vàng.
+
+
+
+   - Xem bộ sưu tập giữ style sáng ở giữa.
+
+
+
+   - Desktop: 3 nút cân, cùng chiều cao, khoảng cách gọn.
+
+
+
+   - Giảm thêm khoảng trắng giữa các section.
+
+
+
+========================================================= */
+
+
+
+
+
+
+
+/* ---------------------------------------------------------
+
+
+
+   HERO CTA — 3 BUTTONS BALANCED
+
+
+
+--------------------------------------------------------- */
+
+
+
+.kj-story-hero__actions {
+
+
+
+  display: grid !important;
+
+
+
+  grid-template-columns:
+
+
+
+    minmax(190px, 1fr)
+
+
+
+    minmax(170px, 0.9fr)
+
+
+
+    minmax(190px, 1fr) !important;
+
+
+
+  gap: 10px !important;
+
+
+
+  width: min(690px, 100%);
+
+
+
+  margin-top: 22px !important;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-hero__actions .kj-story-button {
+
+
+
+  width: 100%;
+
+
+
+  min-height: 50px;
+
+
+
+  padding-inline: 18px;
+
+
+
+  box-sizing: border-box;
+
+
+
+}
+
+
+
+
+
+
+
+/* Hai nút policy giống hệt nhau */
+
+
+
+.kj-story-hero__actions .kj-story-button--primary {
+
+
+
+  background:
+
+
+
+    linear-gradient(
+
+
+
+      135deg,
+
+
+
+      var(--story-gold-light),
+
+
+
+      var(--story-gold)
+
+
+
+    ) !important;
+
+
+
+  color: var(--story-navy) !important;
+
+
+
+  border: 0;
+
+
+
+  box-shadow: 0 12px 26px rgba(217, 178, 29, 0.18);
+
+
+
+}
+
+
+
+
+
+
+
+/* Nút collection nằm giữa, trung tính hơn */
+
+
+
+.kj-story-hero__actions .kj-story-button--light {
+
+
+
+  background: rgba(255, 255, 255, 0.86) !important;
+
+
+
+  border: 1px solid rgba(28, 32, 66, 0.13) !important;
+
+
+
+  color: var(--story-navy) !important;
+
+
+
+}
+
+
+
+
+
+
+
+/* ---------------------------------------------------------
+
+
+
+   DESKTOP — EXTRA COMPACT
+
+
+
+--------------------------------------------------------- */
+
+
+
+@media (min-width: 1081px) {
+
+
+
+  .kj-story-hero {
+
+
+
+    min-height: 400px !important;
+
+
+
+    padding-top: 120px !important;
+
+
+
+    padding-bottom: 48px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero .kj-story-container {
+
+
+
+    gap: 42px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__quote {
+
+
+
+    margin-top: 24px !important;
+
+
+
+    padding-top: 18px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-section {
+
+
+
+    padding-top: 54px !important;
+
+
+
+    padding-bottom: 54px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-section-heading {
+
+
+
+    margin-bottom: 28px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-editorial p {
+
+
+
+    margin-bottom: 18px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-editorial__accent {
+
+
+
+    margin-top: 30px !important;
+
+
+
+    margin-bottom: 30px !important;
+
+
+
+    padding-top: 22px !important;
+
+
+
+    padding-bottom: 22px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-testimonial {
+
+
+
+    margin-top: 30px !important;
+
+
+
+    margin-bottom: 30px !important;
+
+
+
+    padding-top: 34px !important;
+
+
+
+    padding-bottom: 34px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-brand-birth__card {
+
+
+
+    padding: 42px 48px !important;
+
+
+
+    gap: 40px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-mission-grid article {
+
+
+
+    min-height: 300px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-mission-grid h3,
+
+
+
+  .kj-story-values h3 {
+
+
+
+    margin-top: 26px !important;
+
+
+
+    margin-bottom: 14px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-values article {
+
+
+
+    padding-top: 24px !important;
+
+
+
+    padding-bottom: 24px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-future {
+
+
+
+    padding-top: 42px !important;
+
+
+
+    padding-bottom: 64px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-future__panel {
+
+
+
+    padding: 52px 58px !important;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+/* ---------------------------------------------------------
+
+
+
+   TABLET / LAPTOP HẸP — EXTRA COMPACT
+
+
+
+--------------------------------------------------------- */
+
+
+
+@media (min-width: 761px) and (max-width: 1080px) {
+
+
+
+  .kj-story-hero {
+
+
+
+    padding-top: 108px !important;
+
+
+
+    padding-bottom: 50px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__actions {
+
+
+
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+
+
+
+    width: 100%;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-section {
+
+
+
+    padding-top: 50px !important;
+
+
+
+    padding-bottom: 50px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-section-heading {
+
+
+
+    margin-bottom: 26px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-editorial__accent,
+
+
+
+  .kj-story-testimonial {
+
+
+
+    margin-top: 28px !important;
+
+
+
+    margin-bottom: 28px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-brand-birth__card,
+
+
+
+  .kj-story-future__panel {
+
+
+
+    padding: 34px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-future {
+
+
+
+    padding-top: 40px !important;
+
+
+
+    padding-bottom: 58px !important;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+/* ---------------------------------------------------------
+
+
+
+   MOBILE — STACK ĐẸP, 2 policy cùng style vàng
+
+
+
+--------------------------------------------------------- */
+
+
+
+@media (max-width: 760px) {
+
+
+
+  .kj-story-hero__actions {
+
+
+
+    display: flex !important;
+
+
+
+    flex-direction: column !important;
+
+
+
+    width: 100% !important;
+
+
+
+    gap: 10px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__actions .kj-story-button {
+
+
+
+    width: 100% !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-section {
+
+
+
+    padding-top: 58px !important;
+
+
+
+    padding-bottom: 58px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-section-heading {
+
+
+
+    margin-bottom: 28px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-future {
+
+
+
+    padding-top: 44px !important;
+
+
+
+    padding-bottom: 66px !important;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+/* Mobile nhỏ: giữ hard-fix arrow hiện tại */
+
+
+
+@media (max-width: 520px) {
+
+
+
+  .kj-story-hero__actions {
+
+
+
+    margin-top: 20px !important;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+
+
+
+   STORY PAGE — HERO CTA 4 BUTTONS
+
+
+
+   2026-09-26
+
+
+
+
+
+
+
+   Thêm nút "Câu chuyện nhân sự".
+
+
+
+   Nút dẫn đến đúng khu Customer Stories trên trang /contact.
+
+
+
+   ========================================================= */
+
+
+
+
+
+
+
+@media (min-width: 1081px) {
+
+
+
+  .kj-story-hero__actions {
+
+
+
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+
+
+
+    width: min(790px, 100%) !important;
+
+
+
+    gap: 10px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__actions .kj-story-button {
+
+
+
+    min-width: 0 !important;
+
+
+
+    padding-inline: 14px !important;
+
+
+
+    white-space: nowrap;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+@media (min-width: 761px) and (max-width: 1080px) {
+
+
+
+  .kj-story-hero__actions {
+
+
+
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+
+
+    width: min(720px, 100%) !important;
+
+
+
+    gap: 10px !important;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+@media (max-width: 760px) {
+
+
+
+  .kj-story-hero__actions {
+
+
+
+    display: flex !important;
+
+
+
+    flex-direction: column !important;
+
+
+
+    width: 100% !important;
+
+
+
+    gap: 10px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__actions .kj-story-button {
+
+
+
+    width: 100% !important;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+
+
+
+   STORY PAGE — HERO VISUAL IMAGE ISOLATION
+
+
+
+   2026-09-26
+
+
+
+
+
+
+
+   Ảnh trong khung bên phải Hero giờ dùng asset riêng:
+
+
+
+   ../assets/story/story-hero-visual.png
+
+
+
+
+
+
+
+   Muốn đổi ảnh sau này chỉ cần thay đúng file đó.
+
+
+
+   Không còn dùng chung ../assets/staff/kingjades-logo-full.svg.
+
+
+
+   ========================================================= */
+
+
+
+
+
+
+
+.kj-story-logo-card__image--story {
+
+
+
+  display: block;
+
+
+
+  width: 100%;
+
+
+
+  max-width: 430px;
+
+
+
+  height: auto;
+
+
+
+  object-fit: contain;
+
+
+
+  object-position: center;
+
+
+
+  border-radius: 40px;
+
+
+
+}
+
+
+
+
+
+
+
+/* Nếu ảnh mới có tỷ lệ ngang/dọc khác, vẫn giữ trong card an toàn */
+
+
+
+.kj-story-logo-card {
+
+
+
+  min-width: 0;
+
+
+
+}
+
+
+
+
+
+
+
+@media (max-width: 760px) {
+
+
+
+  .kj-story-logo-card__image--story {
+
+
+
+    max-width: 330px;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+@media (max-width: 520px) {
+
+
+
+  .kj-story-logo-card__image--story {
+
+
+
+    max-width: 280px;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+
+
+
+   STORY PAGE — HERO CTA TEXT CENTER FIX
+
+
+
+   2026-09-26
+
+
+
+
+
+
+
+   Mục tiêu:
+
+
+
+   - Chữ của cả 4 nút nằm đúng tâm.
+
+
+
+   - Mũi tên của nút vàng neo bên phải, không đẩy chữ lệch.
+
+
+
+   - Giữ nguyên kích thước, màu sắc và responsive hiện tại.
+
+
+
+   ========================================================= */
+
+
+
+
+
+
+
+.kj-story-hero__actions .kj-story-button {
+
+
+
+  position: relative !important;
+
+
+
+  display: flex !important;
+
+
+
+  align-items: center !important;
+
+
+
+  justify-content: center !important;
+
+
+
+  text-align: center !important;
+
+
+
+}
+
+
+
+
+
+
+
+/* Hai nút vàng: chữ center tuyệt đối, arrow đứng riêng bên phải */
+
+
+
+.kj-story-hero__actions .kj-story-button--primary {
+
+
+
+  padding-left: 22px !important;
+
+
+
+  padding-right: 44px !important;
+
+
+
+}
+
+
+
+
+
+
+
+.kj-story-hero__actions .kj-story-button--primary > span {
+
+
+
+  position: absolute !important;
+
+
+
+  top: 50% !important;
+
+
+
+  right: 18px !important;
+
+
+
+  margin: 0 !important;
+
+
+
+  transform: translateY(-50%) !important;
+
+
+
+  line-height: 1 !important;
+
+
+
+  pointer-events: none;
+
+
+
+}
+
+
+
+
+
+
+
+/* Hai nút trắng không có arrow: cân đều 2 bên */
+
+
+
+.kj-story-hero__actions .kj-story-button--light {
+
+
+
+  padding-left: 22px !important;
+
+
+
+  padding-right: 22px !important;
+
+
+
+  justify-content: center !important;
+
+
+
+}
+
+
+
+
+
+
+
+/* Laptop/tablet */
+
+
+
+@media (min-width: 761px) and (max-width: 1080px) {
+
+
+
+  .kj-story-hero__actions .kj-story-button--primary {
+
+
+
+    padding-left: 18px !important;
+
+
+
+    padding-right: 40px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__actions .kj-story-button--primary > span {
+
+
+
+    right: 15px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__actions .kj-story-button--light {
+
+
+
+    padding-left: 18px !important;
+
+
+
+    padding-right: 18px !important;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+/* Mobile */
+
+
+
+@media (max-width: 760px) {
+
+
+
+  .kj-story-hero__actions .kj-story-button {
+
+
+
+    min-height: 52px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__actions .kj-story-button--primary {
+
+
+
+    padding-left: 20px !important;
+
+
+
+    padding-right: 44px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__actions .kj-story-button--primary > span {
+
+
+
+    right: 18px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__actions .kj-story-button--light {
+
+
+
+    padding-left: 20px !important;
+
+
+
+    padding-right: 20px !important;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+/* Mobile nhỏ */
+
+
+
+@media (max-width: 390px) {
+
+
+
+  .kj-story-hero__actions .kj-story-button--primary {
+
+
+
+    padding-left: 16px !important;
+
+
+
+    padding-right: 40px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__actions .kj-story-button--primary > span {
+
+
+
+    right: 14px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__actions .kj-story-button--light {
+
+
+
+    padding-left: 16px !important;
+
+
+
+    padding-right: 16px !important;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+
+
+
+   STORY PAGE — HERO CTA CENTER FIX V2
+
+
+
+   2026-09-26
+
+
+
+
+
+
+
+   Fix lỗi arrow đè lên chữ:
+
+
+
+   - 4 nút căn chữ giữa thật.
+
+
+
+   - 2 nút vàng dùng padding 2 bên bằng nhau.
+
+
+
+   - Arrow tuyệt đối ở mép phải và không tham gia căn chữ.
+
+
+
+   - Giảm nhẹ font/gap trên desktop để text dài không chạm arrow.
+
+
+
+   ========================================================= */
+
+
+
+
+
+
+
+.kj-story-hero__actions .kj-story-button {
+
+
+
+  position: relative !important;
+
+
+
+  display: flex !important;
+
+
+
+  align-items: center !important;
+
+
+
+  justify-content: center !important;
+
+
+
+  text-align: center !important;
+
+
+
+  line-height: 1.15 !important;
+
+
+
+}
+
+
+
+
+
+
+
+/* Hai nút vàng: padding TRÁI/PHẢI bằng nhau để chữ nằm giữa thật */
+
+
+
+.kj-story-hero__actions .kj-story-button--primary {
+
+
+
+  padding-left: 16px !important;
+
+
+
+  padding-right: 16px !important;
+
+
+
+}
+
+
+
+
+
+
+
+/* Arrow tách khỏi layout, neo hẳn sát phải */
+
+
+
+.kj-story-hero__actions .kj-story-button--primary > span {
+
+
+
+  position: absolute !important;
+
+
+
+  top: 50% !important;
+
+
+
+  right: 10px !important;
+
+
+
+  width: 14px !important;
+
+
+
+  height: 18px !important;
+
+
+
+  margin: 0 !important;
+
+
+
+  display: flex !important;
+
+
+
+  align-items: center !important;
+
+
+
+  justify-content: center !important;
+
+
+
+  transform: translateY(-50%) !important;
+
+
+
+  line-height: 1 !important;
+
+
+
+  pointer-events: none !important;
+
+
+
+}
+
+
+
+
+
+
+
+/* Hai nút trắng cũng cân tuyệt đối */
+
+
+
+.kj-story-hero__actions .kj-story-button--light {
+
+
+
+  padding-left: 16px !important;
+
+
+
+  padding-right: 16px !important;
+
+
+
+}
+
+
+
+
+
+
+
+/* Desktop: đủ chỗ cho 4 nút và chữ không dính arrow */
+
+
+
+@media (min-width: 1081px) {
+
+
+
+  .kj-story-hero__actions {
+
+
+
+    width: min(850px, 100%) !important;
+
+
+
+    grid-template-columns:
+
+
+
+      minmax(200px, 1.08fr)
+
+
+
+      minmax(190px, 1fr)
+
+
+
+      minmax(170px, 0.92fr)
+
+
+
+      minmax(190px, 1fr) !important;
+
+
+
+    gap: 10px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__actions .kj-story-button {
+
+
+
+    font-size: 11px !important;
+
+
+
+    letter-spacing: 0.025em !important;
+
+
+
+    white-space: nowrap !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__actions .kj-story-button--primary {
+
+
+
+    padding-left: 12px !important;
+
+
+
+    padding-right: 28px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  /*
+
+
+
+    Bù lại phần arrow bằng pseudo khoảng trống bên trái.
+
+
+
+    Nhờ đó phần TEXT vẫn nhìn cân giữa trong nút dù arrow ở bên phải.
+
+
+
+  */
+
+
+
+  .kj-story-hero__actions .kj-story-button--primary::before {
+
+
+
+    content: "";
+
+
+
+    width: 16px;
+
+
+
+    flex: 0 0 16px;
+
+
+
+    margin-left: -16px;
+
+
+
+    margin-right: 0;
+
+
+
+    visibility: hidden;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__actions .kj-story-button--primary > span {
+
+
+
+    right: 10px !important;
+
+
+
+    font-size: 15px !important;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+/* Laptop / tablet */
+
+
+
+@media (min-width: 761px) and (max-width: 1080px) {
+
+
+
+  .kj-story-hero__actions .kj-story-button {
+
+
+
+    font-size: 11px !important;
+
+
+
+    white-space: normal !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__actions .kj-story-button--primary {
+
+
+
+    padding-left: 18px !important;
+
+
+
+    padding-right: 34px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__actions .kj-story-button--primary > span {
+
+
+
+    right: 14px !important;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+/* Mobile: full width, chữ giữa, arrow bên phải */
+
+
+
+@media (max-width: 760px) {
+
+
+
+  .kj-story-hero__actions .kj-story-button {
+
+
+
+    font-size: 12px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__actions .kj-story-button--primary {
+
+
+
+    padding-left: 40px !important;
+
+
+
+    padding-right: 40px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__actions .kj-story-button--primary > span {
+
+
+
+    right: 16px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__actions .kj-story-button--light {
+
+
+
+    padding-left: 20px !important;
+
+
+
+    padding-right: 20px !important;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+
+
+
+   STORY PAGE — HERO CTA NO OVERLAP WITH IMAGE
+
+
+
+   2026-09-26
+
+
+
+
+
+
+
+   Fix:
+
+
+
+   - 4 nút chỉ nằm trong cột nội dung bên trái.
+
+
+
+   - Không chạm / đè vào khung ảnh bên phải.
+
+
+
+   - Giữ chữ đã căn giữa và arrow đúng vị trí.
+
+
+
+   ========================================================= */
+
+
+
+
+
+
+
+@media (min-width: 1081px) {
+
+
+
+  .kj-story-hero__content {
+
+
+
+    min-width: 0 !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__actions {
+
+
+
+    width: 100% !important;
+
+
+
+    max-width: 760px !important;
+
+
+
+
+
+
+
+    grid-template-columns:
+
+
+
+      repeat(4, minmax(0, 1fr)) !important;
+
+
+
+
+
+
+
+    gap: 8px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__actions .kj-story-button {
+
+
+
+    min-width: 0 !important;
+
+
+
+    width: 100% !important;
+
+
+
+
+
+
+
+    padding-left: 10px !important;
+
+
+
+    padding-right: 10px !important;
+
+
+
+
+
+
+
+    font-size: 10px !important;
+
+
+
+    letter-spacing: 0.015em !important;
+
+
+
+    white-space: nowrap !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__actions .kj-story-button--primary {
+
+
+
+    padding-left: 10px !important;
+
+
+
+    padding-right: 26px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__actions .kj-story-button--primary > span {
+
+
+
+    right: 9px !important;
+
+
+
+    font-size: 14px !important;
+
+
+
+  }
+
+
+
+
+
+
+
+  /* Không cho phần CTA tràn sang cột visual */
+
+
+
+  .kj-story-hero__visual {
+
+
+
+    position: relative;
+
+
+
+    z-index: 2;
+
+
+
+  }
+
+
+
+
+
+
+
+  .kj-story-hero__content {
+
+
+
+    position: relative;
+
+
+
+    z-index: 3;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+/* Laptop ngang: 2 x 2 để chắc chắn không chạm hình */
+
+
+
+@media (min-width: 761px) and (max-width: 1080px) {
+
+
+
+  .kj-story-hero__actions {
+
+
+
+    grid-template-columns:
+
+
+
+      repeat(2, minmax(0, 1fr)) !important;
+
+
+
+
+
+
+
+    width: 100% !important;
+
+
+
+    max-width: 620px !important;
+
+
+
+    gap: 10px !important;
+
+
+
+  }
+
+
+
+}

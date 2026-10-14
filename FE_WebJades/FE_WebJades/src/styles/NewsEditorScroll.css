@@ -1,0 +1,247 @@
+/* =========================================================
+   KING JADES NEWS — 3-PANE SCROLL WORKSPACE
+   Mục tiêu:
+   - Cột trái cuộn riêng
+   - Vùng chỉnh sửa giữa cuộn riêng
+   - Live Preview cuộn riêng
+   - Không phải kéo toàn bộ trang lên/xuống liên tục
+   ========================================================= */
+
+/* Áp dụng workspace cố định chủ yếu trên màn hình desktop rộng. */
+@media (min-width: 1181px) {
+  .news-editor-workspace-scroll {
+    height: var(
+      --news-workspace-height,
+      calc(100dvh - 180px)
+    );
+    min-height: 500px;
+    max-height: calc(100dvh - 12px);
+    align-items: stretch;
+    overflow: hidden;
+  }
+
+  /* -------------------------
+     LEFT — BLOCK / LAYOUT
+     ------------------------- */
+
+  .news-editor-workspace-scroll
+  > .news-editor-sidebar {
+    height: 100%;
+    min-height: 0;
+    position: relative !important;
+    top: auto !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+    padding-right: 5px;
+    scroll-behavior: smooth;
+  }
+
+  /* -------------------------
+     CENTER — ARTICLE EDITOR
+     ------------------------- */
+
+  .news-editor-main-wrap {
+    min-width: 0;
+    min-height: 0;
+    height: 100%;
+    position: relative;
+  }
+
+  .news-editor-main-wrap
+  > .news-editor-main {
+    height: 100%;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+    scroll-behavior: smooth;
+    padding-right: 18px;
+  }
+
+  /* -------------------------
+     RIGHT — LIVE PREVIEW
+     ------------------------- */
+
+  .news-editor-workspace-scroll
+  > .news-preview {
+    height: 100%;
+    min-height: 0;
+    position: relative !important;
+    top: auto !important;
+    display: grid;
+    grid-template-rows:
+      auto
+      minmax(0, 1fr);
+    overflow: hidden;
+  }
+
+  .news-editor-workspace-scroll
+  > .news-preview
+  > header {
+    position: relative;
+    z-index: 10;
+    flex: 0 0 auto;
+  }
+
+  .news-editor-workspace-scroll
+  > .news-preview
+  > .news-preview-frame {
+    height: 100%;
+    min-height: 0;
+    max-height: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+    scroll-behavior: smooth;
+  }
+
+  /* -------------------------
+     QUICK RAIL — CENTER
+     ------------------------- */
+
+  .news-editor-scroll-rail {
+    width: 34px;
+    position: absolute;
+    right: -3px;
+    top: 50%;
+    z-index: 30;
+    display: grid;
+    justify-items: center;
+    gap: 6px;
+    transform: translateY(-50%);
+    padding: 7px 5px;
+    border: 1px solid rgba(181, 140, 58, 0.22);
+    border-radius: 999px;
+    background: rgba(255, 252, 244, 0.96);
+    box-shadow:
+      0 9px 24px
+      rgba(20, 37, 67, 0.11);
+    backdrop-filter: blur(8px);
+  }
+
+  .news-editor-scroll-rail button {
+    width: 25px;
+    height: 25px;
+    border: 1px solid rgba(181, 140, 58, 0.24);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    background: #fff;
+    color: #9a7429;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+      transform 140ms ease,
+      background 140ms ease,
+      color 140ms ease,
+      border-color 140ms ease;
+  }
+
+  .news-editor-scroll-rail button:hover {
+    transform: scale(1.08);
+    border-color: #b58c3a;
+    background: #f7eedc;
+    color: #6e511c;
+  }
+
+  .news-editor-scroll-rail__track {
+    width: 3px;
+    height: 42px;
+    border-radius: 999px;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(181, 140, 58, 0.2),
+        rgba(181, 140, 58, 0.72),
+        rgba(181, 140, 58, 0.2)
+      );
+  }
+
+  /* -------------------------
+     CUSTOM SCROLLBARS
+     ------------------------- */
+
+  .news-editor-sidebar,
+  .news-editor-main,
+  .news-preview-frame {
+    scrollbar-width: thin;
+    scrollbar-color:
+      rgba(181, 140, 58, 0.58)
+      rgba(20, 37, 67, 0.055);
+  }
+
+  .news-editor-sidebar::-webkit-scrollbar,
+  .news-editor-main::-webkit-scrollbar,
+  .news-preview-frame::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .news-editor-sidebar::-webkit-scrollbar-track,
+  .news-editor-main::-webkit-scrollbar-track,
+  .news-preview-frame::-webkit-scrollbar-track {
+    border-radius: 999px;
+    background:
+      rgba(20, 37, 67, 0.045);
+  }
+
+  .news-editor-sidebar::-webkit-scrollbar-thumb,
+  .news-editor-main::-webkit-scrollbar-thumb,
+  .news-preview-frame::-webkit-scrollbar-thumb {
+    border: 2px solid transparent;
+    border-radius: 999px;
+    background:
+      rgba(181, 140, 58, 0.58);
+    background-clip: padding-box;
+  }
+
+  .news-editor-sidebar::-webkit-scrollbar-thumb:hover,
+  .news-editor-main::-webkit-scrollbar-thumb:hover,
+  .news-preview-frame::-webkit-scrollbar-thumb:hover {
+    background:
+      rgba(159, 122, 46, 0.82);
+    background-clip: padding-box;
+  }
+
+  /* Một chút fade giúp nhận ra cột có thể scroll. */
+  .news-editor-sidebar,
+  .news-editor-main-wrap,
+  .news-preview {
+    border-radius: 18px;
+  }
+}
+
+/* Tablet / laptop nhỏ:
+   quay về flow bình thường để không ép chiều cao quá chật. */
+@media (max-width: 1180px) {
+  .news-editor-workspace-scroll {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible;
+  }
+
+  .news-editor-workspace-scroll
+  > .news-editor-sidebar,
+  .news-editor-main-wrap
+  > .news-editor-main,
+  .news-editor-workspace-scroll
+  > .news-preview,
+  .news-editor-workspace-scroll
+  > .news-preview
+  > .news-preview-frame {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .news-editor-scroll-rail {
+    display: none;
+  }
+}

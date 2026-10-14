@@ -1,0 +1,3683 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+
+
+
+.kj-product-detail-page {
+
+  --kjp-navy: #14254a;
+
+  --kjp-navy-deep: #0b1b3b;
+
+  --kjp-gold: #d2b04c;
+
+  --kjp-cream: #fffaf1;
+
+  --kjp-serif: "Lora", Georgia, "Times New Roman", serif;
+
+  --kjp-sans: "SVN-GILROY", "Gilroy", "Inter", Arial, sans-serif;
+
+  width: 100%;
+
+  min-height: 100vh;
+
+  overflow-x: clip;
+
+  background: #fffdf8;
+
+  color: var(--kjp-navy);
+
+  font-family: var(--kjp-sans);
+
+}
+
+
+
+.kj-product-detail-page,
+
+.kj-product-detail-page *,
+
+.kj-product-detail-page *::before,
+
+.kj-product-detail-page *::after { box-sizing: border-box; }
+
+.kj-product-detail-page a { text-decoration: none; }
+
+.kj-product-detail-page button { font: inherit; cursor: pointer; }
+
+.kj-product-detail-page img { display: block; max-width: 100%; }
+
+.kj-product-detail-page svg {
+
+  width: 20px;
+
+  height: 20px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.6;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+
+}
+
+.kj-product-detail-page :focus-visible { outline: 3px solid var(--kjp-gold); outline-offset: 3px; }
+
+
+
+.kjp-container { width: min(calc(100% - 36px), 1120px); margin: 0 auto; }
+
+.kjp-kicker {
+
+  display: block;
+
+  color: #426c4e;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: .2em;
+
+  line-height: 1.4;
+
+}
+
+
+
+.kjp-state {
+
+  min-height: 75vh;
+
+  padding: 170px 22px 80px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 16px;
+
+  background: #f4f2e4;
+
+  text-align: center;
+
+}
+
+.kjp-state h1 { margin: 0; font: 600 clamp(32px, 7vw, 54px)/1.12 var(--kjp-serif); }
+
+.kjp-state p { max-width: 500px; margin: 0; line-height: 1.7; }
+
+.kjp-state a { color: var(--kjp-navy); font-weight: 700; text-decoration: underline; }
+
+
+
+/* Full-screen product image and floating gallery from the PDF reference. */
+
+.kjp-hero {
+
+  position: relative;
+
+  isolation: isolate;
+
+  min-height: max(710px, 100svh);
+
+  padding: 86px 15px 18px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  overflow: hidden;
+
+  background: #beb9b0;
+
+  color: #fff;
+
+}
+
+.kjp-hero__photo,
+
+.kjp-hero__shade,
+
+.kjp-hero__placeholder { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+.kjp-hero__photo { z-index: -2; object-fit: cover; object-position: center 37%; }
+
+.kjp-hero__placeholder {
+
+  z-index: -2;
+
+  display: grid;
+
+  place-items: center;
+
+  background: linear-gradient(145deg, #d2c6a6, #1f3551);
+
+  font: 600 42px var(--kjp-serif);
+
+}
+
+.kjp-hero__shade {
+
+  z-index: -1;
+
+  background: linear-gradient(180deg,
+
+    rgba(11, 23, 38, .32) 0%, rgba(11, 23, 38, .04) 30%,
+
+    rgba(11, 23, 38, .08) 49%, rgba(11, 23, 38, .63) 88%, rgba(11, 23, 38, .72) 100%);
+
+}
+
+.kjp-nav {
+
+  position: absolute;
+
+  z-index: 2;
+
+  top: max(12px, env(safe-area-inset-top));
+
+  left: 15px;
+
+  right: 15px;
+
+  width: min(calc(100% - 30px), 1100px);
+
+  margin: 0 auto;
+
+  padding: 7px 7px 7px 15px;
+
+  border: 1px solid rgba(255, 255, 255, .8);
+
+  border-radius: 100px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 14px;
+
+  background: rgba(255, 252, 244, .94);
+
+  box-shadow: 0 6px 25px rgba(6, 22, 44, .1);
+
+  backdrop-filter: blur(16px);
+
+}
+
+.kjp-nav__brand {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: var(--kjp-navy);
+
+  font: 600 18px var(--kjp-serif);
+
+  letter-spacing: -.06em;
+
+  white-space: nowrap;
+
+}
+
+.kjp-nav__mark {
+
+  width: 27px;
+
+  height: 27px;
+
+  border: 1px solid #d8bf78;
+
+  border-radius: 50%;
+
+  display: grid;
+
+  place-items: center;
+
+  color: #c99c3e;
+
+  font: 18px Georgia, serif;
+
+}
+
+.kjp-nav__consult {
+
+  min-height: 35px;
+
+  padding: 0 19px;
+
+  border-radius: 100px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: linear-gradient(120deg, #ecd077, #cfa934);
+
+  color: #212644;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: .1em;
+
+  white-space: nowrap;
+
+}
+
+.kjp-hero__content { position: relative; z-index: 1; width: min(100%, 510px); margin: 0 auto; }
+
+.kjp-media-label {
+
+  width: fit-content;
+
+  margin: 0 0 8px 4px;
+
+  padding: 8px 12px;
+
+  border-radius: 100px;
+
+  display: block;
+
+  background: rgba(255, 255, 255, .26);
+
+  color: #fff;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: .14em;
+
+  backdrop-filter: blur(8px);
+
+}
+
+.kjp-hero__identity {
+
+  min-height: 63px;
+
+  padding: 8px 10px;
+
+  border: 1px solid rgba(255, 255, 255, .65);
+
+  border-radius: 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  background: #fffdf9;
+
+  box-shadow: 0 10px 25px rgba(7, 17, 35, .16);
+
+  color: var(--kjp-navy);
+
+}
+
+.kjp-hero__identity strong { min-width: 0; flex: 1; font-size: 15px; font-weight: 800; overflow-wrap: anywhere; }
+
+.kjp-hero__mini {
+
+  flex: 0 0 42px;
+
+  width: 42px;
+
+  height: 42px;
+
+  border-radius: 11px;
+
+  display: grid;
+
+  place-items: center;
+
+  overflow: hidden;
+
+  background: #e8efe6;
+
+  color: #53755d;
+
+}
+
+.kjp-hero__mini img { width: 100%; height: 100%; object-fit: cover; }
+
+.kjp-favorite {
+
+  flex: 0 0 34px;
+
+  width: 34px;
+
+  height: 34px;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  display: grid;
+
+  place-items: center;
+
+  background: transparent;
+
+  color: #45627b;
+
+}
+
+.kjp-thumbs {
+
+  margin-top: 8px;
+
+  padding: 3px 2px 10px;
+
+  display: flex;
+
+  gap: 8px;
+
+  overflow-x: auto;
+
+  scrollbar-width: thin;
+
+  overscroll-behavior-inline: contain;
+
+}
+
+.kjp-thumbs button {
+
+  flex: 0 0 clamp(68px, 23%, 108px);
+
+  aspect-ratio: 1.22;
+
+  padding: 2px;
+
+  border: 2px solid transparent;
+
+  border-radius: 11px;
+
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, .4);
+
+}
+
+.kjp-thumbs button.is-active { border-color: var(--kjp-gold); }
+
+.kjp-thumbs img { width: 100%; height: 100%; border-radius: 7px; object-fit: cover; }
+
+.kjp-hero__actions,
+
+.kjp-primary-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+
+.kjp-hero__actions a,
+
+.kjp-hero__actions button {
+
+  min-height: 43px;
+
+  border-radius: 100px;
+
+  display: grid;
+
+  place-items: center;
+
+  background: #fff;
+
+  color: #27304e;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+}
+
+.kjp-hero__actions button { border: 0; }
+
+.kjp-hero__actions a + button { border: 1px solid rgba(255, 255, 255, .28); background: rgba(255, 255, 255, .16); color: #fff; backdrop-filter: blur(10px); }
+
+.kjp-added {
+
+  position: fixed;
+
+  z-index: 60;
+
+  right: 16px;
+
+  bottom: 84px;
+
+  left: 16px;
+
+  width: fit-content;
+
+  max-width: calc(100% - 32px);
+
+  margin: 0 auto;
+
+  padding: 10px 16px;
+
+  border-radius: 10px;
+
+  background: #fffdf9;
+
+  box-shadow: 0 8px 26px rgba(8, 24, 42, .2);
+
+  color: var(--kjp-navy);
+
+  font-size: 12px;
+
+  text-align: center;
+
+}
+
+
+
+/* Product copy, price, specifications and the four service promises. */
+
+.kjp-light {
+
+  padding: 54px 0 80px;
+
+  background: linear-gradient(155deg, #eff3dd 0%, #f8f8e9 32%, #fffaf0 64%, #fffcf7 100%);
+
+}
+
+.kjp-intro h1,
+
+.kjp-details h2,
+
+.kjp-commitment h2,
+
+.kjp-size-guide h2,
+
+.kjp-after-sale h2,
+
+.kjp-price-card h2 {
+
+  font-family: var(--kjp-serif);
+
+  font-weight: 600;
+
+  letter-spacing: -.065em;
+
+  overflow-wrap: anywhere;
+
+}
+
+.kjp-intro h1 { margin: 11px 0 23px; font-size: clamp(42px, 11vw, 60px); line-height: 1.05; }
+
+.kjp-intro p {
+
+  margin: 0;
+
+  color: #515d60;
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  line-height: 1.88;
+
+  white-space: pre-line;
+
+  overflow-wrap: anywhere;
+
+}
+
+.kjp-intro .kjp-intro__short { margin-top: 14px; }
+
+.kjp-tags { margin-top: 23px; display: flex; flex-wrap: wrap; gap: 7px; }
+
+.kjp-tags span {
+
+  max-width: 100%;
+
+  padding: 7px 10px;
+
+  border: 1px solid #efe7d2;
+
+  border-radius: 100px;
+
+  background: #fffdf7;
+
+  color: #816d46;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: .1em;
+
+  line-height: 1.3;
+
+  text-transform: uppercase;
+
+  overflow-wrap: anywhere;
+
+}
+
+.kjp-price-card {
+
+  margin-top: 28px;
+
+  padding: 25px 24px 23px;
+
+  border: 1px solid #fff;
+
+  border-radius: 29px;
+
+  background: rgba(255, 254, 250, .94);
+
+  box-shadow: 0 16px 36px rgba(59, 65, 40, .055);
+
+}
+
+.kjp-price-card__top { display: flex; align-items: flex-start; gap: 12px; }
+
+.kjp-price-card__top > div { flex: 1; min-width: 0; }
+
+.kjp-price-card .kjp-kicker { color: #a4843c; }
+
+.kjp-price-card h2 { margin: 2px 0 6px; font-size: clamp(25px, 7.8vw, 34px); line-height: 1.14; }
+
+.kjp-price-card del { display: block; margin-bottom: 9px; color: #92938a; font-size: 12px; }
+
+.kjp-price-card p { margin: 0; color: #576169; font-size: 12px; line-height: 1.62; }
+
+.kjp-price-card__arrow {
+
+  flex: 0 0 30px;
+
+  width: 30px;
+
+  height: 30px;
+
+  border: 1px solid #e7dfc8;
+
+  border-radius: 50%;
+
+  display: grid;
+
+  place-items: center;
+
+  color: var(--kjp-navy);
+
+  font-size: 18px;
+
+}
+
+.kjp-sizes { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px; }
+
+.kjp-sizes button {
+
+  min-width: 42px;
+
+  min-height: 35px;
+
+  padding: 0 11px;
+
+  border: 1px solid #e2e4e1;
+
+  border-radius: 50px;
+
+  background: #fff;
+
+  color: var(--kjp-navy);
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+}
+
+.kjp-sizes button.is-selected { border-color: var(--kjp-navy); background: var(--kjp-navy); color: #fff; }
+
+.kjp-price-card .kjp-price-card__size { margin-top: 15px; font-weight: 700; }
+
+.kjp-primary-actions { margin-top: 19px; }
+
+.kjp-primary-actions a,
+
+.kjp-primary-actions button {
+
+  min-height: 43px;
+
+  padding: 0 8px;
+
+  border-radius: 100px;
+
+  display: grid;
+
+  place-items: center;
+
+  background: var(--kjp-navy);
+
+  color: #fff;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: .05em;
+
+  text-align: center;
+
+}
+
+.kjp-primary-actions a + button { background: linear-gradient(120deg, #efd27b, #c49b30); color: #242744; }
+
+.kjp-primary-actions button { border: 0; }
+
+
+
+.kjp-details,
+
+.kjp-size-guide { border-radius: 31px; background: rgba(255, 254, 249, .94); box-shadow: 0 20px 50px rgba(75, 65, 35, .06); }
+
+.kjp-details { margin-top: 50px; padding: 27px 23px 25px; }
+
+.kjp-details h2,
+
+.kjp-commitment h2,
+
+.kjp-size-guide h2 { margin: 3px 0 17px; font-size: clamp(29px, 8vw, 42px); line-height: 1.08; }
+
+.kjp-specs { margin: 0; }
+
+.kjp-specs > div { padding: 14px 0; border-bottom: 1px solid #ecece6; }
+
+.kjp-specs > div:last-child { border-bottom: 0; }
+
+.kjp-specs dt {
+
+  margin-bottom: 4px;
+
+  color: #9ba5a6;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: .12em;
+
+  text-transform: uppercase;
+
+  overflow-wrap: anywhere;
+
+}
+
+.kjp-specs dd { margin: 0; color: var(--kjp-navy); font-size: 13px; font-weight: 800; line-height: 1.45; white-space: pre-line; overflow-wrap: anywhere; }
+
+.kjp-full-description { padding-top: 23px; border-top: 1px solid #ecece6; }
+
+.kjp-full-description h3 { margin: 0 0 9px; font: 600 24px/1.2 var(--kjp-serif); }
+
+.kjp-full-description p { margin: 0; color: #59646a; font-size: 13px; line-height: 1.8; white-space: pre-line; overflow-wrap: anywhere; }
+
+.kjp-description-text {
+  position: relative;
+}
+
+.kjp-description-toggle {
+  margin-top: 14px;
+  padding: 4px 0;
+  border: 0;
+  border-bottom: 1px solid rgba(20, 37, 74, .28);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: transparent;
+  color: var(--kjp-navy);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.kjp-description-toggle:hover {
+  border-bottom-color: #a4843c;
+  color: #a4843c;
+}
+
+.kjp-description-toggle__icon {
+  display: inline-block;
+  font-size: 15px;
+  line-height: 1;
+  transform: translateY(-1px);
+  transition: transform .22s ease;
+}
+
+.kjp-full-description.is-expanded .kjp-description-toggle__icon {
+  transform: translateY(1px) rotate(180deg);
+}
+
+.kjp-commitment { margin-top: 47px; }
+
+.kjp-commitment h2 { max-width: 320px; margin-bottom: 19px; }
+
+.kjp-commitment__grid { display: grid; gap: 12px; }
+
+.kjp-commitment__grid article {
+
+  padding: 17px;
+
+  border: 1px solid #f0e4d4;
+
+  border-radius: 21px;
+
+  background: #fff;
+
+  box-shadow: 0 10px 28px rgba(31, 35, 47, .045);
+
+}
+
+.kjp-icon {
+
+  width: 35px;
+
+  height: 35px;
+
+  border: 1px solid #e9d594;
+
+  border-radius: 11px;
+
+  display: grid;
+
+  place-items: center;
+
+  color: var(--kjp-navy);
+
+}
+
+.kjp-icon svg { width: 18px; height: 18px; }
+
+.kjp-commitment h3 { margin: 13px 0 5px; font-size: 13px; font-weight: 800; }
+
+.kjp-commitment p { margin: 0; color: #687075; font-size: 11px; line-height: 1.55; }
+
+
+
+/* Sizing guidance and after-sales blocks. */
+
+.kjp-size-guide { margin-top: 92px; padding: 27px 23px 24px; scroll-margin-top: 24px; }
+
+.kjp-size-guide > p { margin: 0 0 18px; color: #576169; font-size: 13px; line-height: 1.84; }
+
+.kjp-size-guide > .kjp-size-guide__value { margin-top: 0; font-weight: 700; }
+
+.kjp-dark-button {
+
+  width: fit-content;
+
+  min-height: 36px;
+
+  padding: 0 18px;
+
+  border-radius: 50px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  background: var(--kjp-navy);
+
+  color: #fff;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: .04em;
+
+}
+
+.kjp-size-open {
+
+  min-height: 36px;
+
+  margin-left: 8px;
+
+  padding: 0 18px;
+
+  border: 1px solid var(--kjp-navy);
+
+  border-radius: 50px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  background: transparent;
+
+  color: var(--kjp-navy);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: .04em;
+
+}
+
+.kjp-size-open svg { width: 15px; height: 15px; }
+
+.kjp-size-steps { margin: 28px 0 0; padding: 0; display: grid; gap: 10px; list-style: none; }
+
+.kjp-size-steps li {
+
+  padding: 15px 16px;
+
+  border-radius: 17px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 14px;
+
+  background: #fff;
+
+}
+
+.kjp-size-steps li > span {
+
+  flex: 0 0 30px;
+
+  width: 30px;
+
+  height: 30px;
+
+  border: 1px solid #eddda8;
+
+  border-radius: 50%;
+
+  display: grid;
+
+  place-items: center;
+
+  background: #fff9e7;
+
+  color: var(--kjp-navy);
+
+  font: 700 14px var(--kjp-serif);
+
+}
+
+.kjp-size-steps h3 { margin: 1px 0 4px; font-size: 12px; font-weight: 800; line-height: 1.35; }
+
+.kjp-size-steps p { margin: 0; color: #6a7479; font-size: 11px; line-height: 1.6; }
+
+
+
+.kjp-after-sale {
+
+  width: min(calc(100% - 30px), 1220px);
+
+  margin: 0 auto 70px;
+
+  padding: 30px 0 26px;
+
+  border-radius: 30px;
+
+  background: #0c1d40;
+
+  color: #edf1f3;
+
+  box-shadow: 0 22px 55px rgba(9, 22, 44, .14);
+
+}
+
+.kjp-after-sale .kjp-container { width: calc(100% - 34px); }
+
+.kjp-after-sale .kjp-kicker { color: #e1bf6d; }
+
+.kjp-after-sale h2 { max-width: 780px; margin: 8px 0 38px; color: #e4c57d; font-size: clamp(31px, 8.5vw, 48px); line-height: 1.07; }
+
+.kjp-after-sale__lead { max-width: 720px; margin: 0 0 23px; color: #d6dce5; font-size: 13px; font-weight: 600; line-height: 1.9; }
+
+.kjp-after-sale__head { display: grid; gap: 12px; margin-bottom: 23px; }
+
+.kjp-after-sale__head h2,
+
+.kjp-after-sale__head .kjp-after-sale__lead { margin-bottom: 0; }
+
+.kjp-service-grid,
+
+.kjp-process-grid { display: grid; gap: 12px; }
+
+.kjp-service-grid article,
+
+.kjp-process-grid article {
+
+  border: 1px solid rgba(226, 193, 112, .16);
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  background: #17294c;
+
+}
+
+.kjp-service-grid article { padding: 17px; }
+
+.kjp-after-sale .kjp-icon { border-color: rgba(226, 193, 112, .2); background: rgba(255, 255, 255, .05); color: #e5c477; }
+
+.kjp-service-grid h3 { margin: 14px 0 7px; color: #e9c57a; font-size: 14px; font-weight: 800; }
+
+.kjp-service-grid p,
+
+.kjp-process-grid p { margin: 0; color: #d1d8e0; font-size: 11px; line-height: 1.75; }
+
+.kjp-process-grid { margin-top: 24px; }
+
+.kjp-process-visual {
+
+  aspect-ratio: 4 / 3;
+
+  overflow: hidden;
+
+  background: #17294c;
+
+}
+
+.kjp-process-visual img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+.kjp-process-copy { padding: 16px; }
+
+.kjp-process-copy > div { display: flex; align-items: center; gap: 12px; }
+
+.kjp-process-copy > div span {
+
+  flex: 0 0 30px;
+
+  width: 30px;
+
+  height: 30px;
+
+  border: 1px solid rgba(230, 194, 119, .46);
+
+  border-radius: 50%;
+
+  display: grid;
+
+  place-items: center;
+
+  color: #ebd393;
+
+  font: 700 13px var(--kjp-serif);
+
+}
+
+.kjp-process-copy h3 { margin: 0; color: #e9c57a; font: 600 20px/1.15 var(--kjp-serif); }
+
+.kjp-process-copy p { margin-top: 10px; }
+
+
+
+@media (min-width: 700px) {
+
+  .kjp-hero { min-height: min(920px, 100svh); padding: 100px 30px 30px; }
+
+  .kjp-hero__content { width: min(100%, 520px); margin: 0 max(5vw, calc((100vw - 1120px) / 2)) 0 auto; }
+
+  .kjp-light { padding: 90px 0 110px; }
+
+  .kjp-product-content {
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 455px);
+
+    grid-template-areas: "intro price" "intro actions" "details details" "size size";
+
+    align-items: start;
+
+    column-gap: clamp(32px, 5vw, 80px);
+
+    row-gap: 18px;
+
+  }
+
+  .kjp-intro { grid-area: intro; }
+
+  .kjp-price-card { grid-area: price; margin-top: 0; }
+
+  .kjp-primary-actions { grid-area: actions; margin-top: 0; }
+
+  .kjp-details { grid-area: details; margin-top: 62px; padding: 44px; display: grid; grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr); column-gap: 60px; }
+
+  .kjp-details > .kjp-kicker, .kjp-details > h2, .kjp-details > .kjp-specs, .kjp-details > .kjp-full-description { grid-column: 1; }
+
+  .kjp-commitment { grid-column: 2; grid-row: 1 / span 4; margin-top: 0; }
+
+  .kjp-commitment__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .kjp-size-guide { grid-area: size; padding: 45px; }
+
+  .kjp-size-guide > p { max-width: 740px; }
+
+  .kjp-size-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 35px; }
+
+  .kjp-after-sale { padding: 48px 0; }
+
+  .kjp-after-sale .kjp-container { width: min(calc(100% - 72px), 1100px); }
+
+  .kjp-service-grid, .kjp-process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+}
+
+
+
+@media (min-width: 1080px) {
+
+  .kjp-after-sale { padding: 56px 0; }
+
+  .kjp-service-grid, .kjp-process-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+  .kjp-after-sale__head { grid-template-columns: minmax(0, 1fr) minmax(320px, .58fr); align-items: center; gap: 36px; }
+
+}
+
+
+
+@media (max-width: 359px) {
+
+  .kjp-hero { padding-inline: 10px; }
+
+  .kjp-nav { left: 10px; right: 10px; width: calc(100% - 20px); }
+
+  .kjp-container { width: calc(100% - 26px); }
+
+  .kjp-details, .kjp-size-guide { padding-inline: 17px; }
+
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+
+  .kj-product-detail-page *,
+
+  .kj-product-detail-page *::before,
+
+  .kj-product-detail-page *::after { scroll-behavior: auto !important; transition: none !important; }
+
+}
+
+
+
+/* Data driven typography supplied by the product editor. */
+
+.kj-product-detail-page {
+
+  font-family: var(--kj-pdp-body-font, "SVN-Gilroy"), var(--kjp-sans);
+
+  color: var(--kj-pdp-body-color, #706d65);
+
+  letter-spacing: var(--kj-pdp-letter-spacing, .02em);
+
+  line-height: var(--kj-pdp-line-height, 1.8);
+
+  text-align: var(--kj-pdp-body-align, left);
+
+}
+
+.kj-product-detail-page h1,
+
+.kj-product-detail-page h2,
+
+.kj-product-detail-page h3,
+
+.kj-product-detail-page h4,
+
+.kj-product-detail-page h5,
+
+.kj-product-detail-page h6 {
+
+  font-family: var(--kj-pdp-heading-font, "Lora"), var(--kjp-serif);
+
+  color: var(--kj-pdp-heading-color, #142543);
+
+  text-align: var(--kj-pdp-heading-align, left);
+
+}
+
+.kj-product-detail-page .kjp-intro h1 { font-size: var(--kj-pdp-heading-size, 48px); }
+
+.kj-product-detail-page .kjp-intro p { font-size: var(--kj-pdp-body-size, 16px); }
+
+.kj-product-detail-page .kjp-intro p,
+
+.kj-product-detail-page .kjp-price-card p,
+
+.kj-product-detail-page .kjp-full-description p,
+
+.kj-product-detail-page .kjp-size-guide > p,
+
+.kj-product-detail-page .kjp-extra-details p {
+
+  color: var(--kj-pdp-body-color, #706d65);
+
+}
+
+.kj-product-detail-page .kjp-price-card p,
+
+.kj-product-detail-page .kjp-size-guide > p,
+
+.kj-product-detail-page .kjp-full-description p,
+
+.kj-product-detail-page .kjp-extra-details p,
+
+.kj-product-detail-page .kjp-specs dd {
+
+  font-size: calc(var(--kj-pdp-body-size, 16px) * .82);
+
+}
+
+.kj-product-detail-page .kjp-commitment p,
+
+.kj-product-detail-page .kjp-size-steps p,
+
+.kj-product-detail-page .kjp-service-grid p,
+
+.kj-product-detail-page .kjp-process-grid p {
+
+  font-size: calc(var(--kj-pdp-body-size, 16px) * .7);
+
+}
+
+.kj-product-detail-page .kjp-hero,
+
+.kj-product-detail-page .kjp-hero__identity,
+
+.kj-product-detail-page .kjp-hero__identity strong,
+
+.kj-product-detail-page .kjp-nav__brand { text-align: left; }
+
+.kj-product-detail-page .kjp-after-sale h2,
+
+.kj-product-detail-page .kjp-after-sale h3 { color: #e9c57a; }
+
+.kj-product-detail-page .kjp-image-caption strong {
+
+  font-family: var(--kj-pdp-heading-font, "Lora"), var(--kjp-serif);
+
+  color: var(--kj-pdp-heading-color, #142543);
+
+}
+
+.kj-product-detail-page .kjp-image-caption small { color: var(--kj-pdp-body-color, #706d65); }
+
+
+
+/* Show the site's original navigation at every viewport size. */
+
+.kjp-site-header { display: block; position: relative; z-index: 90; }
+
+
+
+.kjp-discount {
+
+  display: inline-flex;
+
+  margin: 0 0 8px 5px;
+
+  padding: 6px 10px;
+
+  border-radius: 100px;
+
+  background: #d7b760;
+
+  color: #14254a;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+}
+
+.kjp-favorite { font-size: 27px; line-height: 1; }
+
+.kjp-image-caption {
+
+  margin: 2px 0 11px;
+
+  padding: 9px 12px;
+
+  border-radius: 12px;
+
+  display: grid;
+
+  gap: 2px;
+
+  background: rgba(255, 253, 249, .95);
+
+  color: var(--kjp-navy);
+
+  font-size: 11px;
+
+  line-height: 1.4;
+
+}
+
+.kjp-image-caption small { font-size: 10px; line-height: 1.5; }
+
+.kjp-breadcrumb {
+
+  grid-area: breadcrumb;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin: -18px 0 25px;
+
+  color: #7b846c;
+
+  font-size: 10px;
+
+  line-height: 1.6;
+
+  text-align: left;
+
+}
+
+.kjp-breadcrumb a { color: inherit; }
+
+.kjp-breadcrumb strong { color: #30454b; font-weight: 700; }
+
+.kjp-breadcrumb a:hover { text-decoration: underline; }
+
+.kjp-price-card__value {
+
+  display: block;
+
+  margin: 0 0 3px;
+
+  color: var(--kj-pdp-heading-color, #142543);
+
+  font-size: 17px;
+
+  font-weight: 800;
+
+  line-height: 1.3;
+
+}
+
+.kjp-price-card__meta { display: grid; gap: 0; margin: 16px 0; }
+
+.kjp-price-card__meta > div {
+
+  display: flex;
+
+  align-items: baseline;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  padding: 8px 0;
+
+  border-bottom: 1px solid #efede5;
+
+}
+
+.kjp-price-card__meta dt {
+
+  color: #89928e;
+
+  font-size: 10px;
+
+  overflow-wrap: anywhere;
+
+}
+
+.kjp-price-card__meta dd {
+
+  margin: 0;
+
+  color: var(--kj-pdp-heading-color, #142543);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  text-align: right;
+
+  overflow-wrap: anywhere;
+
+}
+
+.kjp-price-card__link {
+
+  min-height: 36px;
+
+  padding: 0 15px;
+
+  border-radius: 100px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  background: #f4e7bd;
+
+  color: #162947;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+}
+
+.kjp-price-card__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+
+.kjp-add-button {
+
+  min-height: 36px;
+
+  padding: 0 13px;
+
+  border: 0;
+
+  border-radius: 100px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  background: #14254a;
+
+  color: #fff;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+}
+
+.kjp-add-button svg { width: 15px; height: 15px; }
+
+.kjp-price-card__note { display: block; margin-top: 12px; color: #7c8582; font-size: 10px; line-height: 1.55; }
+
+.kjp-price-card__link svg,
+
+.kjp-dark-button svg,
+
+.kjp-after-cta svg { width: 15px; height: 15px; }
+
+.kjp-primary-actions a,
+
+.kjp-primary-actions button { display: inline-flex; justify-content: center; align-items: center; gap: 6px; }
+
+.kjp-primary-actions svg { width: 15px; height: 15px; flex: 0 0 15px; }
+
+.kjp-extra-details { margin-top: 25px; }
+
+.kjp-extra-details details { padding: 12px 0; border-bottom: 1px solid #ecece6; }
+
+.kjp-extra-details summary {
+
+  color: var(--kj-pdp-heading-color, #142543);
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+}
+
+.kjp-extra-details details p { margin: 9px 0 0; line-height: 1.7; }
+
+.kjp-extra-details__trigger {
+
+  display: inline-block;
+
+  margin-top: 7px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #466a52;
+
+  font: inherit;
+
+  font-size: 11px;
+
+  text-align: left;
+
+  text-decoration: underline;
+
+  cursor: pointer;
+
+}
+
+.kjp-dark-button { gap: 9px; }
+
+.kjp-after-cta {
+
+  margin-top: 35px;
+
+  padding: 24px 20px;
+
+  border: 1px solid rgba(226, 193, 112, .2);
+
+  border-radius: 20px;
+
+  background: #17294c;
+
+}
+
+.kjp-after-cta h2 { margin: 8px 0; font-size: clamp(25px, 6vw, 33px); }
+
+.kjp-after-cta p { margin: 0 0 16px; color: #d1d8e0; font-size: 12px; line-height: 1.7; }
+
+.kjp-after-cta > a {
+
+  min-height: 39px;
+
+  padding: 0 18px;
+
+  border-radius: 100px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  background: #e2bf6d;
+
+  color: #132547;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+}
+
+.kjp-state--error { background: #fbf4e7; }
+
+.kjp-spinner, .kj-pdp-spinner {
+
+  width: 34px;
+
+  height: 34px;
+
+  border: 3px solid #e7d8ac;
+
+  border-top-color: var(--kjp-navy, #14254a);
+
+  border-radius: 50%;
+
+  animation: kjp-spin .8s linear infinite;
+
+}
+
+@keyframes kjp-spin { to { transform: rotate(360deg); } }
+
+.kj-pdp-state {
+
+  min-height: 75vh;
+
+  padding: 170px 22px 80px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 16px;
+
+  background: #f4f2e4;
+
+  text-align: center;
+
+}
+
+.kj-pdp-state h1 { margin: 0; color: #14254a; font: 600 clamp(32px, 7vw, 54px)/1.12 "Lora", Georgia, serif; }
+
+.kj-pdp-state p { max-width: 500px; margin: 0; line-height: 1.7; }
+
+.kj-pdp-state a { display: inline-flex; align-items: center; gap: 7px; color: #14254a; font-weight: 700; text-decoration: underline; }
+
+.kj-pdp-state a svg { width: 18px; height: 18px; fill: none; stroke: currentColor; }
+
+.kj-pdp-eyebrow { color: #426c4e; font-size: 10px; font-weight: 800; letter-spacing: .2em; }
+
+.kjp-mobile-bar {
+
+  position: fixed;
+
+  z-index: 50;
+
+  right: 8px;
+
+  bottom: max(8px, env(safe-area-inset-bottom));
+
+  left: 8px;
+
+  min-height: 58px;
+
+  padding: 6px 6px 6px 13px;
+
+  border: 1px solid #f1e7d2;
+
+  border-radius: 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  background: rgba(255, 252, 245, .95);
+
+  box-shadow: 0 8px 25px rgba(8, 24, 42, .16);
+
+  backdrop-filter: blur(12px);
+
+  text-align: left;
+
+}
+
+.kjp-mobile-bar div { min-width: 0; display: grid; }
+
+.kjp-mobile-bar small {
+
+  max-width: 150px;
+
+  color: #5e655c;
+
+  font-size: 10px;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+
+}
+
+.kjp-mobile-bar strong { color: #14254a; font-size: 12px; }
+
+.kjp-mobile-bar button {
+
+  min-height: 40px;
+
+  padding: 0 12px;
+
+  border: 0;
+
+  border-radius: 12px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  background: #14254a;
+
+  color: #fff;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+}
+
+.kjp-mobile-bar svg { width: 16px; height: 16px; }
+
+@media (min-width: 700px) {
+
+  .kjp-breadcrumb { margin: -40px 0 10px; }
+
+  .kjp-product-content { grid-template-areas: "breadcrumb breadcrumb" "intro price" "intro actions" "details details" "size size"; }
+
+  .kjp-details > .kjp-extra-details { grid-column: 1; }
+
+  .kjp-details > .kjp-commitment { grid-row: 1 / span 5; }
+
+  .kjp-after-cta { display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+
+  .kjp-after-cta > div { max-width: 680px; }
+
+  .kjp-after-cta p { margin-bottom: 0; }
+
+  .kjp-mobile-bar { display: none; }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .kjp-spinner, .kj-pdp-spinner { animation: none; }
+
+}
+
+
+
+/* Desktop PDF composition: product media beside the product introduction. */
+
+.kjp-top { background: linear-gradient(120deg, #eff3e6 0%, #fff8e9 88%); }
+
+.kjp-top__summary {
+
+  width: min(calc(100% - 36px), 1120px);
+
+  margin: 0 auto;
+
+  padding: 52px 0 58px;
+
+}
+
+.kjp-hero__placeholder {
+
+  background: radial-gradient(circle at 56% 32%, #e4ddc4 0, #c3c7ac 48%, #657766 100%);
+
+  color: rgba(255, 255, 255, .9);
+
+  font-size: 25px;
+
+  letter-spacing: .04em;
+
+}
+
+.kjp-hero__mini { position: relative; }
+
+.kjp-hero__mini::before { position: absolute; inset: 0; display: grid; place-items: center; content: "◆"; }
+
+.kjp-hero__mini img { position: relative; z-index: 1; }
+
+.kjp-thumbs button { position: relative; background: #e2e8de; }
+
+.kjp-thumbs button::before {
+
+  position: absolute;
+
+  inset: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  content: "◆";
+
+  color: #64806e;
+
+  font-size: 17px;
+
+}
+
+.kjp-thumbs img { position: relative; z-index: 1; }
+
+.kjp-nav__heart { display: none; }
+
+.kjp-price-card__chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 17px; }
+
+.kjp-price-card__chips span {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  max-width: 100%;
+
+  min-height: 30px;
+
+  padding: 0 11px;
+
+  border: 1px solid #e7ddca;
+
+  border-radius: 100px;
+
+  background: #fff;
+
+  color: #243252;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  line-height: 1.3;
+
+  overflow-wrap: anywhere;
+
+}
+
+.kjp-price-card__price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 5px 12px; margin-top: 12px; }
+
+.kjp-price-card__price .kjp-price-card__value { margin: 0; font-size: 30px; }
+
+.kjp-price-card__price del { margin: 0; font-size: 10px; }
+
+.kjp-order-note { margin: 14px 0 0; color: #7c8582; font-size: 10px; line-height: 1.5; }
+
+.kjp-breadcrumb { margin: 0 0 25px; }
+
+@media (min-width: 700px) {
+
+  .kjp-product-content { display: block; }
+
+  .kjp-light { padding: 38px 0 95px; }
+
+  .kjp-details { margin-top: 0; }
+
+  .kjp-breadcrumb { margin: 0 0 25px; }
+
+}
+
+@media (min-width: 760px) {
+
+  .kj-product-detail-page {
+
+    background: linear-gradient(112deg, #eff4e9 0%, #fbf9eb 35%, #fff7e8 100%);
+
+  }
+
+  .kjp-top {
+
+    width: min(100%, 1440px);
+
+    min-height: min(100svh, 870px);
+
+    margin: 0 auto;
+
+    padding: 12px clamp(28px, 6.3vw, 92px) 30px;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 47fr) minmax(0, 53fr);
+
+    align-items: center;
+
+    gap: clamp(34px, 6vw, 88px);
+
+    background: transparent;
+
+  }
+
+  .kjp-hero {
+
+    width: 100%;
+
+    min-height: 0;
+
+    height: min(820px, max(560px, calc(100svh - 46px)));
+
+    padding: 66px 13px 12px;
+
+    border-radius: 30px;
+
+    box-shadow: 0 18px 60px rgba(38, 42, 38, .1);
+
+  }
+
+  .kjp-hero__photo { object-position: center 36%; }
+
+  .kjp-hero__shade {
+
+    background: linear-gradient(180deg, rgba(16, 24, 37, .28), transparent 24%, transparent 55%, rgba(11, 18, 31, .57));
+
+  }
+
+  .kjp-hero__content { width: 100%; margin: 0; }
+
+  .kjp-nav {
+
+    top: 15px;
+
+    left: 12px;
+
+    right: 12px;
+
+    width: calc(100% - 24px);
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    box-shadow: none;
+
+    backdrop-filter: none;
+
+    justify-content: flex-end;
+
+    gap: 7px;
+
+  }
+
+  .kjp-nav__brand {
+
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #fff;
+
+    font: 700 10px/1.2 var(--kjp-sans);
+
+    letter-spacing: .24em;
+
+    text-transform: uppercase;
+
+  }
+
+  .kjp-nav__mark { display: none; }
+
+  .kjp-nav__heart,
+
+  .kjp-nav__consult {
+
+    flex: 0 0 26px;
+
+    width: 26px;
+
+    height: 26px;
+
+    min-height: 26px;
+
+    padding: 0;
+
+    border: 1px solid rgba(255, 255, 255, .58);
+
+    border-radius: 50%;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(255, 255, 255, .16);
+
+    box-shadow: none;
+
+    color: #fff;
+
+    backdrop-filter: blur(6px);
+
+  }
+
+  .kjp-nav__heart { font-size: 18px; line-height: 1; }
+
+  .kjp-nav__consult { font-size: 0; }
+
+  .kjp-nav__consult::before { content: "⌕"; font: 22px/1 Arial, sans-serif; }
+
+  .kjp-media-label { margin-bottom: 7px; }
+
+  .kjp-hero__identity { min-height: 56px; }
+
+  .kjp-thumbs button { flex-basis: clamp(48px, 23%, 100px); }
+
+  .kjp-top__summary {
+
+    width: 100%;
+
+    max-width: 570px;
+
+    padding: 0;
+
+    margin: 0;
+
+  }
+
+  .kjp-intro h1 { margin: 10px 0 18px; line-height: 1.08; }
+
+  .kjp-intro p { font-size: 15px; line-height: 1.75; }
+
+  .kjp-tags { margin-top: 18px; }
+
+  .kjp-price-card {
+
+    margin-top: 23px;
+
+    padding: 19px 20px 17px;
+
+    border-radius: 21px;
+
+    box-shadow: 0 12px 34px rgba(53, 62, 50, .08);
+
+  }
+
+  .kjp-price-card .kjp-kicker { display: none; }
+
+  .kjp-price-card h2 { margin: 0 0 7px; font-size: 27px; line-height: 1.2; letter-spacing: -.05em; }
+
+  .kjp-price-card__chips { margin-top: 14px; }
+
+  .kjp-price-card__price { margin-top: 8px; }
+
+  .kjp-primary-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+
+  .kjp-primary-actions a,
+
+  .kjp-primary-actions button { min-height: 37px; padding: 0 16px; }
+
+  .kjp-light { background: transparent; }
+
+  .kjp-product-content { width: min(calc(100% - 60px), 1220px); }
+
+  .kjp-details { padding: clamp(28px, 4vw, 48px); }
+
+  .kjp-size-guide { margin-top: 72px; }
+
+}
+
+@media (min-width: 1100px) {
+
+  .kjp-details { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 0 60px; }
+
+}
+
+@media (min-width: 760px) and (max-width: 1099px) {
+
+  .kjp-details { display: block; }
+
+  .kjp-commitment { margin-top: 36px; }
+
+}
+
+
+
+/* A slightly larger reading scale on phones, including the admin typography values. */
+
+@media (max-width: 759px) {
+
+  .kjp-kicker { font-size: 11px; }
+
+  .kjp-nav__brand { font-size: 19px; }
+
+  .kjp-nav__consult { font-size: 11px; }
+
+  .kjp-media-label { font-size: 10px; }
+
+  .kjp-hero__identity strong { font-size: 17px; }
+
+  .kjp-hero__actions a,
+
+  .kjp-hero__actions button { font-size: 12px; }
+
+  .kjp-image-caption { font-size: 13px; }
+
+  .kjp-image-caption small { font-size: 12px; }
+
+  .kjp-breadcrumb { font-size: 11px; }
+
+  .kj-product-detail-page .kjp-intro h1 {
+
+    font-size: calc(var(--kj-pdp-heading-size, 48px) * 1.04);
+
+  }
+
+  .kj-product-detail-page .kjp-intro p {
+
+    font-size: calc(var(--kj-pdp-body-size, 16px) * 1.06);
+
+  }
+
+  .kjp-tags span { font-size: 10.5px; }
+
+  .kjp-price-card h2 { font-size: clamp(30px, 8.4vw, 36px); }
+
+  .kj-product-detail-page .kjp-price-card p { font-size: calc(var(--kj-pdp-body-size, 16px) * .9); }
+
+  .kjp-price-card__chips span { font-size: 11.5px; }
+
+  .kjp-price-card__price .kjp-price-card__value { font-size: 14px; }
+
+  .kjp-price-card__price del { font-size: 11px; }
+
+  .kjp-primary-actions a,
+
+  .kjp-primary-actions button { min-height: 46px; font-size: 11px; }
+
+  .kjp-details h2,
+
+  .kjp-commitment h2,
+
+  .kjp-size-guide h2 { font-size: clamp(33px, 8.7vw, 43px); }
+
+  .kjp-specs dt { font-size: 11px; }
+
+  .kj-product-detail-page .kjp-specs dd,
+
+  .kj-product-detail-page .kjp-full-description p,
+
+  .kj-product-detail-page .kjp-extra-details p,
+
+  .kj-product-detail-page .kjp-size-guide > p {
+
+    font-size: calc(var(--kj-pdp-body-size, 16px) * .95);
+
+  }
+
+  .kjp-full-description h3 { font-size: 26px; }
+
+  .kjp-extra-details summary { font-size: 14px; }
+
+  .kjp-extra-details__trigger { font-size: 13px; }
+
+  .kjp-size-open { font-size: 12px; }
+
+  .kjp-order-note { font-size: 11.5px; }
+
+  .kjp-commitment h3 { font-size: 15px; }
+
+  .kjp-size-steps h3 { font-size: 14px; }
+
+  .kj-product-detail-page .kjp-commitment p,
+
+  .kj-product-detail-page .kjp-size-steps p,
+
+  .kj-product-detail-page .kjp-service-grid p,
+
+  .kj-product-detail-page .kjp-process-grid p {
+
+    font-size: calc(var(--kj-pdp-body-size, 16px) * .82);
+
+  }
+
+  .kjp-after-sale h2 { font-size: clamp(35px, 9.2vw, 46px); }
+
+  .kjp-after-sale__lead { font-size: 15px; }
+
+  .kjp-service-grid h3 { font-size: 16px; }
+
+  .kjp-process-copy h3 { font-size: 22px; }
+
+  .kjp-after-cta p { font-size: 14px; }
+
+  .kjp-mobile-bar small { font-size: 11px; }
+
+  .kjp-mobile-bar strong { font-size: 14px; }
+
+  .kjp-mobile-bar button { font-size: 12px; }
+
+}
+
+
+
+/* The same ring-size SVG guide used by ProductPage. */
+
+.kjp-size-guide-modal {
+
+  --kjp-modal-navy: #142543;
+
+  --kjp-modal-gold: #d2b04c;
+
+  --kjp-modal-display: "Lora", Georgia, serif;
+
+  --kjp-modal-body: "SVN-GILROY", "Gilroy", "Inter", Arial, sans-serif;
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 2000;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 26px;
+
+  font-family: var(--kjp-modal-body);
+
+}
+
+.kjp-size-guide-modal,
+
+.kjp-size-guide-modal *,
+
+.kjp-size-guide-modal *::before,
+
+.kjp-size-guide-modal *::after { box-sizing: border-box; }
+
+.kjp-size-guide-modal :focus-visible { outline: 3px solid var(--kjp-modal-gold); outline-offset: 3px; }
+
+.kjp-size-guide-backdrop {
+
+  position: absolute;
+
+  inset: 0;
+
+  border: 0;
+
+  padding: 0;
+
+  background: rgba(9, 23, 51, .58);
+
+  cursor: pointer;
+
+  backdrop-filter: blur(8px);
+
+  -webkit-backdrop-filter: blur(8px);
+
+}
+
+.kjp-size-guide-panel {
+
+  position: relative;
+
+  z-index: 1;
+
+  width: min(960px, 100%);
+
+  max-height: min(92vh, 850px);
+
+  overflow: auto;
+
+  padding: clamp(20px, 3vw, 32px);
+
+  border: 1px solid rgba(213, 175, 52, .34);
+
+  border-radius: 30px;
+
+  background: radial-gradient(circle at 100% 0%, rgba(248, 209, 105, .2), transparent 36%), linear-gradient(145deg, #fffdf8, #f7f2e7);
+
+  color: var(--kjp-modal-navy);
+
+  box-shadow: 0 30px 90px rgba(9, 23, 51, .28);
+
+}
+
+.kjp-size-guide-head {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 22px;
+
+}
+
+.kjp-size-guide-eyebrow {
+
+  color: #ad872d;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: .16em;
+
+  text-transform: uppercase;
+
+}
+
+.kjp-size-guide-head h2 {
+
+  margin: 10px 0 9px;
+
+  color: var(--kjp-modal-navy);
+
+  font-family: var(--kjp-modal-display);
+
+  font-size: clamp(36px, 5vw, 58px);
+
+  font-weight: 600;
+
+  line-height: .95;
+
+  letter-spacing: -.035em;
+
+}
+
+.kjp-size-guide-head p {
+
+  max-width: 660px;
+
+  margin: 0;
+
+  color: #706d65;
+
+  font-size: 13px;
+
+  line-height: 1.75;
+
+}
+
+.kjp-size-guide-close {
+
+  flex: 0 0 auto;
+
+  width: 43px;
+
+  height: 43px;
+
+  padding: 0;
+
+  border: 1px solid rgba(20, 37, 67, .12);
+
+  border-radius: 50%;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: rgba(255, 255, 255, .72);
+
+  color: var(--kjp-modal-navy);
+
+  cursor: pointer;
+
+}
+
+.kjp-size-guide-close svg {
+
+  width: 18px;
+
+  height: 18px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.8;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+
+}
+
+.kjp-size-guide-canvas {
+
+  padding: 12px;
+
+  border: 1px solid rgba(20, 37, 67, .1);
+
+  border-radius: 24px;
+
+  background: #fff;
+
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .8);
+
+}
+
+.kjp-size-guide-svg { display: block; width: 100%; height: auto; }
+
+.kjp-size-guide-note {
+
+  margin-top: 15px;
+
+  padding: 14px 16px;
+
+  border-left: 3px solid var(--kjp-modal-gold);
+
+  border-radius: 0 15px 15px 0;
+
+  display: grid;
+
+  gap: 5px;
+
+  background: rgba(248, 209, 105, .14);
+
+  color: #706d65;
+
+}
+
+.kjp-size-guide-note strong { color: var(--kjp-modal-navy); font-size: 12px; }
+
+.kjp-size-guide-note span { font-size: 12px; line-height: 1.65; }
+
+@media (max-width: 720px) {
+
+  .kjp-size-guide-modal { padding: 12px; }
+
+  .kjp-size-guide-panel { border-radius: 24px; max-height: 92dvh; }
+
+  .kjp-size-guide-head { flex-direction: column; padding-right: 37px; }
+
+  .kjp-size-guide-head p { font-size: 14px; }
+
+  .kjp-size-guide-note strong,
+
+  .kjp-size-guide-note span { font-size: 13px; }
+
+  .kjp-size-guide-close { position: absolute; top: 16px; right: 16px; }
+
+  .kjp-size-guide-canvas { overflow-x: auto; }
+
+  .kjp-size-guide-svg { min-width: 620px; }
+
+  .kjp-size-open { margin: 8px 0 0; }
+
+}
+
+
+
+/* =========================================================
+
+   PRODUCT DETAIL - DESKTOP MEDIA COMPACT
+
+   Giảm phần điều khiển phía dưới để ảnh chính ít bị che.
+
+   Mobile/tablet giữ nguyên bố cục hiện tại.
+
+   ========================================================= */
+
+@media (min-width: 1100px) {
+
+  .kjp-hero {
+
+    padding-bottom: 14px;
+
+  }
+
+
+
+  .kjp-hero__content {
+
+    width: min(100%, 440px);
+
+  }
+
+
+
+  .kjp-media-label {
+
+    margin: 0 0 5px 2px;
+
+    padding: 6px 10px;
+
+    font-size: 8px;
+
+    letter-spacing: .12em;
+
+  }
+
+
+
+  .kjp-discount {
+
+    margin: 0 0 5px 3px;
+
+    padding: 5px 8px;
+
+    font-size: 9px;
+
+  }
+
+
+
+  .kjp-thumbs {
+
+    margin-top: 4px;
+
+    padding: 2px 1px 6px;
+
+    gap: 6px;
+
+  }
+
+
+
+  .kjp-thumbs button {
+
+    flex: 0 0 78px;
+
+    max-width: 78px;
+
+    border-radius: 9px;
+
+  }
+
+
+
+  .kjp-thumbs img {
+
+    border-radius: 5px;
+
+  }
+
+
+
+  .kjp-image-caption {
+
+    margin: 0 0 6px;
+
+    padding: 6px 9px;
+
+    gap: 1px;
+
+    border-radius: 9px;
+
+    font-size: 9px;
+
+    line-height: 1.3;
+
+  }
+
+
+
+  .kjp-image-caption small {
+
+    font-size: 8px;
+
+    line-height: 1.35;
+
+  }
+
+
+
+  .kjp-hero__actions {
+
+    gap: 7px;
+
+  }
+
+
+
+  .kjp-hero__actions a,
+
+  .kjp-hero__actions button {
+
+    min-height: 35px;
+
+    font-size: 9px;
+
+  }
+
+}
+
+/* Chỉ giữ lại 4 thumbnail ảnh sản phẩm */
+
+.kjp-hero__content--thumbs-only {
+
+  width: min(100%, 520px);
+
+  margin: 0 auto;
+
+}
+
+
+
+.kjp-hero__content--thumbs-only .kjp-thumbs {
+
+  margin-top: 0;
+
+  padding: 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 10px;
+
+  overflow: visible;
+
+}
+
+
+
+.kjp-hero__content--thumbs-only .kjp-thumbs button {
+
+  flex: unset;
+
+  width: 100%;
+
+  aspect-ratio: 1 / 1;
+
+  padding: 3px;
+
+  border: 2px solid rgba(255, 255, 255, 0.7);
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.18);
+
+  backdrop-filter: blur(4px);
+
+}
+
+
+
+.kjp-hero__content--thumbs-only .kjp-thumbs button.is-active {
+
+  border-color: var(--kjp-gold);
+
+  box-shadow: 0 0 0 2px rgba(210, 176, 76, 0.18);
+
+}
+
+
+
+.kjp-hero__content--thumbs-only .kjp-thumbs img {
+
+  width: 100%;
+
+  height: 100%;
+
+  border-radius: 10px;
+
+  object-fit: cover;
+
+}
+
+/* =========================================================
+   KING JADES PRODUCT DETAIL — IMAGE VISIBILITY FIX
+   2026-10-04
+
+   Mục tiêu:
+   1) Chừa đúng khoảng cho Header, không để Header đè ảnh.
+   2) Ảnh sản phẩm giữ căn giữa nhưng KHÔNG zoom/crop quá mức.
+   3) Dành khoảng phía dưới cho thumbnail để thumbnail không che
+      vào phần sản phẩm chính.
+   4) Áp dụng cho desktop + tablet + iOS + Android.
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   MAIN PRODUCT PHOTO
+   - cover => làm vòng bị phóng to và cắt mất mép
+   - contain => giữ trọn sản phẩm trong khung
+   --------------------------------------------------------- */
+
+.kj-product-detail-page .kjp-hero {
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      #26375c 0%,
+      #142543 58%,
+      #0b1834 100%
+    );
+}
+
+.kj-product-detail-page .kjp-hero__photo {
+  left: 0 !important;
+  right: 0 !important;
+  bottom: auto !important;
+
+  width: 100% !important;
+
+  object-fit: contain !important;
+  object-position: 50% 50% !important;
+
+  transform: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   DESKTOP / LARGE LAPTOP
+   Header cao hơn mobile nên chừa khoảng lớn hơn.
+   Thumbnail được chừa riêng khoảng 100px phía dưới.
+   --------------------------------------------------------- */
+
+@media (min-width: 1100px) {
+  .kj-product-detail-page .kjp-top {
+    padding-top: 108px !important;
+  }
+
+  .kj-product-detail-page .kjp-hero {
+    height:
+      min(
+        760px,
+        max(
+          560px,
+          calc(100svh - 132px)
+        )
+      ) !important;
+
+    min-height: 560px !important;
+  }
+
+  .kj-product-detail-page .kjp-hero__photo {
+    top: 0 !important;
+    height: calc(100% - 104px) !important;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   TABLET / SMALL LAPTOP
+   --------------------------------------------------------- */
+
+@media (min-width: 760px) and (max-width: 1099px) {
+  .kj-product-detail-page .kjp-top {
+    padding-top: 102px !important;
+  }
+
+  .kj-product-detail-page .kjp-hero {
+    height:
+      min(
+        730px,
+        max(
+          540px,
+          calc(100svh - 124px)
+        )
+      ) !important;
+
+    min-height: 540px !important;
+  }
+
+  .kj-product-detail-page .kjp-hero__photo {
+    top: 0 !important;
+    height: calc(100% - 98px) !important;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE — iOS + Android
+
+   Header mobile khoảng 64px + top gap.
+   Chừa 82px đầu trang để Hero bắt đầu bên dưới Header.
+   Chừa 84px cuối ảnh cho dãy thumbnail.
+   --------------------------------------------------------- */
+
+@media (max-width: 759px) {
+  .kj-product-detail-page .kjp-top {
+    padding-top:
+      calc(
+        82px
+        + env(safe-area-inset-top, 0px)
+      ) !important;
+  }
+
+  .kj-product-detail-page .kjp-hero {
+    min-height: 0 !important;
+
+    height:
+      min(
+        760px,
+        calc(
+          100svh
+          - 82px
+          - env(safe-area-inset-top, 0px)
+        )
+      ) !important;
+
+    padding-top: 64px !important;
+  }
+
+  .kj-product-detail-page .kjp-hero__photo {
+    top: 0 !important;
+    height: calc(100% - 86px) !important;
+
+    object-fit: contain !important;
+    object-position: 50% 50% !important;
+  }
+
+  /*
+   * Thumbnail vẫn ở đáy như thiết kế cũ,
+   * nhưng ảnh chính đã được thu vào vùng phía trên.
+   */
+  .kj-product-detail-page
+  .kjp-hero__content--thumbs-only {
+    position: relative;
+    z-index: 3;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   PHONE NHỎ — 320px đến khoảng 430px
+   --------------------------------------------------------- */
+
+@media (max-width: 430px) {
+  .kj-product-detail-page .kjp-top {
+    padding-top:
+      calc(
+        78px
+        + env(safe-area-inset-top, 0px)
+      ) !important;
+  }
+
+  .kj-product-detail-page .kjp-hero {
+    height:
+      min(
+        700px,
+        calc(
+          100svh
+          - 78px
+          - env(safe-area-inset-top, 0px)
+        )
+      ) !important;
+
+    border-radius: 0 0 22px 22px;
+  }
+
+  .kj-product-detail-page .kjp-hero__photo {
+    height: calc(100% - 82px) !important;
+  }
+}
+
+
+/* Safari cũ chưa hỗ trợ svh */
+@supports not (height: 100svh) {
+  @media (min-width: 1100px) {
+    .kj-product-detail-page .kjp-hero {
+      height: min(760px, max(560px, calc(100vh - 132px))) !important;
+    }
+  }
+
+  @media (min-width: 760px) and (max-width: 1099px) {
+    .kj-product-detail-page .kjp-hero {
+      height: min(730px, max(540px, calc(100vh - 124px))) !important;
+    }
+  }
+
+  @media (max-width: 759px) {
+    .kj-product-detail-page .kjp-hero {
+      height:
+        min(
+          760px,
+          calc(
+            100vh
+            - 82px
+            - env(safe-area-inset-top, 0px)
+          )
+        ) !important;
+    }
+  }
+
+  @media (max-width: 430px) {
+    .kj-product-detail-page .kjp-hero {
+      height:
+        min(
+          700px,
+          calc(
+            100vh
+            - 78px
+            - env(safe-area-inset-top, 0px)
+          )
+        ) !important;
+    }
+  }
+}
+
+/* =========================================================
+   PRODUCT DETAIL — MOBILE HERO NAV MATCH DESKTOP
+   2026-10-04
+
+   Mục tiêu:
+   - Trên mobile, thanh nav nằm TRONG ảnh sản phẩm dùng đúng
+     phong cách desktop: nền trong suốt, KINGJADES ở giữa,
+     icon tim + tìm kiếm ở bên phải.
+   - Không còn cảm giác có thêm một "header trắng" thứ hai.
+   - Header chính của website vẫn giữ nguyên.
+   ========================================================= */
+
+@media (max-width: 759px) {
+  .kj-product-detail-page .kjp-nav {
+    top: max(14px, env(safe-area-inset-top, 0px)) !important;
+    left: 12px !important;
+    right: 12px !important;
+
+    width: calc(100% - 24px) !important;
+    min-height: 34px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+    border-radius: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 8px !important;
+
+    background: transparent !important;
+    box-shadow: none !important;
+
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .kj-product-detail-page .kjp-nav__brand {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+
+    transform: translate(-50%, -50%) !important;
+
+    gap: 0 !important;
+    color: #ffffff !important;
+
+    font-family: var(--kjp-sans) !important;
+    font-size: 10px !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+
+    letter-spacing: 0.22em !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+  }
+
+  /* Desktop không hiện biểu tượng tròn bên trái brand,
+     mobile giờ cũng giống desktop. */
+  .kj-product-detail-page .kjp-nav__mark {
+    display: none !important;
+  }
+
+  /* Hiện nút tim giống desktop. */
+  .kj-product-detail-page .kjp-nav__heart,
+  .kj-product-detail-page .kjp-nav__consult {
+    flex: 0 0 32px !important;
+
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+
+    padding: 0 !important;
+
+    border:
+      1px solid
+      rgba(255, 255, 255, 0.62) !important;
+
+    border-radius: 50% !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background:
+      rgba(255, 255, 255, 0.12) !important;
+
+    color: #ffffff !important;
+    box-shadow: none !important;
+
+    -webkit-backdrop-filter: blur(7px) !important;
+    backdrop-filter: blur(7px) !important;
+  }
+
+  .kj-product-detail-page .kjp-nav__heart {
+    font-size: 20px !important;
+    line-height: 1 !important;
+  }
+
+  /* TƯ VẤN dạng chữ được đổi sang icon kính lúp
+     để giống bố cục desktop hiện tại. */
+  .kj-product-detail-page .kjp-nav__consult {
+    font-size: 0 !important;
+    letter-spacing: 0 !important;
+  }
+
+  .kj-product-detail-page .kjp-nav__consult::before {
+    content: "⌕";
+    display: block;
+    font: 22px/1 Arial, sans-serif;
+    transform: translateY(-1px);
+  }
+}
+
+
+/* Điện thoại rất nhỏ */
+@media (max-width: 390px) {
+  .kj-product-detail-page .kjp-nav {
+    left: 10px !important;
+    right: 10px !important;
+    width: calc(100% - 20px) !important;
+    gap: 6px !important;
+  }
+
+  .kj-product-detail-page .kjp-nav__heart,
+  .kj-product-detail-page .kjp-nav__consult {
+    flex-basis: 30px !important;
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+    min-height: 30px !important;
+  }
+
+  .kj-product-detail-page .kjp-nav__brand {
+    font-size: 9px !important;
+    letter-spacing: 0.2em !important;
+  }
+}
+
+/* =========================================================
+   PRODUCT DESCRIPTION — READER MODAL
+   Mô tả ngắn giữ gọn trong trang.
+   Mô tả dài mở thành không gian đọc riêng, không kéo trang quá dài.
+   ========================================================= */
+
+.kjp-full-description__head {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.kjp-full-description__head .kjp-kicker {
+  margin-bottom: 5px;
+  color: #a4843c;
+  font-size: 8px;
+  letter-spacing: .14em;
+}
+
+.kjp-full-description__head h3 {
+  margin: 0;
+}
+
+.kjp-description-reading-time {
+  flex: 0 0 auto;
+  padding: 5px 8px;
+  border: 1px solid #ece2cc;
+  border-radius: 999px;
+  background: #fffaf0;
+  color: #8a7446;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+
+.kjp-description-toggle {
+  min-height: 35px;
+  margin-top: 16px;
+  padding: 0 15px;
+  border: 1px solid rgba(20, 37, 74, .16);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: #fffdf8;
+  color: var(--kjp-navy);
+  box-shadow: 0 7px 18px rgba(20, 37, 74, .045);
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1;
+  transition:
+    transform .18s ease,
+    border-color .18s ease,
+    color .18s ease,
+    box-shadow .18s ease;
+}
+
+.kjp-description-toggle:hover {
+  transform: translateY(-1px);
+  border-color: rgba(164, 132, 60, .48);
+  color: #9a792d;
+  box-shadow: 0 10px 24px rgba(20, 37, 74, .07);
+}
+
+.kjp-description-toggle__icon {
+  font-size: 15px;
+  line-height: 1;
+  transform: none;
+}
+
+
+/* Overlay */
+.kjp-description-modal {
+  position: fixed;
+  z-index: 2200;
+  inset: 0;
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--kjp-sans);
+}
+
+.kjp-description-modal,
+.kjp-description-modal *,
+.kjp-description-modal *::before,
+.kjp-description-modal *::after {
+  box-sizing: border-box;
+}
+
+.kjp-description-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(7, 18, 40, .64);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+}
+
+.kjp-description-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: min(820px, 100%);
+  max-height: min(88dvh, 880px);
+  border: 1px solid rgba(210, 176, 76, .28);
+  border-radius: 28px;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(239, 210, 123, .18),
+      transparent 34%
+    ),
+    #fffdf8;
+  color: var(--kjp-navy);
+  box-shadow: 0 34px 100px rgba(6, 16, 37, .32);
+}
+
+.kjp-description-modal__head {
+  position: relative;
+  z-index: 2;
+  padding: 24px 28px 20px;
+  border-bottom: 1px solid #eee6d7;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  background: rgba(255, 253, 248, .96);
+}
+
+.kjp-description-modal__eyebrow {
+  display: block;
+  margin-bottom: 7px;
+  color: #a47e2b;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .17em;
+}
+
+#root .kjp-description-modal__head h2 {
+  max-width: 650px;
+  margin: 0 !important;
+  color: var(--kjp-navy) !important;
+  font-family: var(--kjp-serif) !important;
+  font-size: clamp(28px, 4vw, 42px) !important;
+  font-weight: 600 !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.035em !important;
+}
+
+.kjp-description-modal__close {
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid #e8dfce;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  color: var(--kjp-navy);
+}
+
+.kjp-description-modal__close:hover {
+  border-color: #d6bb70;
+  background: #fff8e6;
+}
+
+.kjp-description-modal__close svg {
+  width: 17px;
+  height: 17px;
+}
+
+.kjp-description-modal__body {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 28px 34px 36px;
+  scrollbar-width: thin;
+  scrollbar-color: #d7c38b transparent;
+}
+
+.kjp-description-article {
+  width: min(100%, 680px);
+  margin: 0 auto;
+}
+
+#root .kjp-description-article h3 {
+  margin: 30px 0 10px !important;
+  padding-top: 20px;
+  border-top: 1px solid #eee5d5;
+  color: #9a792d !important;
+  font-family: var(--kjp-sans) !important;
+  font-size: 12px !important;
+  font-weight: 900 !important;
+  line-height: 1.45 !important;
+  letter-spacing: .08em !important;
+  text-transform: uppercase;
+}
+
+#root .kjp-description-article h3:first-child {
+  margin-top: 0 !important;
+  padding-top: 0;
+  border-top: 0;
+}
+
+#root .kjp-description-article p {
+  margin: 0 0 12px !important;
+  color: #5f6768 !important;
+  font-family: var(--kjp-sans) !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 1.82 !important;
+  letter-spacing: .005em !important;
+  text-align: left !important;
+}
+
+.kjp-description-modal__footer {
+  padding: 14px 28px;
+  border-top: 1px solid #eee6d7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  background: #fbf7ef;
+}
+
+.kjp-description-modal__footer span {
+  color: #85847d;
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+.kjp-description-modal__footer button {
+  flex: 0 0 auto;
+  min-height: 34px;
+  padding: 0 15px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--kjp-navy);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+
+/* Mobile: reader thành bottom-sheet, không kéo dài cả ProductDetailPage */
+@media (max-width: 759px) {
+  .kjp-full-description__head {
+    align-items: flex-start;
+  }
+
+  .kjp-description-reading-time {
+    display: none;
+  }
+
+  .kjp-description-modal {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .kjp-description-modal__panel {
+    width: 100%;
+    max-height: 91dvh;
+    border-radius: 24px 24px 0 0;
+  }
+
+  .kjp-description-modal__head {
+    padding:
+      18px
+      18px
+      16px;
+  }
+
+  #root .kjp-description-modal__head h2 {
+    padding-right: 4px;
+    font-size: 28px !important;
+    line-height: 1.06 !important;
+  }
+
+  .kjp-description-modal__close {
+    flex-basis: 36px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .kjp-description-modal__body {
+    padding: 22px 18px 30px;
+  }
+
+  #root .kjp-description-article h3 {
+    margin-top: 24px !important;
+    padding-top: 17px;
+    font-size: 11px !important;
+  }
+
+  #root .kjp-description-article p {
+    margin-bottom: 11px !important;
+    font-size: 13.5px !important;
+    line-height: 1.75 !important;
+  }
+
+  .kjp-description-modal__footer {
+    padding:
+      12px
+      16px
+      calc(12px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .kjp-description-modal__footer span {
+    display: none;
+  }
+
+  .kjp-description-modal__footer button {
+    width: 100%;
+    min-height: 40px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 390px) {
+  #root .kjp-description-modal__head h2 {
+    font-size: 25px !important;
+  }
+
+  #root .kjp-description-article p {
+    font-size: 13px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kjp-description-toggle {
+    transition: none;
+  }
+}
+
+/* =========================================================
+   DESCRIPTION MODAL — FIX CLOSE ICON
+   CloseIcon nằm ngoài .kj-product-detail-page nên không nhận
+   bộ stroke SVG chung của ProductDetailPage.
+   ========================================================= */
+
+.kjp-description-modal__close svg {
+  display: block;
+  width: 18px !important;
+  height: 18px !important;
+  fill: none !important;
+  stroke: currentColor !important;
+  stroke-width: 1.9 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+}
+
+.kjp-description-modal__close svg path {
+  fill: none !important;
+  stroke: currentColor !important;
+}
+
+.kjp-description-modal__close {
+  color: #14254a !important;
+}
+
+.kjp-description-modal__close:hover {
+  color: #a47e2b !important;
+}
+
+/* =========================================================
+   AFTER SALES PROCESS — TITLE ALIGNMENT
+   2026-10-05
+
+   Desktop:
+   - 4 tiêu đề nằm cùng một hàng.
+   - Không để "Tiếp nhận & kiểm tra" xuống dòng.
+   - Số thứ tự + tiêu đề canh giữa theo cùng baseline.
+   - Phần mô tả bên dưới bắt đầu đồng đều hơn.
+   ========================================================= */
+
+@media (min-width: 1080px) {
+  .kj-product-detail-page .kjp-process-copy {
+    padding: 16px 14px 17px;
+  }
+
+  .kj-product-detail-page .kjp-process-copy > div {
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+
+  .kj-product-detail-page .kjp-process-copy > div span {
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+  }
+
+  #root .kj-product-detail-page .kjp-process-copy h3 {
+    min-width: 0;
+    margin: 0 !important;
+
+    font-size: clamp(15px, 1.12vw, 18px) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.025em !important;
+
+    white-space: nowrap !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+  }
+
+  .kj-product-detail-page .kjp-process-copy p {
+    margin-top: 11px;
+  }
+}
+
+
+/* Tablet: vẫn giữ hàng tiêu đề gọn, nhưng cho phép co chữ nhẹ */
+@media (min-width: 700px) and (max-width: 1079px) {
+  .kj-product-detail-page .kjp-process-copy > div {
+    min-height: 32px;
+    align-items: center;
+    gap: 9px;
+  }
+
+  #root .kj-product-detail-page .kjp-process-copy h3 {
+    margin: 0 !important;
+    font-size: 18px !important;
+    line-height: 1.08 !important;
+  }
+}
+
+/* KING JADES - MOBILE PRODUCT TITLE, 2026-10-08 */
+@media (max-width: 759px) {
+  /* Chỉ ẩn dòng nhỏ ở khối giới thiệu, không ảnh hưởng kicker khác. */
+  .kj-product-detail-page .kjp-intro__eyebrow {
+    display: none;
+  }
+
+  .kj-product-detail-page .kjp-intro h1#kjp-product-title {
+    box-sizing: border-box;
+    min-height: 84px;
+    margin: 0 0 14px;
+    padding: 13px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(32px, 9.5vw, 48px);
+    line-height: 1.16;
+    text-align: center;
+    overflow-wrap: break-word;
+  }
+}
+
+
+/* =========================================================
+   PRODUCT DETAIL - SIZE PHOTO + MOBILE BUTTON (2026-10-08)
+   Dùng dosize.jpg cho popup. Trên mobile thu gọn chữ để
+   "HƯỚNG DẪN ĐO SIZE" không vượt khỏi nút.
+   ========================================================= */
+.kjp-size-guide-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: min(66vh, 690px);
+  margin-inline: auto;
+  object-fit: contain;
+  border-radius: 13px;
+}
+
+.kjp-primary-actions__size-label {
+  display: inline-block;
+  min-width: 0;
+  line-height: 1.25;
+  text-align: center;
+}
+
+@media (max-width: 759px) {
+  .kj-product-detail-page .kjp-primary-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .kj-product-detail-page .kjp-primary-actions a,
+  .kj-product-detail-page .kjp-primary-actions button {
+    box-sizing: border-box;
+    min-width: 0;
+    min-height: 50px;
+    padding: 7px 6px;
+    gap: 5px;
+    font-size: clamp(8px, 2.25vw, 10px);
+    letter-spacing: 0;
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  .kj-product-detail-page .kjp-primary-actions button .kjp-primary-actions__size-label {
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: break-word;
+    flex: 0 1 auto;
+  }
+
+  .kj-product-detail-page .kjp-primary-actions svg {
+    width: 14px;
+    height: 14px;
+    flex: 0 0 14px;
+  }
+
+  /* Ảnh JPG co vừa màn iOS/Android, không còn scroll ngang do SVG cũ. */
+  .kjp-size-guide-canvas {
+    overflow-x: hidden;
+    padding: 8px;
+  }
+
+  .kjp-size-guide-image {
+    max-height: 58dvh;
+    border-radius: 10px;
+  }
+}
+
+
+/* =========================================================
+   KING JADES - MOBILE SIZE GUIDE BUTTON ONE LINE
+   Keep label and ruler icon aligned without wrapping.
+   Desktop remains unchanged.
+   ========================================================= */
+@media (max-width: 759px) {
+  #root .kj-product-detail-page .kjp-primary-actions > button {
+    min-width: 0 !important;
+    padding: 0 5px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-wrap: nowrap !important;
+    gap: 4px !important;
+    white-space: nowrap !important;
+    font-size: clamp(8px, 2.6vw, 10px) !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0 !important;
+  }
+
+  #root .kj-product-detail-page .kjp-primary-actions > button .kjp-primary-actions__size-label {
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+    display: inline !important;
+    white-space: nowrap !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+    letter-spacing: 0 !important;
+  }
+
+  #root .kj-product-detail-page .kjp-primary-actions > button svg {
+    display: block;
+    flex: 0 0 13px !important;
+    width: 13px !important;
+    height: 13px !important;
+  }
+}
+
+
+/* =========================================================
+   KING JADES - MOBILE PRODUCT INFO CARD (2026-10-08)
+   Không thay đổi desktop: bố cục và số liệu từ API giữ nguyên.
+   ========================================================= */
+.kjp-price-card__heading-mobile {
+  display: none;
+}
+
+@media (max-width: 759px) {
+  /* Ẩn dòng nhãn TƯ VẤN SẢN PHẨM trên mobile */
+  .kj-product-detail-page .kjp-price-card > .kjp-kicker {
+    display: none !important;
+  }
+
+  .kj-product-detail-page .kjp-price-card {
+    padding: 22px 19px 24px;
+  }
+
+  .kj-product-detail-page .kjp-price-card__heading-desktop {
+    display: none;
+  }
+
+  .kj-product-detail-page .kjp-price-card__heading-mobile {
+    display: block;
+  }
+
+  /* Tiêu đề mới căn giữa và có khoảng thở trên/dưới */
+  #root .kj-product-detail-page .kjp-price-card h2.kjp-price-card__heading {
+    margin: 0 auto 13px !important;
+    font-size: clamp(21px, 5.7vw, 28px) !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.025em !important;
+    text-align: center !important;
+    overflow-wrap: break-word;
+  }
+
+  /* Chỉ bỏ ô 'Liên hệ tư vấn size'; chip thông số Admin vẫn còn */
+  .kj-product-detail-page .kjp-price-card__size-chip,
+  .kj-product-detail-page .kjp-price-card__chips--only-size {
+    display: none !important;
+  }
+
+  .kj-product-detail-page .kjp-price-card__chips {
+    margin-top: 12px;
+  }
+
+  /* Tăng cỡ chữ GIÁ nhưng không thay đổi dữ liệu/ẩn giá từ API */
+  #root .kj-product-detail-page .kjp-price-card__price {
+    margin-top: 15px;
+  }
+
+  #root .kj-product-detail-page .kjp-price-card__price .kjp-price-card__value {
+    display: block;
+    max-width: 100%;
+    font-size: clamp(23px, 6.3vw, 30px) !important;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Product media nav: show only centered KINGJADES, no action icons. */
+.kj-product-detail-page .kjp-nav {
+  min-height: 34px !important;
+  justify-content: center !important;
+}
+
+@media (min-width: 760px) {
+  .kj-product-detail-page .kjp-nav__brand {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+/* KING JADES PRODUCT DETAIL — RESTORE FAVORITE HEART ONLY (2026-10-10)
+   Giữ nguyên tiêu đề KingJades ở giữa; không thêm kính lúp. */
+.kj-product-detail-page .kjp-nav {
+  justify-content: flex-end !important;
+}
+
+.kj-product-detail-page .kjp-nav__heart {
+  position: relative;
+  z-index: 5;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  min-height: 38px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, .75);
+  border-radius: 50%;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  background: rgba(17, 34, 64, .35);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, .12);
+  -webkit-backdrop-filter: blur(9px);
+  backdrop-filter: blur(9px);
+  cursor: pointer;
+  transition: transform .18s ease, background .18s ease, border-color .18s ease;
+}
+.kj-product-detail-page .kjp-nav__heart svg {
+  display: block;
+  flex: 0 0 19px;
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  transition: fill .18s ease;
+}
+.kj-product-detail-page .kjp-nav__heart.is-active {
+  color: #f5cf72;
+  border-color: #f5cf72;
+  background: rgba(17, 34, 64, .65);
+}
+.kj-product-detail-page .kjp-nav__heart.is-active svg { fill: currentColor; }
+@media (hover: hover) {
+  .kj-product-detail-page .kjp-nav__heart:hover { transform: scale(1.07); }
+}
+@media (max-width: 759px) {
+  .kj-product-detail-page .kjp-nav__heart {
+    flex-basis: 36px !important;
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    min-height: 36px !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .kj-product-detail-page .kjp-nav__heart,
+  .kj-product-detail-page .kjp-nav__heart svg { transition: none !important; }
+}

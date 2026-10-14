@@ -1,0 +1,521 @@
+:root {
+  --kj-cta-navy: #1c2042;
+  --kj-cta-navy-soft: #253065;
+  --kj-cta-gold: #d9b21d;
+  --kj-cta-gold-light: #f8d169;
+  --kj-cta-ivory: #fbf8f4;
+  --kj-cta-white: #ffffff;
+}
+
+/* ======================================================
+   KING JADES — GLOBAL FLOATING CONTACT CTA
+   Zalo / Facebook / Phone
+   Desktop + iPad + Mobile
+====================================================== */
+
+.kj-global-contact-cta,
+.kj-global-contact-cta *,
+.kj-global-contact-cta *::before,
+.kj-global-contact-cta *::after {
+  box-sizing: border-box;
+}
+
+.kj-global-contact-cta {
+  position: fixed;
+  z-index: 9999;
+
+  right: clamp(18px, 1.45vw, 28px);
+  bottom: max(
+    clamp(20px, 2.2vh, 30px),
+    env(safe-area-inset-bottom)
+  );
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+
+  padding: 8px;
+
+  border: 1px solid rgba(217, 178, 29, 0.24);
+  border-radius: 26px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(251, 248, 244, 0.94),
+      rgba(242, 237, 224, 0.84)
+    );
+
+  box-shadow:
+    0 20px 48px rgba(20, 37, 67, 0.16),
+    0 6px 18px rgba(20, 37, 67, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+
+  backdrop-filter: blur(14px) saturate(1.08);
+  -webkit-backdrop-filter: blur(14px) saturate(1.08);
+
+  pointer-events: none;
+}
+
+/* Gold accent nhỏ, hợp tone King Jades */
+.kj-global-contact-cta::before {
+  content: "";
+
+  width: 22px;
+  height: 2px;
+
+  margin-bottom: 1px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--kj-cta-gold),
+      transparent
+    );
+
+  opacity: 0.72;
+}
+
+.kj-global-contact-cta__item {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 56px;
+  height: 56px;
+  padding: 0;
+
+  overflow: visible;
+
+  border: 1px solid rgba(28, 32, 66, 0.10);
+  border-radius: 18px;
+
+  text-decoration: none;
+
+  background: var(--kj-cta-white);
+
+  box-shadow:
+    0 10px 22px rgba(20, 37, 67, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.96);
+
+  pointer-events: auto;
+
+  transition:
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 180ms ease,
+    box-shadow 220ms ease,
+    filter 180ms ease;
+}
+
+.kj-global-contact-cta__item::after {
+  content: "";
+
+  position: absolute;
+  inset: -1px;
+
+  border: 1px solid transparent;
+  border-radius: inherit;
+
+  pointer-events: none;
+
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+/* Logo thật Zalo / Facebook */
+.kj-global-contact-cta__item img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 2px;
+
+  border-radius: 17px;
+
+  object-fit: contain;
+
+  background: #fff;
+}
+
+/* Phone theo hệ màu King Jades */
+.kj-global-contact-cta__item--phone {
+  color: var(--kj-cta-navy);
+
+  border-color: rgba(217, 178, 29, 0.50);
+
+  background:
+    linear-gradient(
+      145deg,
+      #f8d169 0%,
+      #e2b83e 55%,
+      #cfa52b 100%
+    );
+
+  box-shadow:
+    0 12px 24px rgba(217, 178, 29, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
+.kj-global-contact-cta__item--phone svg {
+  width: 24px;
+  height: 24px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Tooltip sang, nhỏ gọn — chỉ desktop có hover mới dùng */
+.kj-global-contact-cta__item span {
+  position: absolute;
+  top: 50%;
+  right: calc(100% + 14px);
+
+  min-width: max-content;
+  padding: 9px 12px;
+
+  border: 1px solid rgba(217, 178, 29, 0.26);
+  border-radius: 12px;
+
+  color: var(--kj-cta-ivory);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(28, 32, 66, 0.98),
+      rgba(37, 48, 101, 0.97)
+    );
+
+  box-shadow:
+    0 12px 28px rgba(20, 37, 67, 0.20),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  font-family:
+    "SVN-GILROY",
+    "Gilroy",
+    "Poppins",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translate(7px, -50%);
+
+  transition:
+    opacity 160ms ease,
+    visibility 160ms ease,
+    transform 190ms ease;
+
+  white-space: nowrap;
+}
+
+/* Mũi nhọn tooltip */
+.kj-global-contact-cta__item span::after {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  right: -5px;
+
+  width: 9px;
+  height: 9px;
+
+  border-top: 1px solid rgba(217, 178, 29, 0.20);
+  border-right: 1px solid rgba(217, 178, 29, 0.20);
+
+  background: #253065;
+
+  transform:
+    translateY(-50%)
+    rotate(45deg);
+}
+
+/* Desktop hover */
+@media (hover: hover) and (pointer: fine) {
+  .kj-global-contact-cta__item:hover,
+  .kj-global-contact-cta__item:focus-visible {
+    transform:
+      translateX(-4px)
+      translateY(-2px)
+      scale(1.035);
+
+    border-color: rgba(217, 178, 29, 0.42);
+
+    box-shadow:
+      0 16px 32px rgba(20, 37, 67, 0.16),
+      0 0 0 3px rgba(217, 178, 29, 0.07),
+      inset 0 1px 0 rgba(255, 255, 255, 0.96);
+
+    filter: brightness(1.02);
+
+    outline: none;
+  }
+
+  .kj-global-contact-cta__item:hover::after,
+  .kj-global-contact-cta__item:focus-visible::after {
+    border-color: rgba(217, 178, 29, 0.34);
+  }
+
+  .kj-global-contact-cta__item:hover span,
+  .kj-global-contact-cta__item:focus-visible span {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, -50%);
+  }
+
+  .kj-global-contact-cta__item--phone:hover,
+  .kj-global-contact-cta__item--phone:focus-visible {
+    box-shadow:
+      0 16px 34px rgba(217, 178, 29, 0.30),
+      0 0 0 3px rgba(217, 178, 29, 0.09),
+      inset 0 1px 0 rgba(255, 255, 255, 0.58);
+  }
+}
+
+/* ======================================================
+   iPad / Tablet
+   768px–1180px
+====================================================== */
+
+@media (min-width: 768px) and (max-width: 1180px) {
+  .kj-global-contact-cta {
+    right: 14px;
+
+    bottom: max(
+      18px,
+      env(safe-area-inset-bottom)
+    );
+
+    gap: 8px;
+
+    padding: 7px;
+
+    border-radius: 23px;
+  }
+
+  .kj-global-contact-cta::before {
+    width: 19px;
+  }
+
+  .kj-global-contact-cta__item {
+    width: 52px;
+    height: 52px;
+
+    border-radius: 17px;
+  }
+
+  .kj-global-contact-cta__item img {
+    border-radius: 16px;
+  }
+
+  .kj-global-contact-cta__item--phone svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* Touch device không cần tooltip */
+  .kj-global-contact-cta__item span {
+    display: none;
+  }
+}
+
+/* ======================================================
+   Mobile
+   <= 767px
+====================================================== */
+
+@media (max-width: 767px) {
+  .kj-global-contact-cta {
+    right: max(
+      10px,
+      env(safe-area-inset-right)
+    );
+
+    bottom: max(
+      86px,
+      calc(env(safe-area-inset-bottom) + 78px)
+    );
+
+    gap: 7px;
+
+    padding: 6px;
+
+    border-radius: 21px;
+
+    background:
+      linear-gradient(
+        145deg,
+        rgba(251, 248, 244, 0.94),
+        rgba(242, 237, 224, 0.88)
+      );
+
+    box-shadow:
+      0 14px 34px rgba(20, 37, 67, 0.14),
+      0 4px 12px rgba(20, 37, 67, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  }
+
+  .kj-global-contact-cta::before {
+    width: 17px;
+    height: 2px;
+
+    margin-bottom: 0;
+  }
+
+  .kj-global-contact-cta__item {
+    width: 46px;
+    height: 46px;
+
+    border-radius: 15px;
+  }
+
+  .kj-global-contact-cta__item img {
+    padding: 1px;
+    border-radius: 14px;
+  }
+
+  .kj-global-contact-cta__item--phone svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .kj-global-contact-cta__item span {
+    display: none;
+  }
+
+  /*
+    Trên mobile không hover, nhưng khi nhấn vẫn có cảm giác phản hồi.
+  */
+  .kj-global-contact-cta__item:active {
+    transform: scale(0.94);
+  }
+}
+
+/* iPhone SE / màn rất hẹp */
+@media (max-width: 390px) {
+  .kj-global-contact-cta {
+    right: max(
+      8px,
+      env(safe-area-inset-right)
+    );
+
+    bottom: max(
+      82px,
+      calc(env(safe-area-inset-bottom) + 74px)
+    );
+
+    gap: 6px;
+
+    padding: 5px;
+
+    border-radius: 19px;
+  }
+
+  .kj-global-contact-cta__item {
+    width: 43px;
+    height: 43px;
+
+    border-radius: 14px;
+  }
+
+  .kj-global-contact-cta__item img {
+    border-radius: 13px;
+  }
+
+  .kj-global-contact-cta__item--phone svg {
+    width: 19px;
+    height: 19px;
+  }
+}
+
+/* Landscape mobile: tránh chiếm quá nhiều chiều cao */
+@media (max-height: 520px) and (orientation: landscape) {
+  .kj-global-contact-cta {
+    right: 9px;
+    bottom: max(
+      68px,
+      calc(env(safe-area-inset-bottom) + 60px)
+    );
+
+    gap: 5px;
+    padding: 5px;
+
+    border-radius: 18px;
+  }
+
+  .kj-global-contact-cta__item {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 13px;
+  }
+
+  .kj-global-contact-cta__item img {
+    border-radius: 12px;
+  }
+
+  .kj-global-contact-cta__item--phone svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Accessibility */
+.kj-global-contact-cta__item:focus-visible {
+  outline: 2px solid rgba(217, 178, 29, 0.78);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kj-global-contact-cta__item,
+  .kj-global-contact-cta__item span {
+    transition: none !important;
+  }
+}
+
+/* KING JADES - MOBILE FLOATING CTA SIZING, 2026-10-08 */
+@media (max-width: 767px) {
+  .kj-global-contact-cta {
+    gap: 9px;
+    padding: 7px;
+    border-radius: 24px;
+  }
+  .kj-global-contact-cta__item {
+    flex: 0 0 50px;
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .kj-global-contact-cta__item img {
+    border-radius: 15px;
+  }
+  .kj-global-contact-cta__item--phone svg {
+    flex: 0 0 23px;
+    width: 23px;
+    height: 23px;
+  }
+}

@@ -1,0 +1,360 @@
+/*
+  KING JADES — GLOBAL TYPOGRAPHY + RESPONSIVE TYPE SYSTEM
+
+  Chỉ quản lý:
+  - font-family
+  - font-size
+  - line-height
+  - letter-spacing
+  - responsive type scale chung
+
+  Không quản lý:
+  - layout riêng từng page
+  - grid / flex
+  - width / height
+  - background / image
+  - card / section spacing riêng
+  - animation riêng
+
+  Brand policy:
+  - H1 / H2 / H3: Lora
+  - H4 / H5 / H6 + body / UI: SVN-Gilroy Việt Hóa
+  - Fallback: Gilroy / Poppins / Segoe UI / Arial
+
+  Responsive:
+  - iOS
+  - Android
+  - Tablet
+  - Laptop
+  - Desktop
+  - Large desktop
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap");
+
+/* ======================================================
+   LOCAL FONT — SVN-GILROY VIỆT HÓA
+   Path tính từ src/styles/GlobalTypography.css
+====================================================== */
+
+@font-face {
+  font-family: "SVN-Gilroy";
+  src: url("../assets/fonts/gilroy/SVN-Gilroy Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SVN-Gilroy";
+  src: url("../assets/fonts/gilroy/SVN-Gilroy Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SVN-Gilroy";
+  src: url("../assets/fonts/gilroy/SVN-Gilroy SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SVN-Gilroy";
+  src: url("../assets/fonts/gilroy/SVN-Gilroy Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ======================================================
+   GLOBAL TOKENS — DESKTOP DEFAULT
+====================================================== */
+
+:root {
+  --kj-font-heading:
+    "Lora",
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  --kj-font-body:
+    "SVN-Gilroy",
+    "Gilroy",
+    "Poppins",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  --kj-type-h1: clamp(44px, 4.5vw, 64px);
+  --kj-type-h2: clamp(32px, 3vw, 46px);
+  --kj-type-h3: clamp(20px, 1.45vw, 24px);
+
+  --kj-type-h4: 18px;
+  --kj-type-h5: 16px;
+  --kj-type-h6: 14px;
+
+  --kj-type-body-lg: 17px;
+  --kj-type-body: 15px;
+  --kj-type-small: 13px;
+
+  --kj-type-button: 12px;
+  --kj-type-label: 11px;
+  --kj-type-caption: 11px;
+  --kj-type-input: 15px;
+
+  --kj-leading-h1: 1.02;
+  --kj-leading-h2: 1.08;
+  --kj-leading-h3: 1.18;
+  --kj-leading-body: 1.7;
+  --kj-leading-ui: 1.35;
+}
+
+/* ======================================================
+   GLOBAL FONT POLICY
+====================================================== */
+
+html,
+body,
+#root {
+  font-family: var(--kj-font-body) !important;
+  font-size: var(--kj-type-body);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  line-height: var(--kj-leading-body);
+}
+
+/* Body / UI */
+#root p,
+#root a,
+#root span,
+#root small,
+#root strong,
+#root em,
+#root li,
+#root dt,
+#root dd,
+#root label,
+#root button,
+#root input,
+#root select,
+#root textarea,
+#root option {
+  font-family: var(--kj-font-body) !important;
+}
+
+/* H1 / H2 / H3 = Lora */
+#root h1,
+#root h2,
+#root h3 {
+  font-family: var(--kj-font-heading) !important;
+  text-rendering: optimizeLegibility;
+}
+
+/* H4 / H5 / H6 = Gilroy */
+#root h4,
+#root h5,
+#root h6 {
+  font-family: var(--kj-font-body) !important;
+}
+
+/* ======================================================
+   GLOBAL SEMANTIC SIZE
+====================================================== */
+
+#root h1 {
+  font-size: var(--kj-type-h1) !important;
+  line-height: var(--kj-leading-h1) !important;
+  letter-spacing: -0.035em !important;
+}
+
+#root h2 {
+  font-size: var(--kj-type-h2) !important;
+  line-height: var(--kj-leading-h2) !important;
+  letter-spacing: -0.025em !important;
+}
+
+#root h3 {
+  font-size: var(--kj-type-h3) !important;
+  line-height: var(--kj-leading-h3) !important;
+  letter-spacing: -0.01em !important;
+}
+
+#root h4 {
+  font-size: var(--kj-type-h4) !important;
+}
+
+#root h5 {
+  font-size: var(--kj-type-h5) !important;
+}
+
+#root h6 {
+  font-size: var(--kj-type-h6) !important;
+}
+
+#root p,
+#root li,
+#root dt,
+#root dd {
+  line-height: var(--kj-leading-body);
+}
+
+#root button,
+#root input,
+#root select,
+#root textarea {
+  font-size: var(--kj-type-input);
+  line-height: var(--kj-leading-ui);
+}
+
+/* ======================================================
+   COMMON LABEL / EYEBROW TYPOGRAPHY ONLY
+====================================================== */
+
+#root .kj-eyebrow,
+#root .kj-brand-pill,
+#root .kj-pdp-eyebrow,
+#root .kj-destiny-eyebrow,
+#root [class*="__eyebrow"] {
+  font-family: var(--kj-font-body) !important;
+  font-size: var(--kj-type-label) !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase;
+}
+
+/* ======================================================
+   COMMON BUTTON TYPOGRAPHY ONLY
+====================================================== */
+
+#root .kj-brand-button,
+#root .kj-pdp-button,
+#root .kj-destiny-submit,
+#root .kj-footer-cta-button,
+#root .kj-footer-floating-cta__item {
+  font-family: var(--kj-font-body) !important;
+  font-size: var(--kj-type-button) !important;
+  line-height: var(--kj-leading-ui) !important;
+  font-weight: 700;
+}
+
+/* ======================================================
+   TABLET / SMALL LAPTOP — 721px → 1024px
+====================================================== */
+
+@media (min-width: 721px) and (max-width: 1024px) {
+  :root {
+    --kj-type-h1: clamp(40px, 6.4vw, 54px);
+    --kj-type-h2: clamp(30px, 4.8vw, 40px);
+    --kj-type-h3: 21px;
+
+    --kj-type-h4: 18px;
+    --kj-type-h5: 16px;
+    --kj-type-h6: 14px;
+
+    --kj-type-body-lg: 17px;
+    --kj-type-body: 15px;
+    --kj-type-small: 13px;
+
+    --kj-type-button: 12px;
+    --kj-type-label: 11px;
+    --kj-type-caption: 11px;
+    --kj-type-input: 16px;
+  }
+}
+
+/* ======================================================
+   MOBILE — iOS + Android — <= 720px
+====================================================== */
+
+@media (max-width: 720px) {
+  :root {
+    --kj-type-h1: clamp(40px, 10.5vw, 50px);
+    --kj-type-h2: clamp(32px, 8.5vw, 40px);
+    --kj-type-h3: 22px;
+
+    --kj-type-h4: 19px;
+    --kj-type-h5: 17px;
+    --kj-type-h6: 15px;
+
+    --kj-type-body-lg: 20px;
+    --kj-type-body: 18px;
+    --kj-type-small: 15px;
+
+    --kj-type-button: 15px;
+    --kj-type-label: 13px;
+    --kj-type-caption: 13px;
+    --kj-type-input: 18px;
+
+    --kj-leading-h1: 1.04;
+    --kj-leading-h2: 1.1;
+    --kj-leading-h3: 1.22;
+    --kj-leading-body: 1.68;
+    --kj-leading-ui: 1.4;
+  }
+
+  html,
+  body,
+  #root {
+    font-size: var(--kj-type-body);
+  }
+
+  /* iOS Safari không tự zoom input khi focus */
+  #root input,
+  #root select,
+  #root textarea {
+    font-size: max(16px, var(--kj-type-input)) !important;
+  }
+}
+
+/* ======================================================
+   SMALL MOBILE — iPhone SE / Android 320–390px
+====================================================== */
+
+@media (max-width: 480px) {
+  :root {
+    --kj-type-h1: clamp(38px, 10.8vw, 46px);
+    --kj-type-h2: clamp(30px, 8.7vw, 38px);
+    --kj-type-h3: 21px;
+
+    --kj-type-body-lg: 19px;
+    --kj-type-body: 17px;
+    --kj-type-small: 14px;
+
+    --kj-type-button: 14px;
+    --kj-type-label: 12px;
+    --kj-type-caption: 12px;
+    --kj-type-input: 17px;
+  }
+}
+
+/* ======================================================
+   LARGE DESKTOP — >= 1600px
+====================================================== */
+
+@media (min-width: 1600px) {
+  :root {
+    --kj-type-h1: clamp(52px, 3.6vw, 70px);
+    --kj-type-h2: clamp(38px, 2.6vw, 52px);
+    --kj-type-h3: 24px;
+
+    --kj-type-body-lg: 18px;
+    --kj-type-body: 16px;
+    --kj-type-small: 14px;
+  }
+}
+
+/* ======================================================
+   ACCESSIBILITY / BROWSER CONSISTENCY
+====================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

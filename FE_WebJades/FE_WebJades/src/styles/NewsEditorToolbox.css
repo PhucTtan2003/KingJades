@@ -1,0 +1,520 @@
+/* =========================================================
+   KING JADES NEWS EDITOR — COLLAPSIBLE TOOLBOX
+   File được import SAU NewsEditorScroll.css.
+   Mục tiêu:
+   - Cột công cụ trái KHÔNG còn chiếm một cột trong grid.
+   - Có thể hiện / ẩn bằng nút nổi.
+   - Khi đóng, Editor + Live Preview dùng toàn bộ chiều rộng.
+   - Không thay đổi dữ liệu bài viết, block, SEO hay publish flow.
+   ========================================================= */
+
+.news-editor-page {
+  position: relative;
+}
+
+/* =========================================================
+   1. WORKSPACE CHỈ CÒN 2 CỘT
+   ========================================================= */
+
+.news-editor-page .news-editor-layout {
+  width: 100%;
+  grid-template-columns:
+    minmax(560px, 1.35fr)
+    minmax(380px, 0.85fr) !important;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.news-editor-page .news-editor-main-wrap,
+.news-editor-page .news-preview {
+  min-width: 0;
+}
+
+/* =========================================================
+   2. NÚT HIỆN / ẨN TOOLBOX
+   Không nằm trong grid.
+   ========================================================= */
+
+.news-editor-page .news-toolbox-toggle {
+  position: fixed;
+  left: calc(
+    var(--kj-admin-sidebar-width, 292px) + 12px
+  );
+  top: 50%;
+  z-index: 1390;
+
+  min-height: 43px;
+  padding: 6px 11px 6px 7px;
+  border: 1px solid rgba(217, 178, 29, 0.34);
+  border-radius: 0 999px 999px 0;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  transform: translateY(-50%);
+
+  background: rgba(255, 253, 248, 0.97);
+  color: #1c2042;
+  box-shadow:
+    0 12px 30px rgba(28, 32, 66, 0.14);
+
+  font-family:
+    "SVN-GILROY",
+    "Gilroy",
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+
+  backdrop-filter: blur(12px);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.news-editor-page .news-toolbox-toggle:hover {
+  transform:
+    translateY(-50%)
+    translateX(3px);
+  border-color: rgba(217, 178, 29, 0.7);
+  background: #fffaf0;
+  box-shadow:
+    0 15px 34px rgba(28, 32, 66, 0.18);
+}
+
+.news-editor-page
+.news-toolbox-toggle__icon {
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+
+  display: inline-grid;
+  place-items: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8d169,
+      #d9b21d
+    );
+  color: #1c2042;
+
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+/* Khi Admin sidebar thu gọn, nút tự chạy sang trái. */
+.kj-admin-layout.is-collapsed
+.news-editor-page
+.news-toolbox-toggle {
+  left: calc(
+    var(--kj-admin-sidebar-collapsed, 88px) + 12px
+  );
+}
+
+/* =========================================================
+   3. OFF-CANVAS TOOLBOX
+   Đây là overlay ngoài .news-editor-layout.
+   ========================================================= */
+
+.news-editor-page .news-editor-toolbox {
+  position: fixed !important;
+  left: calc(
+    var(--kj-admin-sidebar-width, 292px) + 18px
+  );
+  top: var(--news-toolbox-top, 110px) !important;
+  bottom: auto;
+
+  z-index: 1400;
+
+  width: min(300px, calc(100vw - 340px));
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: min(620px, 68dvh);
+
+  padding: 12px;
+
+  display: grid;
+  align-content: start;
+  gap: 12px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+
+  border: 1px solid rgba(217, 178, 29, 0.26);
+  border-radius: 24px;
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(248, 209, 105, 0.15),
+      transparent 32%
+    ),
+    rgba(251, 248, 244, 0.98);
+
+  box-shadow:
+    0 28px 80px rgba(9, 23, 51, 0.22);
+
+  backdrop-filter: blur(16px);
+  scrollbar-width: thin;
+  scrollbar-color:
+    rgba(217, 178, 29, 0.56)
+    rgba(37, 48, 101, 0.06);
+}
+
+.kj-admin-layout.is-collapsed
+.news-editor-page
+.news-editor-toolbox {
+  left: calc(
+    var(--kj-admin-sidebar-collapsed, 88px) + 18px
+  );
+}
+
+.news-editor-page
+.news-editor-toolbox::-webkit-scrollbar {
+  width: 8px;
+}
+
+.news-editor-page
+.news-editor-toolbox::-webkit-scrollbar-track {
+  border-radius: 999px;
+  background: rgba(37, 48, 101, 0.05);
+}
+
+.news-editor-page
+.news-editor-toolbox::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: rgba(217, 178, 29, 0.58);
+  background-clip: padding-box;
+}
+
+/* =========================================================
+   4. TOOLBOX HEADER + DRAG VERTICAL
+   ========================================================= */
+
+.news-editor-page .news-toolbox-head {
+  position: sticky;
+  top: -12px;
+  z-index: 4;
+
+  margin: -12px -12px 0;
+  padding: 10px 10px 10px 14px;
+
+  border-bottom: 1px solid rgba(37, 48, 101, 0.09);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  background: rgba(251, 248, 244, 0.98);
+  backdrop-filter: blur(14px);
+}
+
+.news-editor-page
+.news-toolbox-head__copy {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+}
+
+.news-editor-page
+.news-toolbox-head__copy span {
+  color: #a7832e;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+}
+
+.news-editor-page
+.news-toolbox-head__copy strong {
+  overflow: hidden;
+  color: #1c2042;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.news-editor-page
+.news-toolbox-head__actions {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.news-editor-page
+.news-toolbox-head__actions > button {
+  flex: 0 0 auto;
+  min-width: 31px;
+  height: 31px;
+  padding: 0 7px;
+
+  border: 1px solid rgba(37, 48, 101, 0.12);
+  border-radius: 10px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  background: #ffffff;
+  color: #1c2042;
+
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+
+  transition:
+    border-color 150ms ease,
+    background 150ms ease,
+    transform 150ms ease;
+}
+
+.news-editor-page
+.news-toolbox-head__actions > button:hover {
+  border-color: rgba(217, 178, 29, 0.5);
+  background: #fff8df;
+}
+
+.news-editor-page
+.news-toolbox-head__actions > button:active {
+  transform: translateY(1px);
+}
+
+.news-editor-page
+.news-toolbox-drag-handle {
+  min-width: 55px !important;
+  cursor: ns-resize !important;
+  touch-action: none;
+  user-select: none;
+  border-color: rgba(217, 178, 29, 0.34) !important;
+  background: #fff8df !important;
+  color: #8a651c !important;
+}
+
+.news-editor-page
+.news-toolbox-drag-handle span {
+  font-size: 15px;
+}
+
+.news-editor-page
+.news-toolbox-drag-handle small {
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.news-editor-page
+.news-toolbox-close {
+  border-radius: 50% !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+}
+
+.news-editor-page
+.news-toolbox-minimize {
+  font-size: 17px !important;
+}
+
+/* Thu gọn: chỉ giữ thanh điều khiển, không che vùng soạn thảo. */
+.news-editor-page
+.news-editor-toolbox.is-minimized {
+  width: min(300px, calc(100vw - 340px));
+  max-height: 54px;
+  padding-bottom: 0;
+  overflow: hidden;
+}
+
+.news-editor-page
+.news-editor-toolbox.is-minimized
+> .news-card {
+  display: none;
+}
+
+.news-editor-page
+.news-editor-toolbox.is-minimized
+.news-toolbox-head {
+  border-bottom: 0;
+}
+
+/* Card bên trong drawer không cần shadow quá nặng. */
+.news-editor-page
+.news-editor-toolbox > .news-card {
+  box-shadow:
+    0 12px 28px rgba(28, 32, 66, 0.055) !important;
+}
+
+
+.news-editor-page .news-editor-toolbox::after {
+  content: "Kéo ↕ hoặc dùng ↑ ↓ để đổi vị trí";
+  position: sticky;
+  bottom: -12px;
+  z-index: 3;
+  display: block;
+  margin: 0 -12px -12px;
+  padding: 7px 12px;
+  border-top: 1px solid rgba(37, 48, 101, 0.07);
+  background: rgba(251, 248, 244, 0.96);
+  color: rgba(112, 109, 101, 0.78);
+  font-size: 8px;
+  font-weight: 700;
+  text-align: center;
+  pointer-events: none;
+}
+
+.news-editor-page
+.news-editor-toolbox.is-minimized::after {
+  display: none;
+}
+
+/* =========================================================
+   5. BACKDROP
+   Desktop: không chặn vùng editor.
+   Mobile/tablet: bật backdrop để drawer dễ dùng.
+   ========================================================= */
+
+.news-editor-page .news-toolbox-backdrop {
+  display: none;
+}
+
+/* =========================================================
+   6. DESKTOP SCROLL WORKSPACE
+   ========================================================= */
+
+@media (min-width: 1181px) {
+  .news-editor-page
+  .news-editor-workspace-scroll {
+    grid-template-columns:
+      minmax(560px, 1.35fr)
+      minmax(380px, 0.85fr) !important;
+  }
+
+  .news-editor-page
+  .news-editor-workspace-scroll
+  > .news-preview {
+    grid-column: auto !important;
+  }
+}
+
+/* =========================================================
+   7. LAPTOP / TABLET
+   Editor và preview xếp dọc, toolbox vẫn overlay.
+   ========================================================= */
+
+@media (max-width: 1180px) {
+  .news-editor-page .news-editor-layout {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .news-editor-page .news-preview {
+    grid-column: 1 / -1 !important;
+  }
+
+  .news-editor-page .news-editor-toolbox {
+    left: 18px;
+    top: var(--news-toolbox-top, 86px) !important;
+    bottom: auto;
+    width: min(300px, calc(100vw - 36px));
+    max-height: min(600px, 68dvh);
+  }
+
+  .news-editor-page .news-toolbox-toggle,
+  .kj-admin-layout.is-collapsed
+  .news-editor-page
+  .news-toolbox-toggle {
+    left: 0;
+  }
+
+  .news-editor-page .news-toolbox-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1395;
+
+    display: block;
+
+    border: 0;
+    padding: 0;
+    background: rgba(9, 23, 51, 0.22);
+    backdrop-filter: blur(2px);
+    cursor: default;
+  }
+
+  .news-editor-page .news-editor-toolbox {
+    z-index: 1400;
+  }
+}
+
+/* =========================================================
+   8. MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .news-editor-page .news-editor-toolbox {
+    left: 10px;
+    right: 10px;
+    top: var(--news-toolbox-top, 76px) !important;
+    bottom: auto;
+
+    width: auto;
+    max-width: none;
+    max-height: 70dvh;
+
+    border-radius: 20px;
+  }
+
+  .news-editor-page
+  .news-editor-toolbox.is-minimized {
+    width: auto;
+    max-height: 54px;
+  }
+
+  .news-editor-page
+  .news-toolbox-head__copy span {
+    display: none;
+  }
+
+  .news-editor-page
+  .news-toolbox-drag-handle small {
+    display: none;
+  }
+
+  .news-editor-page
+  .news-toolbox-drag-handle {
+    min-width: 36px !important;
+  }
+
+  .news-editor-page .news-toolbox-toggle {
+    top: auto;
+    bottom: 18px;
+    left: 0;
+
+    transform: none;
+
+    min-height: 45px;
+    border-radius: 0 999px 999px 0;
+  }
+
+  .news-editor-page
+  .news-toolbox-toggle:hover {
+    transform: translateX(3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .news-editor-page .news-toolbox-toggle {
+    transition: none;
+  }
+}

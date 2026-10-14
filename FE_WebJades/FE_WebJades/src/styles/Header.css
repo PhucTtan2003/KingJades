@@ -1,0 +1,7259 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --kj-navy: #142543;
+  --kj-navy-deep: #091733;
+  --kj-gold: #d5af34;
+  --kj-gold-light: #e3c359;
+  --kj-gold-dark: #a7832e;
+  --kj-cream: #f7f2e7;
+  --kj-ivory: #fcfaf5;
+  --kj-warm-white: #fffdf8;
+
+  --kj-header-body:
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  --kj-header-condensed:
+    "Barlow Condensed",
+    "Arial Narrow",
+    sans-serif;
+}
+
+.kj-header,
+.kj-header *,
+.kj-header *::before,
+.kj-header *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.kj-header {
+  position: fixed;
+  top: 18px;
+  left: 0;
+  right: 0;
+
+  z-index: 1200;
+
+  padding: 0 24px;
+
+  pointer-events: none;
+
+  font-family:
+    var(--kj-header-body);
+}
+
+.kj-header-shell {
+  position: relative;
+
+  width:
+    min(
+      1500px,
+      100%
+    );
+
+  min-height: 82px;
+
+  margin: 0 auto;
+
+  padding:
+    10px
+    14px
+    10px
+    24px;
+
+  display: grid;
+
+  grid-template-columns:
+    220px
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap:
+    clamp(
+      18px,
+      2vw,
+      36px
+    );
+
+  border:
+    1px solid
+    rgba(
+      213,
+      175,
+      52,
+      0.28
+    );
+
+  border-radius:
+    999px;
+
+  background:
+    linear-gradient(
+      108deg,
+      rgba(
+        255,
+        253,
+        248,
+        0.97
+      ),
+      rgba(
+        250,
+        246,
+        236,
+        0.94
+      )
+    );
+
+  box-shadow:
+    0 18px 52px
+      rgba(
+        20,
+        37,
+        67,
+        0.11
+      ),
+    inset
+      0 1px 0
+      rgba(
+        255,
+        255,
+        255,
+        0.88
+      );
+
+  backdrop-filter:
+    blur(18px)
+    saturate(1.08);
+
+  -webkit-backdrop-filter:
+    blur(18px)
+    saturate(1.08);
+
+  pointer-events: auto;
+}
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.kj-header-logo {
+  width: 205px;
+  height: 58px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding: 4px 0;
+
+  text-decoration: none;
+}
+
+.kj-header-logo img {
+  display: block;
+
+  width: 178px;
+  max-width: 100%;
+
+  height: 46px;
+
+  object-fit: contain;
+
+  object-position:
+    left center;
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.kj-main-nav {
+  min-width: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.kj-main-nav-links {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap:
+    clamp(
+      22px,
+      2.35vw,
+      42px
+    );
+
+  white-space: nowrap;
+}
+
+.kj-main-nav-links a {
+  position: relative;
+
+  min-height: 44px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color:
+    rgba(
+      20,
+      37,
+      67,
+      0.82
+    );
+
+  text-decoration: none;
+
+  font-family:
+    var(
+      --kj-header-condensed
+    );
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing:
+    0.025em;
+
+  text-transform:
+    capitalize;
+
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.kj-main-nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 4px;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background:
+    var(--kj-gold);
+
+  opacity: 0;
+
+  transform:
+    translate(
+      -50%,
+      5px
+    );
+
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.kj-main-nav-links a:hover,
+.kj-main-nav-links a.active {
+  color:
+    var(--kj-navy);
+
+  transform:
+    translateY(-1px);
+}
+
+.kj-main-nav-links a:hover::after,
+.kj-main-nav-links a.active::after {
+  opacity: 1;
+
+  transform:
+    translate(
+      -50%,
+      0
+    );
+}
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+.kj-header-actions,
+.kj-header-utility-actions {
+  display: flex;
+
+  align-items: center;
+}
+
+.kj-header-actions {
+  justify-content:
+    flex-end;
+
+  gap: 9px;
+
+  white-space:
+    nowrap;
+}
+
+.kj-header-utility-actions {
+  gap: 5px;
+
+  margin-right: 4px;
+}
+
+/* =========================================================
+   ICON BUTTON
+========================================================= */
+
+.kj-header-icon-button {
+  position: relative;
+
+  width: 40px;
+  height: 40px;
+
+  padding: 0;
+
+  border:
+    1px solid
+    rgba(
+      20,
+      37,
+      67,
+      0.1
+    );
+
+  border-radius: 50%;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.62
+    );
+
+  color:
+    var(--kj-navy);
+
+  cursor: pointer;
+
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.kj-header-icon-button svg,
+.kj-mobile-nav-actions svg,
+.kj-header-search > svg {
+  width: 19px;
+  height: 19px;
+
+  fill: none;
+
+  stroke:
+    currentColor;
+
+  stroke-width: 1.7;
+
+  stroke-linecap:
+    round;
+
+  stroke-linejoin:
+    round;
+}
+
+.kj-header-icon-button:hover {
+  transform:
+    translateY(-2px);
+
+  border-color:
+    rgba(
+      213,
+      175,
+      52,
+      0.55
+    );
+
+  background:
+    #ffffff;
+}
+
+.kj-header-count {
+  position: absolute;
+
+  top: -5px;
+  right: -4px;
+
+  min-width: 18px;
+
+  height: 18px;
+
+  padding:
+    0 5px;
+
+  border:
+    2px solid
+    var(
+      --kj-warm-white
+    );
+
+  border-radius:
+    999px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+    var(--kj-navy);
+
+  color: #ffffff;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+/* =========================================================
+   ZALO + CONSULT
+========================================================= */
+
+.kj-header-zalo,
+.kj-header-consult {
+  min-height: 50px;
+
+  padding:
+    0 22px;
+
+  border-radius:
+    999px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-decoration: none;
+
+  font-family:
+    var(
+      --kj-header-condensed
+    );
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing:
+    0.08em;
+
+  text-transform:
+    uppercase;
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.kj-header-zalo {
+  min-width: 82px;
+
+  border:
+    1px solid
+    rgba(
+      20,
+      37,
+      67,
+      0.16
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.76
+    );
+
+  color:
+    var(--kj-navy);
+
+  box-shadow:
+    0 8px 18px
+    rgba(
+      20,
+      37,
+      67,
+      0.05
+    );
+}
+
+.kj-header-consult {
+  min-width: 100px;
+
+  border:
+    1px solid
+    rgba(
+      167,
+      131,
+      46,
+      0.3
+    );
+
+  background:
+    linear-gradient(
+      135deg,
+      var(
+        --kj-gold-light
+      ),
+      var(--kj-gold),
+      var(
+        --kj-gold-dark
+      )
+    );
+
+  color:
+    var(
+      --kj-navy-deep
+    );
+
+  box-shadow:
+    0 12px 24px
+    rgba(
+      167,
+      131,
+      46,
+      0.22
+    );
+}
+
+.kj-header-zalo:hover,
+.kj-header-consult:hover {
+  transform:
+    translateY(-2px);
+}
+
+.kj-header-zalo:hover {
+  border-color:
+    rgba(
+      213,
+      175,
+      52,
+      0.55
+    );
+}
+
+.kj-header-consult:hover {
+  box-shadow:
+    0 16px 28px
+    rgba(
+      167,
+      131,
+      46,
+      0.3
+    );
+}
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.kj-menu-button {
+  display: none;
+
+  width: 46px;
+  height: 46px;
+
+  padding: 0;
+
+  border:
+    1px solid
+    rgba(
+      20,
+      37,
+      67,
+      0.13
+    );
+
+  border-radius: 50%;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.76
+    );
+
+  cursor: pointer;
+
+  align-items: center;
+
+  justify-content:
+    center;
+
+  flex-direction:
+    column;
+
+  gap: 5px;
+}
+
+.kj-menu-button span {
+  width: 19px;
+
+  height: 1.5px;
+
+  border-radius:
+    99px;
+
+  background:
+    var(--kj-navy);
+
+  transition:
+    transform 180ms ease,
+    opacity 180ms ease;
+}
+
+.kj-menu-button.active span:nth-child(1) {
+  transform:
+    translateY(6.5px)
+    rotate(45deg);
+}
+
+.kj-menu-button.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.kj-menu-button.active span:nth-child(3) {
+  transform:
+    translateY(-6.5px)
+    rotate(-45deg);
+}
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.kj-header-search {
+  position: absolute;
+
+  top:
+    calc(
+      100% + 12px
+    );
+
+  right: 18px;
+
+  width:
+    min(
+      520px,
+      calc(
+        100vw - 48px
+      )
+    );
+
+  min-height: 62px;
+
+  padding:
+    7px
+    8px
+    7px
+    18px;
+
+  border:
+    1px solid
+    rgba(
+      213,
+      175,
+      52,
+      0.3
+    );
+
+  border-radius:
+    22px;
+
+  display: grid;
+
+  grid-template-columns:
+    22px
+    minmax(0, 1fr)
+    auto
+    42px;
+
+  align-items: center;
+
+  gap: 10px;
+
+  background:
+    rgba(
+      255,
+      253,
+      248,
+      0.98
+    );
+
+  box-shadow:
+    0 22px 56px
+    rgba(
+      20,
+      37,
+      67,
+      0.16
+    );
+
+  animation:
+    kjHeaderSearchIn
+    180ms ease both;
+}
+
+.kj-header-search > svg {
+  color:
+    var(
+      --kj-gold-dark
+    );
+}
+
+.kj-header-search input {
+  min-width: 0;
+
+  height: 46px;
+
+  padding: 0 4px;
+
+  border: 0;
+
+  outline: 0;
+
+  background:
+    transparent;
+
+  color:
+    var(--kj-navy);
+
+  font:
+    500 14px/1.4
+    var(
+      --kj-header-body
+    );
+}
+
+.kj-header-search input::placeholder {
+  color:
+    rgba(
+      20,
+      37,
+      67,
+      0.48
+    );
+}
+
+.kj-header-search button {
+  height: 42px;
+
+  padding:
+    0 17px;
+
+  border: 0;
+
+  border-radius:
+    14px;
+
+  background:
+    var(--kj-navy);
+
+  color: #ffffff;
+
+  font-family:
+    var(
+      --kj-header-body
+    );
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.kj-header-search button:last-child {
+  width: 42px;
+
+  padding: 0;
+
+  background:
+    rgba(
+      20,
+      37,
+      67,
+      0.07
+    );
+
+  color:
+    var(--kj-navy);
+
+  font-size: 24px;
+
+  font-weight: 400;
+}
+
+.kj-mobile-nav-actions {
+  display: none;
+}
+
+@keyframes kjHeaderSearchIn {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(-6px)
+      scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+/* =========================================================
+   HEADER AUTH
+========================================================= */
+
+.kj-header-auth {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+/* =========================================================
+   REGISTER BUTTON
+========================================================= */
+
+.kj-header-register-button {
+  min-height: 42px;
+
+  padding:
+    0 16px;
+
+  border:
+    1px solid
+    rgba(
+      217,
+      178,
+      29,
+      0.46
+    );
+
+  border-radius:
+    999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(
+        248,
+        209,
+        105,
+        0.15
+      ),
+      rgba(
+        255,
+        255,
+        255,
+        0.88
+      )
+    );
+
+  color:
+    var(
+      --kj-royal-blue,
+      #1c2042
+    );
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  font: inherit;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  white-space:
+    nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.kj-header-register-button:hover {
+  border-color:
+    var(
+      --kj-gold,
+      #d9b21d
+    );
+
+  background:
+    linear-gradient(
+      135deg,
+      var(
+        --kj-gold-light,
+        #f8d169
+      ),
+      var(
+        --kj-gold,
+        #d9b21d
+      )
+    );
+
+  color:
+    var(
+      --kj-royal-blue,
+      #1c2042
+    );
+
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 9px 22px
+    rgba(
+      217,
+      178,
+      29,
+      0.18
+    );
+}
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+.kj-header-login-button {
+  min-height: 42px;
+
+  padding:
+    0 16px;
+
+  border:
+    1px solid
+    rgba(
+      24,
+      72,
+      51,
+      0.22
+    );
+
+  border-radius:
+    999px;
+
+  background:
+    #ffffff;
+
+  color:
+    #173c2a;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap: 8px;
+
+  font: inherit;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.kj-header-login-button svg {
+  width: 18px;
+  height: 18px;
+
+  fill: none;
+
+  stroke:
+    currentColor;
+
+  stroke-width: 1.7;
+
+  stroke-linecap:
+    round;
+
+  stroke-linejoin:
+    round;
+}
+
+.kj-header-login-button:hover {
+  background:
+    #164b35;
+
+  border-color:
+    #164b35;
+
+  color:
+    #ffffff;
+
+  transform:
+    translateY(-1px);
+}
+
+/* =========================================================
+   LOGGED USER BUTTON
+========================================================= */
+
+.kj-header-account-button {
+  min-height: 42px;
+
+  max-width: 180px;
+
+  padding:
+    4px
+    12px
+    4px
+    5px;
+
+  border:
+    1px solid
+    rgba(
+      24,
+      72,
+      51,
+      0.16
+    );
+
+  border-radius:
+    999px;
+
+  background:
+    #ffffff;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.kj-header-account-button:hover {
+  border-color:
+    rgba(
+      24,
+      72,
+      51,
+      0.38
+    );
+
+  box-shadow:
+    0 7px 22px
+    rgba(
+      23,
+      60,
+      42,
+      0.08
+    );
+}
+
+.kj-header-account-avatar {
+  width: 32px;
+
+  height: 32px;
+
+  flex:
+    0 0 32px;
+
+  border-radius:
+    50%;
+
+  background:
+    #164b35;
+
+  color: #ffffff;
+
+  display: grid;
+
+  place-items: center;
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+.kj-header-account-name {
+  min-width: 0;
+
+  overflow: hidden;
+
+  text-overflow:
+    ellipsis;
+
+  white-space:
+    nowrap;
+
+  color:
+    #173c2a;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.kj-header-account-arrow {
+  color:
+    #7a8a81;
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   ACCOUNT DROPDOWN
+========================================================= */
+
+.kj-header-account-menu {
+  position: absolute;
+
+  z-index: 1100;
+
+  top:
+    calc(
+      100% + 12px
+    );
+
+  right: 0;
+
+  width: 260px;
+
+  padding: 12px;
+
+  border:
+    1px solid
+    rgba(
+      18,
+      64,
+      44,
+      0.12
+    );
+
+  border-radius:
+    16px;
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 22px 55px
+    rgba(
+      15,
+      43,
+      31,
+      0.16
+    );
+}
+
+.kj-header-account-menu::before {
+  content: "";
+
+  position: absolute;
+
+  top: -6px;
+  right: 24px;
+
+  width: 12px;
+  height: 12px;
+
+  background:
+    #ffffff;
+
+  border-top:
+    1px solid
+    rgba(
+      18,
+      64,
+      44,
+      0.12
+    );
+
+  border-left:
+    1px solid
+    rgba(
+      18,
+      64,
+      44,
+      0.12
+    );
+
+  transform:
+    rotate(45deg);
+}
+
+.kj-header-account-menu__top {
+  padding: 7px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.kj-header-account-menu__avatar {
+  width: 42px;
+
+  height: 42px;
+
+  flex:
+    0 0 42px;
+
+  border-radius:
+    50%;
+
+  background:
+    #164b35;
+
+  color:
+    #ffffff;
+
+  display: grid;
+
+  place-items: center;
+
+  font-weight: 800;
+}
+
+.kj-header-account-menu__top div {
+  min-width: 0;
+}
+
+.kj-header-account-menu__top strong,
+.kj-header-account-menu__top small {
+  display: block;
+
+  overflow: hidden;
+
+  text-overflow:
+    ellipsis;
+
+  white-space:
+    nowrap;
+}
+
+.kj-header-account-menu__top strong {
+  color:
+    #183c2c;
+
+  font-size: 14px;
+}
+
+.kj-header-account-menu__top small {
+  margin-top: 3px;
+
+  color:
+    #718077;
+
+  font-size: 11px;
+}
+
+.kj-header-account-role {
+  margin:
+    5px
+    7px
+    9px;
+
+  padding:
+    7px
+    10px;
+
+  border-radius:
+    8px;
+
+  background:
+    #f2f7f4;
+
+  color:
+    #416554;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.kj-header-account-menu > a,
+.kj-header-logout {
+  width: 100%;
+
+  min-height: 38px;
+
+  padding:
+    0 10px;
+
+  border: 0;
+
+  border-radius:
+    9px;
+
+  background:
+    transparent;
+
+  color:
+    #304a3e;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  text-decoration:
+    none;
+
+  font: inherit;
+
+  font-size: 12px;
+
+  font-weight: 650;
+
+  cursor: pointer;
+}
+
+.kj-header-account-menu > a:hover {
+  background:
+    #f3f6f4;
+}
+
+.kj-header-logout {
+  margin-top: 5px;
+
+  border-top:
+    1px solid
+    #edf0ee;
+
+  border-radius:
+    0 0 9px 9px;
+
+  color:
+    #a13c3c;
+}
+
+.kj-header-logout:hover {
+  background:
+    #fff3f3;
+}
+
+.kj-header-logout svg {
+  width: 17px;
+
+  height: 17px;
+
+  fill: none;
+
+  stroke:
+    currentColor;
+
+  stroke-width: 1.8;
+
+  stroke-linecap:
+    round;
+
+  stroke-linejoin:
+    round;
+}
+
+/* =========================================================
+   AUTH OVERLAY
+========================================================= */
+
+.kj-auth-overlay {
+  position: fixed;
+
+  z-index:
+    99999;
+
+  inset: 0;
+
+  padding: 24px;
+
+  background:
+    rgba(
+      4,
+      15,
+      10,
+      0.58
+    );
+
+  backdrop-filter:
+    blur(8px);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    center;
+
+  overflow-y: auto;
+}
+
+/* =========================================================
+   AUTH MODAL
+========================================================= */
+
+.kj-auth-modal {
+  position: relative;
+
+  width:
+    min(
+      100%,
+      460px
+    );
+
+  max-height:
+    calc(
+      100vh - 48px
+    );
+
+  overflow-y: auto;
+
+  padding: 32px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.35
+    );
+
+  border-radius:
+    24px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(
+        255,
+        255,
+        255,
+        0.99
+      ),
+      rgba(
+        249,
+        250,
+        249,
+        0.99
+      )
+    );
+
+  box-shadow:
+    0 30px 90px
+    rgba(
+      0,
+      0,
+      0,
+      0.28
+    );
+
+  animation:
+    kjAuthModalOpen
+    0.2s ease;
+}
+
+@keyframes kjAuthModalOpen {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(12px)
+      scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+.kj-auth-modal__close {
+  position: absolute;
+
+  z-index: 2;
+
+  top: 17px;
+  right: 17px;
+
+  width: 36px;
+  height: 36px;
+
+  border: 0;
+
+  border-radius:
+    50%;
+
+  background:
+    #f2f4f3;
+
+  color:
+    #4e6158;
+
+  display: grid;
+
+  place-items:
+    center;
+
+  cursor: pointer;
+}
+
+.kj-auth-modal__close:hover {
+  background:
+    #e8ece9;
+
+  color:
+    #173c2a;
+}
+
+.kj-auth-modal__close svg {
+  width: 17px;
+
+  height: 17px;
+
+  fill: none;
+
+  stroke:
+    currentColor;
+
+  stroke-width: 1.8;
+
+  stroke-linecap:
+    round;
+}
+
+.kj-auth-modal__logo {
+  display:
+    inline-flex;
+
+  margin-bottom:
+    23px;
+}
+
+.kj-auth-modal__logo img {
+  width: auto;
+
+  max-width:
+    145px;
+
+  height: 43px;
+
+  object-fit:
+    contain;
+}
+
+/* =========================================================
+   AUTH HEADING
+========================================================= */
+
+.kj-auth-modal__heading {
+  margin-bottom:
+    22px;
+}
+
+.kj-auth-modal__heading > span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color:
+    #ad8548;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing:
+    0.17em;
+
+  text-transform:
+    uppercase;
+}
+
+.kj-auth-modal__heading h2 {
+  margin: 0;
+
+  color:
+    #163c2a;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      27px,
+      4vw,
+      34px
+    );
+
+  line-height: 1.15;
+
+  font-weight: 500;
+}
+
+.kj-auth-modal__heading p {
+  margin:
+    9px 0 0;
+
+  color:
+    #77837d;
+
+  font-size: 13px;
+
+  line-height: 1.65;
+}
+
+/* =========================================================
+   AUTH FORM
+========================================================= */
+
+.kj-auth-form {
+  display: flex;
+
+  flex-direction:
+    column;
+
+  gap: 14px;
+}
+
+.kj-auth-form__row {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 12px;
+}
+
+.kj-auth-form label {
+  display: flex;
+
+  flex-direction:
+    column;
+
+  gap: 7px;
+}
+
+.kj-auth-form label > span {
+  color:
+    #314d3f;
+
+  font-size: 12px;
+
+  font-weight: 750;
+}
+
+.kj-auth-form input {
+  width: 100%;
+
+  height: 46px;
+
+  padding:
+    0 13px;
+
+  border:
+    1px solid
+    #d8dfdb;
+
+  border-radius:
+    11px;
+
+  background:
+    #ffffff;
+
+  color:
+    #1f3028;
+
+  outline: none;
+
+  font: inherit;
+
+  font-size: 13px;
+
+  box-sizing:
+    border-box;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.kj-auth-form input:focus {
+  border-color:
+    #557965;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(
+      68,
+      113,
+      87,
+      0.1
+    );
+}
+
+.kj-auth-form input::placeholder {
+  color:
+    #a4ada8;
+}
+
+/* =========================================================
+   PASSWORD
+========================================================= */
+
+.kj-auth-password {
+  position: relative;
+}
+
+.kj-auth-password input {
+  padding-right:
+    45px;
+}
+
+.kj-auth-password button {
+  position: absolute;
+
+  top: 50%;
+  right: 5px;
+
+  width: 36px;
+  height: 36px;
+
+  border: 0;
+
+  border-radius:
+    8px;
+
+  background:
+    transparent;
+
+  color:
+    #6e7e76;
+
+  display: grid;
+
+  place-items:
+    center;
+
+  transform:
+    translateY(-50%);
+
+  cursor: pointer;
+}
+
+.kj-auth-password button:hover {
+  background:
+    #f4f6f5;
+}
+
+.kj-auth-password svg {
+  width: 18px;
+
+  height: 18px;
+
+  fill: none;
+
+  stroke:
+    currentColor;
+
+  stroke-width: 1.7;
+
+  stroke-linecap:
+    round;
+
+  stroke-linejoin:
+    round;
+}
+
+/* =========================================================
+   AUTH SUBMIT
+========================================================= */
+
+.kj-auth-submit {
+  width: 100%;
+
+  min-height: 48px;
+
+  margin-top: 4px;
+
+  border: 0;
+
+  border-radius:
+    11px;
+
+  background:
+    #164b35;
+
+  color:
+    #ffffff;
+
+  font: inherit;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.kj-auth-submit:hover:not(:disabled) {
+  background:
+    #103e2b;
+
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 9px 24px
+    rgba(
+      17,
+      74,
+      51,
+      0.18
+    );
+}
+
+.kj-auth-submit:disabled {
+  opacity: 0.6;
+
+  cursor:
+    not-allowed;
+}
+
+/* =========================================================
+   ALERT
+========================================================= */
+
+.kj-auth-alert {
+  margin-bottom:
+    15px;
+
+  padding:
+    11px 13px;
+
+  border-radius:
+    10px;
+
+  font-size: 12px;
+
+  line-height: 1.55;
+}
+
+.kj-auth-alert strong,
+.kj-auth-alert span {
+  display: block;
+}
+
+.kj-auth-alert span {
+  margin-top: 3px;
+}
+
+.kj-auth-alert--success {
+  border:
+    1px solid
+    #b9dfc7;
+
+  background:
+    #edf9f1;
+
+  color:
+    #28643d;
+}
+
+.kj-auth-alert--error {
+  border:
+    1px solid
+    #efc7c7;
+
+  background:
+    #fff1f1;
+
+  color:
+    #9d3636;
+}
+
+/* =========================================================
+   LOGIN / REGISTER SWITCH
+========================================================= */
+
+.kj-auth-switch {
+  margin-top: 20px;
+
+  padding-top: 17px;
+
+  border-top:
+    1px solid
+    #e7ebe8;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    center;
+
+  gap: 5px;
+
+  color:
+    #76827c;
+
+  font-size: 12px;
+}
+
+.kj-auth-switch button {
+  padding:
+    2px 4px;
+
+  border: 0;
+
+  background:
+    transparent;
+
+  color:
+    #17563b;
+
+  font: inherit;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.kj-auth-switch button:hover {
+  text-decoration:
+    underline;
+}
+
+/* =========================================================
+   BASIC RESPONSIVE
+========================================================= */
+
+@media (
+  max-width: 1380px
+) {
+  .kj-header-shell {
+    grid-template-columns:
+      190px
+      minmax(0, 1fr)
+      auto;
+
+    gap: 18px;
+  }
+
+  .kj-header-logo {
+    width: 180px;
+  }
+
+  .kj-header-logo img {
+    width: 158px;
+  }
+
+  .kj-main-nav-links {
+    gap: 24px;
+  }
+
+  .kj-main-nav-links a {
+    font-size: 16px;
+  }
+
+  .kj-header-utility-actions {
+    display: none;
+  }
+}
+
+@media (
+  max-width: 1080px
+) {
+  .kj-header {
+    top: 12px;
+
+    padding:
+      0 14px;
+  }
+
+  .kj-header-shell {
+    min-height: 72px;
+
+    grid-template-columns:
+      minmax(
+        150px,
+        1fr
+      )
+      auto;
+
+    padding:
+      8px
+      10px
+      8px
+      20px;
+
+    border-radius:
+      28px;
+  }
+
+  .kj-header-logo {
+    width: 170px;
+
+    height: 52px;
+  }
+
+  .kj-header-logo img {
+    width: 150px;
+
+    height: 42px;
+  }
+
+  .kj-menu-button {
+    display:
+      inline-flex;
+  }
+
+  .kj-main-nav {
+    position:
+      absolute;
+
+    top:
+      calc(
+        100% + 10px
+      );
+
+    left: 0;
+    right: 0;
+
+    display: none;
+
+    padding: 18px;
+
+    border:
+      1px solid
+      rgba(
+        213,
+        175,
+        52,
+        0.28
+      );
+
+    border-radius:
+      26px;
+
+    background:
+      rgba(
+        255,
+        253,
+        248,
+        0.985
+      );
+
+    box-shadow:
+      0 22px 60px
+      rgba(
+        20,
+        37,
+        67,
+        0.16
+      );
+
+    backdrop-filter:
+      blur(18px);
+
+    -webkit-backdrop-filter:
+      blur(18px);
+
+    flex-direction:
+      column;
+
+    align-items:
+      stretch;
+
+    gap: 16px;
+
+    animation:
+      kjHeaderSearchIn
+      180ms ease both;
+  }
+
+  .kj-main-nav.open {
+    display: flex;
+  }
+
+  .kj-main-nav-links {
+    display: grid;
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      );
+
+    gap: 7px;
+  }
+
+  .kj-main-nav-links a {
+    min-height: 48px;
+
+    justify-content:
+      flex-start;
+
+    padding:
+      0 15px;
+
+    border-radius:
+      15px;
+
+    background:
+      rgba(
+        20,
+        37,
+        67,
+        0.035
+      );
+
+    font-size: 17px;
+  }
+
+  .kj-main-nav-links a::after {
+    left: 15px;
+
+    bottom: 8px;
+
+    transform: none;
+  }
+
+  .kj-main-nav-links a:hover::after,
+  .kj-main-nav-links a.active::after {
+    transform: none;
+  }
+
+  .kj-mobile-nav-actions {
+    display: grid;
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      );
+
+    gap: 8px;
+
+    padding-top:
+      14px;
+
+    border-top:
+      1px solid
+      rgba(
+        20,
+        37,
+        67,
+        0.08
+      );
+  }
+
+  .kj-mobile-nav-actions button,
+  .kj-mobile-nav-actions a {
+    min-height: 46px;
+
+    padding:
+      0 14px;
+
+    border:
+      1px solid
+      rgba(
+        20,
+        37,
+        67,
+        0.1
+      );
+
+    border-radius:
+      14px;
+
+    display:
+      inline-flex;
+
+    align-items:
+      center;
+
+    justify-content:
+      center;
+
+    gap: 8px;
+
+    background:
+      #ffffff;
+
+    color:
+      var(--kj-navy);
+
+    text-decoration:
+      none;
+
+    font:
+      700 13px/1.2
+      var(
+        --kj-header-body
+      );
+
+    cursor: pointer;
+  }
+
+  .kj-mobile-nav-actions button svg {
+    width: 17px;
+
+    height: 17px;
+  }
+
+  .kj-header-zalo,
+  .kj-header-consult {
+    min-height: 46px;
+
+    padding:
+      0 18px;
+  }
+
+  .kj-header-auth {
+    display: none;
+  }
+}
+
+@media (
+  max-width: 720px
+) {
+  .kj-header {
+    top: 8px;
+
+    padding:
+      0 8px;
+  }
+
+  .kj-header-shell {
+    min-height: 64px;
+
+    padding:
+      7px
+      8px
+      7px
+      14px;
+
+    border-radius:
+      22px;
+  }
+
+  .kj-header-logo {
+    width: 142px;
+
+    height: 48px;
+  }
+
+  .kj-header-logo img {
+    width: 130px;
+
+    height: 38px;
+  }
+
+  .kj-header-zalo {
+    display: none;
+  }
+
+  .kj-header-consult {
+    min-width: 78px;
+
+    min-height: 42px;
+
+    padding:
+      0 13px;
+
+    font-size: 14px;
+  }
+
+  .kj-menu-button {
+    width: 42px;
+
+    height: 42px;
+  }
+
+  .kj-main-nav {
+    left: 0;
+    right: 0;
+
+    padding: 14px;
+
+    border-radius:
+      22px;
+  }
+
+  .kj-main-nav-links,
+  .kj-mobile-nav-actions {
+    grid-template-columns:
+      1fr;
+  }
+
+  .kj-main-nav-links a {
+    min-height: 45px;
+  }
+
+  .kj-header-search {
+    left: 0;
+    right: 0;
+
+    width: auto;
+
+    min-height: 58px;
+
+    grid-template-columns:
+      20px
+      minmax(
+        0,
+        1fr
+      )
+      40px;
+
+    padding:
+      7px
+      8px
+      7px
+      14px;
+
+    border-radius:
+      19px;
+  }
+
+  .kj-header-search button[type="submit"] {
+    display: none;
+  }
+
+  .kj-header-search button:last-child {
+    width: 40px;
+
+    height: 40px;
+  }
+}
+
+@media (
+  max-width: 600px
+) {
+  .kj-auth-overlay {
+    padding: 12px;
+
+    align-items:
+      flex-start;
+  }
+
+  .kj-auth-modal {
+    width: 100%;
+
+    max-height: none;
+
+    margin:
+      20px 0;
+
+    padding:
+      26px 20px;
+
+    border-radius:
+      18px;
+  }
+
+  .kj-auth-form__row {
+    grid-template-columns:
+      1fr;
+  }
+
+  .kj-auth-modal__heading h2 {
+    font-size: 27px;
+  }
+}
+
+@media (
+  max-width: 430px
+) {
+  .kj-header-logo {
+    width: 124px;
+  }
+
+  .kj-header-logo img {
+    width: 116px;
+  }
+
+  .kj-header-consult {
+    display: none;
+  }
+}
+
+/* =========================================================
+   HEADER FULL LABEL LAYOUT FIX
+========================================================= */
+
+:root {
+  --kj-header-body:
+    "SVN-GILROY",
+    "Gilroy",
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  --kj-header-condensed:
+    "SVN-GILROY",
+    "Gilroy",
+    "Barlow Condensed",
+    "Arial Narrow",
+    sans-serif;
+}
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (
+  min-width: 1501px
+) {
+  .kj-header-shell {
+    width:
+      min(
+        1920px,
+        calc(
+          100% - 48px
+        )
+      );
+
+    grid-template-columns:
+      190px
+      minmax(0, 1fr)
+      auto;
+
+    gap: 14px;
+  }
+
+  .kj-header-logo {
+    width: 185px;
+  }
+
+  .kj-header-logo img {
+    width: 165px;
+  }
+
+  .kj-main-nav-links {
+    gap:
+      clamp(
+        13px,
+        1.15vw,
+        24px
+      );
+  }
+
+  .kj-main-nav-links a {
+    min-height: 40px;
+
+    font-size: 14px;
+
+    letter-spacing:
+      0.01em;
+
+    text-transform:
+      none;
+  }
+
+  .kj-header-actions {
+    gap: 6px;
+  }
+
+  .kj-header-utility-actions {
+    gap: 4px;
+
+    margin-right: 2px;
+  }
+
+  .kj-header-icon-button {
+    width: 38px;
+
+    height: 38px;
+  }
+
+  .kj-header-zalo,
+  .kj-header-consult,
+  .kj-header-register-button,
+  .kj-header-login-button,
+  .kj-header-account-button {
+    min-height: 44px;
+  }
+
+  .kj-header-zalo {
+    min-width: 76px;
+
+    padding:
+      0 18px;
+  }
+
+  .kj-header-consult {
+    min-width: 92px;
+
+    padding:
+      0 18px;
+  }
+
+  .kj-header-register-button,
+  .kj-header-login-button {
+    padding:
+      0 14px;
+  }
+}
+
+/* =========================================================
+   DESKTOP / LAPTOP
+========================================================= */
+
+@media (
+  min-width: 1081px
+) and (
+  max-width: 1500px
+) {
+  .kj-header-shell {
+    width:
+      min(
+        1360px,
+        calc(
+          100% - 32px
+        )
+      );
+
+    min-height: 112px;
+
+    padding:
+      12px
+      18px
+      13px
+      22px;
+
+    grid-template-columns:
+      190px
+      minmax(0, 1fr)
+      auto;
+
+    grid-template-areas:
+      "logo spacer actions"
+      "nav nav nav";
+
+    align-items: center;
+
+    row-gap: 5px;
+
+    column-gap:
+      18px;
+
+    border-radius:
+      34px;
+  }
+
+  .kj-header-logo {
+    grid-area: logo;
+
+    width: 185px;
+
+    height: 52px;
+  }
+
+  .kj-header-logo img {
+    width: 164px;
+
+    height: 42px;
+  }
+
+  .kj-header-actions {
+    grid-area:
+      actions;
+
+    justify-self: end;
+
+    gap: 7px;
+  }
+
+  .kj-main-nav {
+    grid-area: nav;
+
+    width: 100%;
+
+    min-width: 0;
+
+    padding-top:
+      5px;
+
+    border-top:
+      1px solid
+      rgba(
+        37,
+        48,
+        101,
+        0.08
+      );
+  }
+
+  .kj-main-nav-links {
+    width: 100%;
+
+    min-width: 0;
+
+    justify-content:
+      center;
+
+    gap:
+      clamp(
+        14px,
+        2.1vw,
+        32px
+      );
+
+    white-space:
+      nowrap;
+  }
+
+  .kj-main-nav-links a {
+    min-height: 32px;
+
+    font-size: 14px;
+
+    letter-spacing:
+      0.01em;
+
+    text-transform:
+      none;
+  }
+
+  .kj-main-nav-links a::after {
+    bottom: -1px;
+  }
+
+  .kj-header-utility-actions {
+    display: none;
+  }
+
+  .kj-header-zalo,
+  .kj-header-consult,
+  .kj-header-register-button,
+  .kj-header-login-button,
+  .kj-header-account-button {
+    min-height: 44px;
+  }
+
+  .kj-header-zalo {
+    min-width: 74px;
+
+    padding:
+      0 17px;
+  }
+
+  .kj-header-consult {
+    min-width: 88px;
+
+    padding:
+      0 17px;
+  }
+}
+
+/* =========================================================
+   SMALL LAPTOP
+========================================================= */
+
+@media (
+  min-width: 1081px
+) and (
+  max-width: 1240px
+) {
+  .kj-main-nav-links {
+    gap: 13px;
+  }
+
+  .kj-main-nav-links a {
+    font-size: 13px;
+  }
+
+  .kj-header-zalo,
+  .kj-header-register-button,
+  .kj-header-login-button {
+    display: none;
+  }
+}
+
+/* =========================================================
+   AUTH MODAL BRAND SYNC
+========================================================= */
+
+:root {
+  --kj-navy: #253065;
+
+  --kj-navy-deep:
+    #1c2042;
+
+  --kj-royal-blue:
+    #1c2042;
+
+  --kj-gold:
+    #d9b21d;
+
+  --kj-gold-light:
+    #f8d169;
+
+  --kj-gold-dark:
+    #b99618;
+
+  --kj-cream:
+    #f2ede0;
+
+  --kj-ivory:
+    #fbf8f4;
+
+  --kj-warm-white:
+    #fbf8f4;
+
+  --kj-header-body:
+    "SVN-GILROY",
+    "Gilroy",
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  --kj-header-condensed:
+    "SVN-GILROY",
+    "Gilroy",
+    "Barlow Condensed",
+    "Arial Narrow",
+    sans-serif;
+
+  --kj-header-display:
+    "Warbler",
+    "Cormorant Garamond",
+    Georgia,
+    "Times New Roman",
+    serif;
+}
+
+/* =========================================================
+   AUTH OVERLAY BRAND
+========================================================= */
+
+.kj-auth-overlay {
+  background:
+    radial-gradient(
+      circle at 18% 10%,
+      rgba(
+        248,
+        209,
+        105,
+        0.16
+      ),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 86% 90%,
+      rgba(
+        37,
+        48,
+        101,
+        0.22
+      ),
+      transparent 34%
+    ),
+    rgba(
+      28,
+      32,
+      66,
+      0.72
+    );
+
+  backdrop-filter:
+    blur(10px)
+    saturate(1.05);
+
+  -webkit-backdrop-filter:
+    blur(10px)
+    saturate(1.05);
+}
+
+/* =========================================================
+   AUTH MODAL BRAND
+========================================================= */
+
+.kj-auth-modal {
+  border:
+    1px solid
+    rgba(
+      217,
+      178,
+      29,
+      0.24
+    );
+
+  border-radius:
+    28px;
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(
+        248,
+        209,
+        105,
+        0.16
+      ),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 0% 100%,
+      rgba(
+        242,
+        237,
+        224,
+        0.76
+      ),
+      transparent 40%
+    ),
+    linear-gradient(
+      145deg,
+      #ffffff 0%,
+      var(--kj-ivory)
+        55%,
+      var(--kj-cream)
+        100%
+    );
+
+  color:
+    var(
+      --kj-royal-blue
+    );
+
+  box-shadow:
+    0 30px 90px
+      rgba(
+        17,
+        17,
+        17,
+        0.22
+      ),
+    0 0 0 1px
+      rgba(
+        255,
+        255,
+        255,
+        0.72
+      )
+      inset;
+
+  font-family:
+    var(
+      --kj-header-body
+    );
+}
+
+/* Close */
+
+.kj-auth-modal__close {
+  background:
+    rgba(
+      37,
+      48,
+      101,
+      0.055
+    );
+
+  color:
+    var(
+      --kj-royal-blue
+    );
+}
+
+.kj-auth-modal__close:hover {
+  background:
+    var(
+      --kj-royal-blue
+    );
+
+  color:
+    var(
+      --kj-warm-white
+    );
+}
+
+/* Logo */
+
+.kj-auth-modal__logo {
+  margin-bottom:
+    24px;
+}
+
+.kj-auth-modal__logo img {
+  max-width:
+    168px;
+
+  height: 48px;
+}
+
+/* Heading */
+
+.kj-auth-modal__heading > span {
+  color:
+    var(
+      --kj-gold-dark
+    );
+
+  font-family:
+    var(
+      --kj-header-condensed
+    );
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing:
+    0.17em;
+}
+
+.kj-auth-modal__heading h2 {
+  color:
+    var(
+      --kj-royal-blue
+    );
+
+  font-family:
+    var(
+      --kj-header-display
+    );
+
+  font-size:
+    clamp(
+      36px,
+      4.6vw,
+      48px
+    );
+
+  font-weight: 600;
+
+  line-height: 0.98;
+
+  letter-spacing:
+    -0.035em;
+}
+
+.kj-auth-modal__heading p {
+  color:
+    rgba(
+      28,
+      32,
+      66,
+      0.62
+    );
+
+  font-size: 13px;
+
+  line-height: 1.68;
+}
+
+/* Form */
+
+.kj-auth-form label > span {
+  color:
+    rgba(
+      28,
+      32,
+      66,
+      0.86
+    );
+
+  font-family:
+    var(
+      --kj-header-body
+    );
+
+  font-size: 12px;
+
+  font-weight: 800;
+}
+
+/* Inputs */
+
+.kj-auth-form input {
+  border:
+    1px solid
+    rgba(
+      37,
+      48,
+      101,
+      0.14
+    );
+
+  border-radius:
+    14px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.82
+    );
+
+  color:
+    var(
+      --kj-royal-blue
+    );
+
+  box-shadow:
+    0 8px 18px
+    rgba(
+      28,
+      32,
+      66,
+      0.035
+    );
+}
+
+.kj-auth-form input:hover {
+  border-color:
+    rgba(
+      217,
+      178,
+      29,
+      0.36
+    );
+}
+
+.kj-auth-form input:focus {
+  border-color:
+    rgba(
+      217,
+      178,
+      29,
+      0.82
+    );
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 0 0 4px
+      rgba(
+        248,
+        209,
+        105,
+        0.18
+      ),
+    0 10px 24px
+      rgba(
+        28,
+        32,
+        66,
+        0.06
+      );
+}
+
+.kj-auth-form input::placeholder {
+  color:
+    rgba(
+      112,
+      109,
+      101,
+      0.58
+    );
+}
+
+/* Password */
+
+.kj-auth-password button {
+  color:
+    rgba(
+      37,
+      48,
+      101,
+      0.64
+    );
+}
+
+.kj-auth-password button:hover {
+  background:
+    rgba(
+      248,
+      209,
+      105,
+      0.18
+    );
+
+  color:
+    var(
+      --kj-royal-blue
+    );
+}
+
+/* Submit */
+
+.kj-auth-submit {
+  min-height: 50px;
+
+  border-radius:
+    14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(
+        --kj-gold-light
+      )
+        0%,
+      var(
+        --kj-gold
+      )
+        58%,
+      var(
+        --kj-gold-dark
+      )
+        100%
+    );
+
+  color:
+    var(
+      --kj-royal-blue
+    );
+
+  font-family:
+    var(
+      --kj-header-body
+    );
+
+  font-size: 13px;
+
+  font-weight: 900;
+
+  letter-spacing:
+    0.025em;
+
+  box-shadow:
+    0 16px 32px
+    rgba(
+      217,
+      178,
+      29,
+      0.2
+    );
+}
+
+.kj-auth-submit:hover:not(:disabled) {
+  background:
+    linear-gradient(
+      135deg,
+      #ffe07d 0%,
+      var(
+        --kj-gold
+      )
+        55%,
+      #b58f14 100%
+    );
+
+  color:
+    var(
+      --kj-royal-blue
+    );
+
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 20px 38px
+    rgba(
+      217,
+      178,
+      29,
+      0.27
+    );
+}
+
+.kj-auth-submit:disabled {
+  opacity: 0.58;
+
+  cursor:
+    not-allowed;
+}
+
+/* Alerts */
+
+.kj-auth-alert {
+  border-radius:
+    14px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.kj-auth-alert--success {
+  border:
+    1px solid
+    rgba(
+      217,
+      178,
+      29,
+      0.28
+    );
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(
+        248,
+        209,
+        105,
+        0.18
+      ),
+      rgba(
+        251,
+        248,
+        244,
+        0.92
+      )
+    );
+
+  color:
+    var(
+      --kj-royal-blue
+    );
+}
+
+.kj-auth-alert--error {
+  border:
+    1px solid
+    rgba(
+      166,
+      61,
+      61,
+      0.24
+    );
+
+  background:
+    #fff1ee;
+
+  color:
+    #9d3535;
+}
+
+/* Switch */
+
+.kj-auth-switch {
+  border-top:
+    1px solid
+    rgba(
+      37,
+      48,
+      101,
+      0.1
+    );
+
+  color:
+    rgba(
+      28,
+      32,
+      66,
+      0.58
+    );
+}
+
+.kj-auth-switch button {
+  color:
+    var(
+      --kj-royal-blue
+    );
+
+  font-weight: 900;
+}
+
+.kj-auth-switch button:hover {
+  color:
+    var(
+      --kj-gold-dark
+    );
+
+  text-decoration:
+    none;
+}
+
+/* =========================================================
+   HEADER AUTH BRAND
+========================================================= */
+
+.kj-header-register-button {
+  border-color:
+    rgba(
+      217,
+      178,
+      29,
+      0.42
+    );
+
+  background:
+    rgba(
+      248,
+      209,
+      105,
+      0.12
+    );
+
+  color:
+    var(
+      --kj-royal-blue
+    );
+}
+
+.kj-header-register-button:hover {
+  border-color:
+    rgba(
+      217,
+      178,
+      29,
+      0.8
+    );
+
+  background:
+    linear-gradient(
+      135deg,
+      var(
+        --kj-gold-light
+      ),
+      var(
+        --kj-gold
+      )
+    );
+
+  color:
+    var(
+      --kj-royal-blue
+    );
+}
+
+.kj-header-login-button {
+  border-color:
+    rgba(
+      37,
+      48,
+      101,
+      0.14
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.84
+    );
+
+  color:
+    var(
+      --kj-royal-blue
+    );
+}
+
+.kj-header-login-button:hover {
+  border-color:
+    rgba(
+      217,
+      178,
+      29,
+      0.46
+    );
+
+  background:
+    var(
+      --kj-royal-blue
+    );
+
+  color:
+    var(
+      --kj-warm-white
+    );
+}
+
+.kj-header-account-avatar,
+.kj-header-account-menu__avatar {
+  background:
+    linear-gradient(
+      135deg,
+      var(
+        --kj-gold-light
+      ),
+      var(
+        --kj-gold
+      )
+    );
+
+  color:
+    var(
+      --kj-royal-blue
+    );
+}
+
+.kj-header-account-button {
+  border-color:
+    rgba(
+      37,
+      48,
+      101,
+      0.13
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.84
+    );
+}
+
+.kj-header-account-button:hover {
+  border-color:
+    rgba(
+      217,
+      178,
+      29,
+      0.45
+    );
+}
+
+.kj-header-account-name,
+.kj-header-account-menu__top strong {
+  color:
+    var(
+      --kj-royal-blue
+    );
+}
+
+.kj-header-account-role {
+  background:
+    rgba(
+      248,
+      209,
+      105,
+      0.16
+    );
+
+  color:
+    var(
+      --kj-royal-blue
+    );
+}
+
+.kj-header-account-menu > a {
+  color:
+    var(
+      --kj-royal-blue
+    );
+}
+
+.kj-header-account-menu > a:hover {
+  background:
+    rgba(
+      248,
+      209,
+      105,
+      0.13
+    );
+}
+
+@media (
+  max-width: 600px
+) {
+  .kj-auth-modal {
+    border-radius:
+      22px;
+  }
+
+  .kj-auth-modal__heading h2 {
+    font-size: 35px;
+  }
+}
+
+/* =========================================================
+   FIXED PRODUCT CATEGORY / MEGA MENU
+   ========================================================= */
+
+/*
+ * Dropdown desktop bám theo toàn bộ header shell thay vì
+ * từng item nhỏ, tránh menu bị lệch và tiêu đề chồng chữ.
+ */
+.kj-header-shell {
+  position: relative;
+}
+
+.kj-main-nav-links {
+  position: static;
+}
+
+.kj-category-nav-item {
+  position: static;
+
+  display: flex;
+
+  align-items: stretch;
+}
+
+.kj-category-nav-item > a {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  height: 100%;
+
+  white-space: nowrap;
+}
+
+.kj-category-nav-caret {
+  flex: 0 0 auto;
+
+  font-size: 10px;
+
+  line-height: 1;
+
+  transition:
+    transform 0.2s ease;
+}
+
+/* =========================================================
+   DROPDOWN BASE
+   ========================================================= */
+
+.kj-category-dropdown {
+  position: absolute;
+
+  top:
+    calc(
+      100% - 2px
+    );
+
+  left: 50%;
+
+  z-index: 1500;
+
+  width:
+    min(
+      1040px,
+      calc(
+        100vw - 48px
+      )
+    );
+
+  max-height:
+    min(
+      560px,
+      calc(
+        100vh - 150px
+      )
+    );
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  padding:
+    22px
+    24px
+    24px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.985
+    );
+
+  border:
+    1px solid
+    rgba(
+      16,
+      52,
+      111,
+      0.12
+    );
+
+  border-radius:
+    0
+    0
+    18px
+    18px;
+
+  box-shadow:
+    0
+    18px
+    50px
+    rgba(
+      9,
+      33,
+      74,
+      0.16
+    );
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transform:
+    translate(
+      -50%,
+      10px
+    );
+
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease,
+    visibility 0.18s ease;
+}
+
+.kj-category-nav-item:hover
+  .kj-category-dropdown,
+.kj-category-nav-item:focus-within
+  .kj-category-dropdown,
+.kj-category-nav-item.is-desktop-open
+  .kj-category-dropdown {
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+
+  transform:
+    translate(
+      -50%,
+      0
+    );
+}
+
+.kj-category-nav-item:hover
+  .kj-category-nav-caret,
+.kj-category-nav-item:focus-within
+  .kj-category-nav-caret,
+.kj-category-nav-item.is-desktop-open
+  .kj-category-nav-caret {
+  transform:
+    rotate(180deg);
+}
+
+/* =========================================================
+   DROPDOWN GROUP
+   ========================================================= */
+
+.kj-category-dropdown__group {
+  min-width: 0;
+}
+
+.kj-category-dropdown__title {
+  display: block;
+
+  margin:
+    0
+    0
+    10px;
+
+  color:
+    #0d397c;
+
+  font-family:
+    var(
+      --kj-header-condensed
+    );
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  line-height: 1.35;
+
+  letter-spacing:
+    0.025em;
+
+  text-transform:
+    uppercase;
+
+  white-space: normal;
+
+  overflow-wrap:
+    anywhere;
+}
+
+.kj-category-dropdown__links {
+  display: flex;
+
+  flex-direction:
+    column;
+
+  gap: 3px;
+}
+
+.kj-category-dropdown a {
+  display: block;
+
+  min-width: 0;
+
+  min-height: auto;
+
+  padding:
+    8px
+    10px;
+
+  border-radius:
+    9px;
+
+  color:
+    #12396f;
+
+  font-family:
+    var(
+      --kj-header-body
+    );
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  line-height: 1.38;
+
+  text-align: left;
+
+  text-decoration: none;
+
+  text-transform: none;
+
+  letter-spacing: 0;
+
+  white-space: normal;
+
+  overflow-wrap:
+    break-word;
+
+  transform: none;
+
+  transition:
+    background 0.16s ease,
+    color 0.16s ease,
+    transform 0.16s ease;
+}
+
+/*
+ * Loại bỏ chấm vàng underline của nav chính
+ * khỏi link bên trong dropdown.
+ */
+.kj-category-dropdown a::after {
+  display: none;
+}
+
+.kj-category-dropdown a:hover,
+.kj-category-dropdown a:focus-visible {
+  background:
+    rgba(
+      193,
+      151,
+      42,
+      0.1
+    );
+
+  color:
+    #0b2f64;
+
+  transform:
+    translateX(2px);
+}
+
+.kj-category-dropdown a.active {
+  background:
+    rgba(
+      193,
+      151,
+      42,
+      0.14
+    );
+
+  color:
+    #9f7612;
+}
+
+/* =========================================================
+   FLAT MENU
+   VÒNG NGỌC THIÊN NHIÊN
+   ========================================================= */
+
+.kj-category-dropdown--flat {
+  width:
+    min(
+      900px,
+      calc(
+        100vw - 48px
+      )
+    );
+}
+
+.kj-category-dropdown--flat
+  .kj-category-dropdown__group {
+  width: 100%;
+}
+
+.kj-category-dropdown--flat
+  .kj-category-dropdown__links {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap:
+    8px
+    18px;
+}
+
+/* =========================================================
+   MEGA MENU
+   TRANG SỨC NGỌC
+   3 CỘT X NHIỀU HÀNG
+   ========================================================= */
+
+.kj-category-dropdown--mega {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap:
+    28px
+    34px;
+}
+
+/* =========================================================
+   LAPTOP / SMALL DESKTOP
+   ========================================================= */
+
+@media (
+  max-width: 1360px
+) {
+  .kj-category-dropdown {
+    width:
+      min(
+        920px,
+        calc(
+          100vw - 36px
+        )
+      );
+
+    padding: 20px;
+  }
+
+  .kj-category-dropdown--mega {
+    grid-template-columns:
+      repeat(
+        3,
+        minmax(
+          0,
+          1fr
+        )
+      );
+
+    gap:
+      22px
+      26px;
+  }
+
+  .kj-category-dropdown a {
+    font-size: 13px;
+  }
+
+  .kj-category-dropdown__title {
+    font-size: 13px;
+  }
+}
+
+@media (
+  max-width: 1180px
+) {
+  .kj-category-dropdown--mega {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      );
+  }
+
+  .kj-category-dropdown--flat
+    .kj-category-dropdown__links {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      );
+  }
+}
+
+/* =========================================================
+   MOBILE CATEGORY MENU
+   ========================================================= */
+
+@media (
+  max-width: 1080px
+) {
+  .kj-category-nav-item {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+  }
+
+  .kj-category-nav-item > a {
+    width: 100%;
+
+    justify-content:
+      space-between;
+
+    white-space: normal;
+  }
+
+  .kj-category-dropdown,
+  .kj-category-dropdown--flat,
+  .kj-category-dropdown--mega {
+    position: static;
+
+    display: grid;
+
+    grid-template-columns:
+      1fr;
+
+    width: 100%;
+
+    max-height: none;
+
+    overflow: visible;
+
+    margin: 0;
+
+    padding:
+      8px
+      0
+      10px
+      14px;
+
+    background:
+      transparent;
+
+    border: 0;
+
+    border-radius: 0;
+
+    box-shadow: none;
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform: none;
+  }
+
+  .kj-category-dropdown--flat
+    .kj-category-dropdown__links {
+    grid-template-columns:
+      1fr;
+  }
+
+  .kj-category-dropdown__group {
+    padding:
+      2px
+      0
+      8px;
+  }
+
+  .kj-category-dropdown__title {
+    margin:
+      6px
+      10px
+      4px;
+
+    font-size: 12px;
+  }
+
+  .kj-category-dropdown a {
+    min-height: auto;
+
+    padding:
+      7px
+      10px;
+
+    background:
+      transparent;
+
+    font-size: 13px;
+  }
+
+  .kj-category-nav-caret {
+    transform:
+      none !important;
+  }
+}
+
+@media (
+  max-width: 640px
+) {
+  .kj-category-dropdown {
+    padding-left: 8px;
+  }
+}
+
+
+/* =========================================================
+   HEADER DESKTOP ANTI-OVERLAP FIX
+   Fix trường hợp viewport desktop ~1500-1800px:
+   logo + nav + action bị chen/lẹm vào nhau.
+========================================================= */
+
+/* Luôn khóa nội dung trong đúng grid-cell của header */
+.kj-header-logo,
+.kj-main-nav,
+.kj-header-actions {
+  min-width: 0;
+}
+
+.kj-header-logo {
+  overflow: hidden;
+}
+
+.kj-main-nav-links {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.kj-header-actions {
+  flex: 0 0 auto;
+}
+
+/*
+  1501–1799px = desktop phổ biến / laptop DPI cao.
+  Vẫn giữ header 1 hàng nhưng thu gọn hợp lý.
+  Quan trọng: không để nav tràn ngược qua logo.
+*/
+@media (min-width: 1501px) and (max-width: 1799px) {
+  .kj-header {
+    padding: 0 12px;
+  }
+
+  .kj-header-shell {
+    width: calc(100% - 8px);
+    min-height: 78px;
+
+    padding: 9px 12px 9px 18px;
+
+    grid-template-columns:
+      170px
+      minmax(0, 1fr)
+      auto;
+
+    gap: 10px;
+
+    border-radius: 999px;
+  }
+
+  .kj-header-logo {
+    width: 164px;
+    height: 54px;
+  }
+
+  .kj-header-logo img {
+    width: 150px;
+    height: 42px;
+  }
+
+  .kj-main-nav {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .kj-main-nav-links {
+    width: 100%;
+    gap: clamp(8px, 0.72vw, 13px);
+    justify-content: center;
+  }
+
+  .kj-main-nav-links a {
+    min-height: 38px;
+    font-size: 13px;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .kj-category-nav-item > a {
+    gap: 4px;
+  }
+
+  .kj-category-nav-caret {
+    font-size: 9px;
+  }
+
+  .kj-header-actions {
+    gap: 5px;
+  }
+
+  .kj-header-utility-actions {
+    gap: 3px;
+    margin-right: 1px;
+  }
+
+  .kj-header-icon-button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .kj-header-icon-button svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .kj-header-zalo,
+  .kj-header-register-button,
+  .kj-header-login-button,
+  .kj-header-account-button {
+    min-height: 42px;
+  }
+
+  .kj-header-zalo {
+    min-width: 68px;
+    padding: 0 13px;
+    font-size: 13px;
+  }
+
+  .kj-header-register-button,
+  .kj-header-login-button {
+    padding: 0 12px;
+    font-size: 12px;
+  }
+
+  .kj-header-login-button {
+    gap: 6px;
+  }
+
+  .kj-header-login-button svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /*
+    Đã có menu "Thông tin liên hệ" ở nav.
+    Ở độ rộng này ẩn CTA TƯ VẤN để dành không gian,
+    tránh toàn bộ header tràn ngang.
+  */
+  .kj-header-consult {
+    display: none;
+  }
+}
+
+/*
+  1800px trở lên mới bung layout đầy đủ:
+  utility icons + Zalo + auth + Tư vấn.
+*/
+@media (min-width: 1800px) {
+  .kj-header-shell {
+    width: min(1920px, calc(100% - 48px));
+
+    grid-template-columns:
+      205px
+      minmax(0, 1fr)
+      auto;
+
+    gap: 16px;
+  }
+
+  .kj-header-logo {
+    width: 195px;
+  }
+
+  .kj-header-logo img {
+    width: 172px;
+  }
+
+  .kj-main-nav-links {
+    gap: clamp(12px, 1vw, 20px);
+  }
+
+  .kj-main-nav-links a {
+    font-size: 14px;
+  }
+}
+
+/*
+  Range 1381–1500 hiện dùng layout 2 hàng ở rule cũ.
+  Khóa overflow để logo/nav không bao giờ đè nhau khi zoom browser.
+*/
+@media (min-width: 1081px) and (max-width: 1500px) {
+  .kj-header-logo {
+    overflow: hidden;
+  }
+
+  .kj-main-nav {
+    min-width: 0;
+    overflow: visible;
+  }
+}
+
+
+/* =========================================================
+   KING JADES HEADER — TABLET / iPad FINAL
+   Tối ưu 768–1080px:
+   - Menu không bung toàn bộ category con cùng lúc.
+   - Category dùng accordion riêng.
+   - Panel có giới hạn chiều cao + cuộn nội bộ.
+   - Header gọn trên iPad Mini / iPad Air.
+========================================================= */
+
+/* Nút accordion chỉ dùng tablet/mobile */
+.kj-category-nav-toggle {
+  display: none;
+}
+
+@media (min-width: 721px) and (max-width: 1080px) {
+  .kj-header {
+    top: 10px;
+    padding: 0 14px;
+  }
+
+  .kj-header-shell {
+    width: min(100%, 940px);
+    min-height: 68px;
+
+    grid-template-columns:
+      minmax(150px, 1fr)
+      auto;
+
+    padding: 7px 9px 7px 18px;
+    gap: 10px;
+
+    border-radius: 25px;
+  }
+
+  .kj-header-logo {
+    width: 160px;
+    height: 50px;
+  }
+
+  .kj-header-logo img {
+    width: 145px;
+    height: 40px;
+  }
+
+  .kj-header-actions {
+    gap: 7px;
+  }
+
+  /* iPad: giữ Zalo + Tư vấn + hamburger, bỏ auth desktop */
+  .kj-header-zalo,
+  .kj-header-consult {
+    min-height: 42px;
+    padding: 0 15px;
+    font-size: 13px;
+  }
+
+  .kj-header-zalo {
+    min-width: 66px;
+  }
+
+  .kj-header-consult {
+    min-width: 74px;
+  }
+
+  .kj-menu-button {
+    width: 42px;
+    height: 42px;
+  }
+
+  /* Panel menu */
+  .kj-main-nav {
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+
+    max-height: calc(100dvh - 104px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    padding: 14px;
+    border-radius: 22px;
+
+    scrollbar-width: thin;
+    scrollbar-color:
+      rgba(37, 48, 101, 0.22)
+      transparent;
+  }
+
+  .kj-main-nav::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .kj-main-nav::-webkit-scrollbar-thumb {
+    border-radius: 99px;
+    background: rgba(37, 48, 101, 0.22);
+  }
+
+  .kj-main-nav-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 8px;
+  }
+
+  /* Link thường */
+  .kj-main-nav-links > a {
+    min-height: 46px;
+    padding: 0 14px;
+    border-radius: 13px;
+
+    background: rgba(37, 48, 101, 0.045);
+
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  /* Category = 1 cell trong grid */
+  .kj-category-nav-item {
+    position: relative !important;
+
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 42px;
+    align-items: start;
+
+    width: 100%;
+
+    border-radius: 14px;
+    background: rgba(37, 48, 101, 0.045);
+  }
+
+  .kj-category-nav-item.is-mobile-open {
+    grid-column: 1 / -1;
+
+    border:
+      1px solid
+      rgba(217, 178, 29, 0.18);
+
+    background:
+      linear-gradient(
+        145deg,
+        rgba(248, 209, 105, 0.08),
+        rgba(37, 48, 101, 0.035)
+      );
+  }
+
+  .kj-category-nav-item > .kj-category-nav-main-link {
+    width: 100%;
+    min-width: 0;
+    min-height: 46px;
+
+    padding: 0 6px 0 14px;
+
+    justify-content: flex-start;
+
+    border-radius: 13px 0 0 13px;
+    background: transparent;
+
+    font-size: 14px;
+    line-height: 1.2;
+    white-space: normal;
+  }
+
+  /*
+    Tablet dùng nút accordion riêng nên caret trong Link được ẩn.
+    Người dùng vẫn có thể chạm tên category để vào trang category.
+  */
+  .kj-category-nav-main-link .kj-category-nav-caret {
+    display: none;
+  }
+
+  .kj-category-nav-toggle {
+    display: inline-flex;
+
+    width: 42px;
+    height: 46px;
+
+    padding: 0;
+    border: 0;
+    border-left: 1px solid rgba(37, 48, 101, 0.07);
+    border-radius: 0 13px 13px 0;
+
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    color: var(--kj-royal-blue, #1c2042);
+
+    cursor: pointer;
+  }
+
+  .kj-category-nav-toggle span {
+    display: block;
+
+    font-size: 18px;
+    line-height: 1;
+
+    transition: transform 180ms ease;
+  }
+
+  .kj-category-nav-item.is-mobile-open
+    .kj-category-nav-toggle span {
+    transform: rotate(180deg);
+  }
+
+  /* QUAN TRỌNG: mặc định đóng menu con */
+  .kj-category-dropdown,
+  .kj-category-dropdown--flat,
+  .kj-category-dropdown--mega {
+    position: static !important;
+
+    grid-column: 1 / -1;
+
+    display: none !important;
+
+    width: 100% !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 4px 10px 12px !important;
+
+    overflow: visible !important;
+
+    border: 0 !important;
+    border-top:
+      1px solid
+      rgba(37, 48, 101, 0.07) !important;
+    border-radius: 0 !important;
+
+    background: transparent !important;
+    box-shadow: none !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+
+    transform: none !important;
+  }
+
+  .kj-category-dropdown.is-mobile-open {
+    display: grid !important;
+  }
+
+  .kj-category-dropdown--mega.is-mobile-open {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr)) !important;
+
+    gap: 8px 18px !important;
+  }
+
+  .kj-category-dropdown--flat.is-mobile-open
+    .kj-category-dropdown__links {
+    display: grid;
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr)) !important;
+
+    gap: 3px 12px;
+  }
+
+  .kj-category-dropdown__group {
+    min-width: 0;
+    padding: 5px 0 7px;
+  }
+
+  .kj-category-dropdown__title {
+    margin: 5px 8px 3px;
+    font-size: 11px;
+  }
+
+  .kj-category-dropdown a {
+    min-height: 35px;
+    padding: 7px 8px;
+
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  /* Actions phía dưới menu cũng gọn lại */
+  .kj-mobile-nav-actions {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 7px;
+    padding-top: 12px;
+  }
+
+  .kj-mobile-nav-actions button,
+  .kj-mobile-nav-actions a {
+    min-height: 42px;
+    padding: 0 12px;
+    border-radius: 12px;
+
+    font-size: 12px;
+  }
+}
+
+/* =========================================================
+   <= 720px: vẫn dùng accordion nhưng về 1 cột
+========================================================= */
+
+@media (max-width: 720px) {
+  .kj-category-nav-item {
+    position: relative !important;
+
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 42px;
+
+    width: 100%;
+
+    border-radius: 13px;
+    background: rgba(37, 48, 101, 0.04);
+  }
+
+  .kj-category-nav-item.is-mobile-open {
+    grid-column: 1 / -1;
+  }
+
+  .kj-category-nav-item > .kj-category-nav-main-link {
+    width: 100%;
+    min-height: 45px;
+
+    padding: 0 6px 0 13px;
+
+    justify-content: flex-start;
+
+    background: transparent;
+
+    white-space: normal;
+  }
+
+  .kj-category-nav-main-link .kj-category-nav-caret {
+    display: none;
+  }
+
+  .kj-category-nav-toggle {
+    display: inline-flex;
+
+    width: 42px;
+    height: 45px;
+
+    padding: 0;
+    border: 0;
+    border-left: 1px solid rgba(37, 48, 101, 0.07);
+    border-radius: 0 13px 13px 0;
+
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    color: var(--kj-royal-blue, #1c2042);
+  }
+
+  .kj-category-nav-toggle span {
+    transition: transform 180ms ease;
+  }
+
+  .kj-category-nav-item.is-mobile-open
+    .kj-category-nav-toggle span {
+    transform: rotate(180deg);
+  }
+
+  .kj-category-dropdown,
+  .kj-category-dropdown--flat,
+  .kj-category-dropdown--mega {
+    position: static !important;
+
+    grid-column: 1 / -1;
+
+    display: none !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 4px 8px 10px !important;
+
+    border: 0 !important;
+    border-top:
+      1px solid
+      rgba(37, 48, 101, 0.07) !important;
+    border-radius: 0 !important;
+
+    background: transparent !important;
+    box-shadow: none !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+
+    transform: none !important;
+  }
+
+  .kj-category-dropdown.is-mobile-open {
+    display: grid !important;
+  }
+
+  .kj-category-dropdown--mega.is-mobile-open,
+  .kj-category-dropdown--flat.is-mobile-open
+    .kj-category-dropdown__links {
+    grid-template-columns: 1fr !important;
+  }
+
+  .kj-main-nav {
+    max-height: calc(100dvh - 88px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}
+
+
+/* =========================================================
+   DESKTOP MEGA MENU — HOVER GRACE FIX
+   Giữ dropdown mở khi con trỏ đi từ menu cha xuống menu con.
+========================================================= */
+
+@media (min-width: 1081px) {
+  .kj-category-nav-item.is-desktop-open
+    .kj-category-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate(-50%, 0);
+  }
+
+  .kj-category-nav-item.is-desktop-open
+    .kj-category-nav-caret {
+    transform: rotate(180deg);
+  }
+
+  /*
+   * Kéo dropdown lên nhẹ để giảm dead-zone giữa link cha
+   * và panel dropdown nhưng vẫn bám theo header shell.
+   */
+  .kj-category-dropdown {
+    top: calc(100% - 8px);
+  }
+}
+
+/* =========================================================
+   KING JADES HEADER — GUEST / LOGGED-IN ACTION STATE
+   2026-09-18
+
+   GUEST (chưa đăng nhập):
+   - Search
+   - Favorite
+   - Cart
+   - Tư Vấn
+   - KHÔNG Zalo
+   - KHÔNG Đăng ký / Đăng nhập
+
+   LOGGED IN:
+   - Search
+   - Favorite
+   - Cart
+   - Account
+   - Tư Vấn
+   - KHÔNG Zalo
+
+   Không thay đổi nav / mega menu / logo.
+========================================================= */
+
+/* Zalo không hiện trên thanh header ở mọi trạng thái. */
+.kj-header .kj-header-zalo {
+  display: none !important;
+}
+
+/* Utility icons phải hiện trên desktop/laptop khi có đủ chỗ. */
+@media (min-width: 1081px) {
+  .kj-header .kj-header-utility-actions {
+    display: flex !important;
+  }
+
+  .kj-header .kj-header-consult {
+    display: inline-flex !important;
+  }
+}
+
+/* Range 1501–1799 từng ẩn Tư Vấn trong CSS cũ — bật lại. */
+@media (min-width: 1501px) and (max-width: 1799px) {
+  .kj-header .kj-header-consult {
+    display: inline-flex !important;
+    min-width: 88px;
+    min-height: 42px;
+    padding: 0 15px;
+  }
+}
+
+/* 1081–1500: giữ utility + consult, account chỉ render khi đã login. */
+@media (min-width: 1081px) and (max-width: 1500px) {
+  .kj-header .kj-header-utility-actions {
+    display: flex !important;
+  }
+
+  .kj-header .kj-header-consult {
+    display: inline-flex !important;
+  }
+}
+
+/* Tablet/mobile:
+   thanh header vật lý vẫn gọn với Tư Vấn + hamburger.
+   Search/Favorite/Cart nằm trong menu drawer như TSX hiện tại. */
+@media (max-width: 1080px) {
+  .kj-header .kj-header-consult {
+    display: inline-flex !important;
+  }
+}
+
+/* Mobile rất nhỏ: CSS cũ từng ẩn Tư Vấn <=430px. Giữ lại. */
+@media (max-width: 430px) {
+  .kj-header .kj-header-consult {
+    display: inline-flex !important;
+    min-width: 70px;
+    min-height: 40px;
+    padding: 0 10px;
+    font-size: 12px;
+  }
+}
+/* =========================================================
+   LAPTOP NHỎ / NEST HUB MAX FIX
+   1081px - 1500px
+   Giữ header 1 dòng
+========================================================= */
+
+@media (min-width:1081px) and (max-width:1500px){
+
+  .kj-header-shell {
+
+    width:
+      calc(100% - 32px);
+
+    min-height:78px;
+
+    padding:
+      9px
+      14px;
+
+    grid-template-columns:
+      170px
+      minmax(0,1fr)
+      auto;
+
+    /* bỏ layout 2 dòng */
+    grid-template-areas:none;
+
+    align-items:center;
+
+    gap:12px;
+
+    border-radius:999px;
+  }
+
+
+  .kj-header-logo {
+
+    width:165px;
+    height:52px;
+
+  }
+
+
+  .kj-header-logo img {
+
+    width:145px;
+    height:40px;
+
+  }
+
+
+  .kj-main-nav {
+
+    width:100%;
+
+    overflow:hidden;
+
+  }
+
+
+  .kj-main-nav-links {
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:
+      clamp(
+        8px,
+        1vw,
+        16px
+      );
+
+    white-space:nowrap;
+
+  }
+
+
+  .kj-main-nav-links a {
+
+    font-size:13px;
+
+    min-height:36px;
+
+    letter-spacing:0;
+
+  }
+
+
+  .kj-category-nav-item > a {
+
+    gap:3px;
+
+  }
+
+
+  .kj-category-nav-caret {
+
+    font-size:8px;
+
+  }
+
+
+  .kj-header-actions {
+
+    gap:5px;
+
+  }
+
+
+  .kj-header-icon-button {
+
+    width:36px;
+
+    height:36px;
+
+  }
+
+
+  .kj-header-icon-button svg {
+
+    width:16px;
+
+    height:16px;
+
+  }
+
+
+  .kj-header-consult {
+
+    min-height:40px;
+
+    min-width:82px;
+
+    padding:
+      0 12px;
+
+    font-size:12px;
+
+  }
+
+}/* =========================================================
+   FINAL FIX - NEST HUB MAX / SMALL LAPTOP
+   Force header 1 row
+========================================================= */
+
+@media (min-width:1081px) and (max-width:1500px){
+
+  .kj-header-shell {
+
+    min-height:78px !important;
+
+    grid-template-columns:
+      170px
+      minmax(0,1fr)
+      auto !important;
+
+    grid-template-areas:
+      none !important;
+
+    display:grid !important;
+
+    align-items:center !important;
+
+    gap:10px !important;
+
+  }
+
+
+  .kj-header-logo {
+    grid-area:auto !important;
+  }
+
+
+  .kj-main-nav {
+
+    grid-area:auto !important;
+
+    position:static !important;
+
+    width:auto !important;
+
+    overflow:hidden !important;
+
+  }
+
+
+  .kj-header-actions {
+
+    grid-area:auto !important;
+
+  }
+
+
+  .kj-main-nav-links {
+
+    gap:10px !important;
+
+  }
+
+
+  .kj-main-nav-links a {
+
+    font-size:12px !important;
+
+    min-height:34px !important;
+
+  }
+
+
+  .kj-header-logo {
+
+    width:160px !important;
+
+  }
+
+
+  .kj-header-logo img {
+
+    width:140px !important;
+
+  }
+
+
+  .kj-header-icon-button {
+
+    width:34px !important;
+
+    height:34px !important;
+
+  }
+
+
+  .kj-header-consult {
+
+    min-height:38px !important;
+
+    padding:0 12px !important;
+
+    font-size:12px !important;
+
+  }
+
+}
+
+
+/* =========================================================
+   KING JADES HEADER — CLEAN CARD + BLUR POPUP + MOBILE FINAL
+   2026-09-25
+
+   Mục tiêu:
+   - Bỏ line/viền ngoài header.
+   - Bỏ line/chấm active/hover dưới item menu.
+   - Desktop/laptop: rê chuột tới item nào -> item đó nổi lên + kính mờ.
+   - iOS/Android: chạm item nào -> item đó nổi lên nhẹ, tap target >= 44px.
+   - Không đổi logic TSX / mega menu.
+   ========================================================= */
+
+/* 1) BỎ LINE/VIỀN Ở HEADER */
+.kj-header .kj-header-shell {
+  border: 0 !important;
+}
+
+/*
+  Một số breakpoint laptop cũ tạo thêm đường kẻ ngang phía trên nav.
+  Bỏ luôn để header sạch và liền khối.
+*/
+.kj-header .kj-main-nav {
+  border-top: 0 !important;
+}
+
+/* Bỏ dấu/chấm/underline của nav chính ở mọi breakpoint. */
+.kj-header .kj-main-nav-links > a::after,
+.kj-header .kj-category-nav-item > a::after,
+.kj-header .kj-category-nav-main-link::after {
+  content: none !important;
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+}
+
+/* =========================================================
+   2) DESKTOP / LAPTOP — BLUR + POPUP KHI HOVER
+   ========================================================= */
+@media (min-width: 1081px) {
+  /*
+    Chỉ target item NAV cấp 1.
+    Không áp hiệu ứng popup này cho link nằm bên trong mega-menu.
+  */
+  .kj-header .kj-main-nav-links > a,
+  .kj-header .kj-category-nav-item > a,
+  .kj-header .kj-category-nav-main-link {
+    position: relative;
+    z-index: 1;
+
+    padding-inline: 11px;
+
+    border: 0 !important;
+    border-radius: 999px;
+
+    background: transparent;
+
+    box-shadow: none;
+
+    -webkit-backdrop-filter: blur(0);
+    backdrop-filter: blur(0);
+
+    transition:
+      color 180ms ease,
+      background 180ms ease,
+      box-shadow 220ms ease,
+      transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 180ms ease,
+      -webkit-backdrop-filter 180ms ease,
+      backdrop-filter 180ms ease;
+
+    will-change: transform;
+  }
+
+  /* Hover tới đâu, thẻ đó popup tới đó. */
+  .kj-header .kj-main-nav-links > a:hover,
+  .kj-header .kj-category-nav-item > a:hover,
+  .kj-header .kj-category-nav-item:hover > a,
+  .kj-header .kj-category-nav-item:focus-within > a,
+  .kj-header .kj-category-nav-main-link:hover {
+    z-index: 20;
+
+    color: var(--kj-navy, #253065);
+
+    background:
+      linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.70),
+        rgba(255, 253, 248, 0.45)
+      );
+
+    box-shadow:
+      0 12px 28px rgba(28, 32, 66, 0.11),
+      0 2px 8px rgba(28, 32, 66, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 0.82);
+
+    -webkit-backdrop-filter: blur(14px) saturate(1.08);
+    backdrop-filter: blur(14px) saturate(1.08);
+
+    transform:
+      translateY(-3px)
+      scale(1.025);
+  }
+
+  /*
+    Trang hiện tại vẫn có trạng thái active,
+    nhưng không còn line/chấm dưới chữ.
+  */
+  .kj-header .kj-main-nav-links > a.active,
+  .kj-header .kj-category-nav-item > a.active,
+  .kj-header .kj-category-nav-main-link.active {
+    color: var(--kj-navy, #253065);
+
+    background: rgba(255, 255, 255, 0.30);
+
+    box-shadow:
+      0 5px 14px rgba(28, 32, 66, 0.055),
+      inset 0 1px 0 rgba(255, 255, 255, 0.50);
+
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+
+    transform: none;
+  }
+
+  .kj-header .kj-main-nav-links > a.active:hover,
+  .kj-header .kj-category-nav-item > a.active:hover,
+  .kj-header .kj-category-nav-main-link.active:hover {
+    background: rgba(255, 255, 255, 0.70);
+
+    box-shadow:
+      0 12px 28px rgba(28, 32, 66, 0.11),
+      inset 0 1px 0 rgba(255, 255, 255, 0.82);
+
+    transform:
+      translateY(-3px)
+      scale(1.025);
+  }
+}
+
+/* =========================================================
+   3) TABLET / MOBILE — iOS + ANDROID
+   ========================================================= */
+@media (max-width: 1080px) {
+  /*
+    Safe area cho iPhone tai thỏ / Dynamic Island và Android edge-to-edge.
+    Không làm thay đổi desktop.
+  */
+  .kj-header {
+    top: max(8px, env(safe-area-inset-top, 0px));
+
+    padding-left:
+      max(
+        8px,
+        env(safe-area-inset-left, 0px)
+      );
+
+    padding-right:
+      max(
+        8px,
+        env(safe-area-inset-right, 0px)
+      );
+  }
+
+  .kj-header .kj-header-shell {
+    border: 0 !important;
+  }
+
+  /*
+    Menu drawer:
+    cuộn mượt Safari iOS / Chrome Android khi menu dài.
+  */
+  .kj-header .kj-main-nav {
+    border: 0 !important;
+
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  /*
+    Item menu cấp 1:
+    - bỏ line/chấm
+    - đủ cao để bấm bằng ngón tay
+    - giữ nền dịu của layout hiện tại.
+  */
+  .kj-header .kj-main-nav-links > a,
+  .kj-header .kj-category-nav-item {
+    min-height: 46px;
+
+    border: 0 !important;
+
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+
+    transition:
+      background 160ms ease,
+      box-shadow 180ms ease,
+      transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+      color 160ms ease;
+  }
+
+  .kj-header .kj-main-nav-links > a {
+    border-radius: 14px;
+  }
+
+  /*
+    Trên điện thoại không có hover thật.
+    :active = lúc chạm.
+    :focus-visible = keyboard/accessibility.
+    .active = trang hiện tại.
+  */
+  .kj-header .kj-main-nav-links > a:active,
+  .kj-header .kj-main-nav-links > a:focus-visible,
+  .kj-header .kj-main-nav-links > a.active {
+    z-index: 3;
+
+    color: var(--kj-navy, #253065);
+
+    background: rgba(255, 255, 255, 0.68);
+
+    box-shadow:
+      0 10px 22px rgba(28, 32, 66, 0.10),
+      inset 0 1px 0 rgba(255, 255, 255, 0.78);
+
+    -webkit-backdrop-filter: blur(12px) saturate(1.06);
+    backdrop-filter: blur(12px) saturate(1.06);
+
+    transform:
+      translateY(-2px)
+      scale(1.012);
+
+    outline: none;
+  }
+
+  /*
+    Category có nút accordion riêng.
+    Khi đang mở thì toàn thẻ category được popup nhẹ.
+  */
+  .kj-header .kj-category-nav-item.is-mobile-open {
+    border: 0 !important;
+
+    background:
+      linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.72),
+        rgba(248, 209, 105, 0.07)
+      ) !important;
+
+    box-shadow:
+      0 10px 24px rgba(28, 32, 66, 0.09),
+      inset 0 1px 0 rgba(255, 255, 255, 0.75);
+
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+
+    transform: translateY(-1px);
+  }
+
+  .kj-header .kj-category-nav-item > .kj-category-nav-main-link {
+    min-height: 46px;
+
+    border: 0 !important;
+
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .kj-header .kj-category-nav-item > .kj-category-nav-main-link:active,
+  .kj-header .kj-category-nav-item > .kj-category-nav-main-link:focus-visible {
+    background: rgba(255, 255, 255, 0.56);
+
+    box-shadow:
+      0 8px 18px rgba(28, 32, 66, 0.08);
+
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+    transform:
+      translateY(-1px)
+      scale(1.008);
+
+    outline: none;
+  }
+
+  /*
+    Nút mũi tên accordion cũng đủ 44px để thao tác tốt trên iOS/Android.
+  */
+  .kj-header .kj-category-nav-toggle {
+    min-width: 44px;
+    min-height: 44px;
+
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .kj-header .kj-category-nav-toggle:active {
+    background: rgba(255, 255, 255, 0.58);
+
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
+
+  /*
+    Các action phía dưới menu:
+    Search / favorite / cart / auth vẫn bấm thoải mái trên điện thoại.
+  */
+  .kj-header .kj-mobile-nav-actions button,
+  .kj-header .kj-mobile-nav-actions a {
+    min-height: 46px;
+
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+
+    transition:
+      transform 160ms ease,
+      box-shadow 160ms ease,
+      background 160ms ease;
+  }
+
+  .kj-header .kj-mobile-nav-actions button:active,
+  .kj-header .kj-mobile-nav-actions a:active {
+    background: rgba(255, 255, 255, 0.82);
+
+    box-shadow:
+      0 8px 18px rgba(28, 32, 66, 0.09);
+
+    transform:
+      translateY(-1px)
+      scale(1.01);
+  }
+}
+
+/* =========================================================
+   4) PHONE NHỎ — iPhone SE / Android 360–390px
+   ========================================================= */
+@media (max-width: 430px) {
+  .kj-header {
+    padding-left:
+      max(
+        6px,
+        env(safe-area-inset-left, 0px)
+      );
+
+    padding-right:
+      max(
+        6px,
+        env(safe-area-inset-right, 0px)
+      );
+  }
+
+  .kj-header .kj-header-shell {
+    width: 100%;
+  }
+
+  .kj-header .kj-main-nav {
+    max-height:
+      calc(
+        100dvh
+        - 82px
+        - env(safe-area-inset-bottom, 0px)
+      );
+  }
+
+  .kj-header .kj-main-nav-links > a,
+  .kj-header .kj-category-nav-item > .kj-category-nav-main-link {
+    min-height: 45px;
+  }
+
+  .kj-header .kj-category-nav-toggle {
+    min-width: 44px;
+    min-height: 45px;
+  }
+}
+
+/* Fallback cho browser cũ chưa hiểu dvh. */
+@supports not (height: 100dvh) {
+  @media (max-width: 1080px) {
+    .kj-header .kj-main-nav {
+      max-height: calc(100vh - 96px);
+    }
+  }
+}
+
+/* Người dùng chọn Reduce Motion: giữ blur nhưng bỏ chuyển động popup. */
+@media (prefers-reduced-motion: reduce) {
+  .kj-header .kj-main-nav-links > a,
+  .kj-header .kj-category-nav-item > a,
+  .kj-header .kj-category-nav-item,
+  .kj-header .kj-mobile-nav-actions button,
+  .kj-header .kj-mobile-nav-actions a {
+    transition: none !important;
+  }
+
+  .kj-header .kj-main-nav-links > a:hover,
+  .kj-header .kj-main-nav-links > a:active,
+  .kj-header .kj-category-nav-item > a:hover,
+  .kj-header .kj-category-nav-item > a:active,
+  .kj-header .kj-category-nav-item.is-mobile-open {
+    transform: none !important;
+  }
+}
+
+
+/* =========================================================
+   KING JADES HEADER — MOBILE MENU SCROLL FIX
+   2026-09-25
+
+   Fix:
+   - Khi xổ một danh mục dài trên điện thoại vẫn cuộn LÊN / XUỐNG được.
+   - iOS Safari + Android Chrome.
+   - Giữ header trên cùng, phần menu bên dưới là vùng scroll riêng.
+   - Header của category đang mở sẽ sticky để dễ đóng/chọn category khác.
+   ========================================================= */
+
+@media (max-width: 1080px) {
+  /*
+    QUAN TRỌNG:
+    .kj-main-nav là scroll container thật sự.
+    Dùng height thay vì chỉ max-height để iOS Safari luôn tạo vùng cuộn.
+  */
+  .kj-header .kj-main-nav.open {
+    display: flex !important;
+
+    min-height: 0 !important;
+    height:
+      calc(
+        100dvh
+        - 96px
+        - env(safe-area-inset-bottom, 0px)
+      ) !important;
+
+    max-height:
+      calc(
+        100dvh
+        - 96px
+        - env(safe-area-inset-bottom, 0px)
+      ) !important;
+
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+
+    -webkit-overflow-scrolling: touch;
+
+    overscroll-behavior-x: none;
+    overscroll-behavior-y: contain;
+
+    touch-action: pan-y pinch-zoom;
+
+    scrollbar-width: thin;
+
+    /* Cho phép kéo ngón tay từ gần mép panel vẫn cuộn được */
+    pointer-events: auto;
+  }
+
+  .kj-header .kj-main-nav.open::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .kj-header .kj-main-nav.open::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: rgba(37, 48, 101, 0.20);
+  }
+
+  /*
+    Không để grid con cố chiếm / khóa chiều cao của scroll container.
+  */
+  .kj-header .kj-main-nav.open > .kj-main-nav-links,
+  .kj-header .kj-main-nav.open > .kj-mobile-nav-actions {
+    flex: 0 0 auto;
+    min-height: 0;
+  }
+
+  .kj-header .kj-main-nav-links {
+    overflow: visible !important;
+  }
+
+  /*
+    Dropdown dài phải nở theo nội dung,
+    còn việc cuộn do .kj-main-nav.open đảm nhiệm.
+  */
+  .kj-header .kj-category-dropdown,
+  .kj-header .kj-category-dropdown--flat,
+  .kj-header .kj-category-dropdown--mega {
+    max-height: none !important;
+    overflow: visible !important;
+
+    touch-action: pan-y pinch-zoom;
+  }
+
+  /*
+    Đảm bảo vuốt trên chữ/link con vẫn kéo được menu.
+    Không để các item con chặn gesture dọc.
+  */
+  .kj-header .kj-main-nav-links,
+  .kj-header .kj-main-nav-links a,
+  .kj-header .kj-category-nav-item,
+  .kj-header .kj-category-dropdown,
+  .kj-header .kj-category-dropdown a,
+  .kj-header .kj-mobile-nav-actions {
+    touch-action: pan-y pinch-zoom;
+  }
+
+  /*
+    Khi một category đang xổ:
+    giữ hàng tiêu đề của category ở mép trên vùng cuộn.
+    Người dùng có thể đóng nó ngay mà không phải kéo ngược rất xa.
+  */
+  .kj-header .kj-category-nav-item.is-mobile-open
+    > .kj-category-nav-main-link,
+  .kj-header .kj-category-nav-item.is-mobile-open
+    > .kj-category-nav-toggle {
+    position: sticky !important;
+    top: 0 !important;
+
+    z-index: 30;
+
+    background:
+      rgba(
+        255,
+        253,
+        248,
+        0.96
+      ) !important;
+
+    -webkit-backdrop-filter:
+      blur(14px)
+      saturate(1.05);
+
+    backdrop-filter:
+      blur(14px)
+      saturate(1.05);
+  }
+
+  .kj-header .kj-category-nav-item.is-mobile-open
+    > .kj-category-nav-main-link {
+    box-shadow:
+      0 8px 16px
+      rgba(
+        28,
+        32,
+        66,
+        0.055
+      );
+  }
+
+  /*
+    Chừa một khoảng ở cuối panel để item cuối không bị sát đáy
+    hoặc bị safe-area iPhone che.
+  */
+  .kj-header .kj-mobile-nav-actions {
+    padding-bottom:
+      max(
+        16px,
+        env(safe-area-inset-bottom, 0px)
+      );
+  }
+}
+
+/* Android / iPhone portrait */
+@media (max-width: 720px) {
+  .kj-header .kj-main-nav.open {
+    height:
+      calc(
+        100dvh
+        - 80px
+        - env(safe-area-inset-bottom, 0px)
+      ) !important;
+
+    max-height:
+      calc(
+        100dvh
+        - 80px
+        - env(safe-area-inset-bottom, 0px)
+      ) !important;
+
+    padding-bottom:
+      max(
+        14px,
+        env(safe-area-inset-bottom, 0px)
+      );
+  }
+
+  /*
+    Tăng scroll-padding để khi trình duyệt tự focus/chuyển vị trí,
+    item không bị chui dưới phần đầu của panel.
+  */
+  .kj-header .kj-main-nav.open {
+    scroll-padding-top: 8px;
+    scroll-padding-bottom:
+      max(
+        20px,
+        env(safe-area-inset-bottom, 0px)
+      );
+  }
+}
+
+/* Samsung / iPhone nhỏ */
+@media (max-width: 430px) {
+  .kj-header .kj-main-nav.open {
+    height:
+      calc(
+        100dvh
+        - 76px
+        - env(safe-area-inset-bottom, 0px)
+      ) !important;
+
+    max-height:
+      calc(
+        100dvh
+        - 76px
+        - env(safe-area-inset-bottom, 0px)
+      ) !important;
+  }
+}
+
+/*
+  Safari iOS cũ chưa hỗ trợ dvh:
+  fallback về vh.
+*/
+@supports not (height: 100dvh) {
+  @media (max-width: 1080px) {
+    .kj-header .kj-main-nav.open {
+      height:
+        calc(
+          100vh
+          - 96px
+          - env(safe-area-inset-bottom, 0px)
+        ) !important;
+
+      max-height:
+        calc(
+          100vh
+          - 96px
+          - env(safe-area-inset-bottom, 0px)
+        ) !important;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .kj-header .kj-main-nav.open {
+      height:
+        calc(
+          100vh
+          - 80px
+          - env(safe-area-inset-bottom, 0px)
+        ) !important;
+
+      max-height:
+        calc(
+          100vh
+          - 80px
+          - env(safe-area-inset-bottom, 0px)
+        ) !important;
+    }
+  }
+}
+
+
+/* =========================================================
+   KING JADES HEADER — MOBILE CATEGORY OVERLAP FIX
+   2026-09-25
+
+   Sửa lỗi:
+   - Tiêu đề category sticky đè lên item con khi cuộn.
+   - Giữ nguyên scroll mobile iOS / Android.
+   ========================================================= */
+
+@media (max-width: 1080px) {
+
+  /*
+    TẮT sticky ở category đang mở.
+    Header category trở lại flow bình thường nên
+    không còn text con chạy phía sau / đè lên nhau.
+  */
+  .kj-header .kj-category-nav-item.is-mobile-open
+    > .kj-category-nav-main-link,
+  .kj-header .kj-category-nav-item.is-mobile-open
+    > .kj-category-nav-toggle {
+    position: relative !important;
+    top: auto !important;
+    z-index: 2 !important;
+
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+
+    box-shadow: none !important;
+  }
+
+  /*
+    Giữ phần tiêu đề category thành đúng hàng đầu tiên.
+  */
+  .kj-header .kj-category-nav-item.is-mobile-open {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 44px !important;
+    grid-template-rows: auto auto !important;
+    align-items: center !important;
+
+    overflow: visible !important;
+  }
+
+  .kj-header .kj-category-nav-item.is-mobile-open
+    > .kj-category-nav-main-link {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+
+    min-width: 0 !important;
+
+    background: transparent !important;
+
+    transform: none !important;
+  }
+
+  .kj-header .kj-category-nav-item.is-mobile-open
+    > .kj-category-nav-toggle {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+
+    width: 44px !important;
+    min-width: 44px !important;
+    height: 46px !important;
+
+    background: transparent !important;
+
+    transform: none !important;
+  }
+
+  /*
+    Dropdown luôn nằm ở hàng thứ 2,
+    tách khỏi title bằng khoảng cách rõ ràng.
+  */
+  .kj-header .kj-category-nav-item.is-mobile-open
+    > .kj-category-dropdown,
+  .kj-header .kj-category-nav-item.is-mobile-open
+    > .kj-category-dropdown--flat,
+  .kj-header .kj-category-nav-item.is-mobile-open
+    > .kj-category-dropdown--mega {
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
+
+    position: static !important;
+
+    margin-top: 4px !important;
+    padding-top: 10px !important;
+
+    border-top:
+      1px solid
+      rgba(37, 48, 101, 0.07) !important;
+
+    overflow: visible !important;
+
+    transform: none !important;
+  }
+
+  /*
+    Giảm khả năng item con chạm sát title.
+  */
+  .kj-header .kj-category-dropdown__group:first-child {
+    padding-top: 2px !important;
+  }
+
+  .kj-header .kj-category-dropdown__links {
+    margin-top: 2px;
+  }
+
+  /*
+    Scroll vẫn do main nav đảm nhiệm.
+  */
+  .kj-header .kj-main-nav.open {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    -webkit-overflow-scrolling: touch;
+
+    touch-action: pan-y pinch-zoom;
+
+    overscroll-behavior-y: contain;
+  }
+}
+
+
+/* Điện thoại nhỏ */
+@media (max-width: 720px) {
+
+  .kj-header .kj-category-nav-item.is-mobile-open {
+    grid-template-columns: minmax(0, 1fr) 42px !important;
+  }
+
+  .kj-header .kj-category-nav-item.is-mobile-open
+    > .kj-category-nav-toggle {
+    width: 42px !important;
+    min-width: 42px !important;
+    height: 45px !important;
+  }
+
+  .kj-header .kj-category-nav-item.is-mobile-open
+    > .kj-category-dropdown,
+  .kj-header .kj-category-nav-item.is-mobile-open
+    > .kj-category-dropdown--flat,
+  .kj-header .kj-category-nav-item.is-mobile-open
+    > .kj-category-dropdown--mega {
+    margin-top: 3px !important;
+    padding-top: 8px !important;
+  }
+}
+
+
+/* =========================================================
+   KING JADES HEADER — MOBILE SCROLL UNLOCK FINAL
+   2026-09-25
+
+   Mục tiêu:
+   - KHÔNG khóa scroll bằng height cứng.
+   - Chỉ main nav là vùng cuộn.
+   - Vuốt lên / xuống tự nhiên trên iOS + Android.
+   - Giữ nguyên accordion + no-overlap + blur popup.
+   ========================================================= */
+
+@media (max-width: 1080px) {
+
+  /*
+    Gỡ toàn bộ cơ chế lock trước đó.
+    Dùng max-height thay cho height cố định.
+  */
+  .kj-header .kj-main-nav.open {
+    display: flex !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+
+    max-height:
+      calc(
+        100dvh
+        - 92px
+        - env(safe-area-inset-bottom, 0px)
+      ) !important;
+
+    overflow-x: hidden !important;
+    overflow-y: scroll !important;
+
+    -webkit-overflow-scrolling: touch !important;
+
+    /*
+      QUAN TRỌNG:
+      không khóa gesture bằng pan-y/pinch-zoom nữa.
+      Để Safari / Chrome tự xử lý scroll native.
+    */
+    touch-action: auto !important;
+
+    overscroll-behavior: auto !important;
+
+    scrollbar-width: thin;
+
+    pointer-events: auto !important;
+  }
+
+  /*
+    Các con bên trong không được biến thành vùng scroll riêng.
+  */
+  .kj-header .kj-main-nav-links,
+  .kj-header .kj-category-nav-item,
+  .kj-header .kj-category-dropdown,
+  .kj-header .kj-category-dropdown--flat,
+  .kj-header .kj-category-dropdown--mega,
+  .kj-header .kj-mobile-nav-actions {
+    height: auto !important;
+    max-height: none !important;
+
+    overflow: visible !important;
+
+    touch-action: auto !important;
+  }
+
+  /*
+    Link/button cũng trả touch-action về native.
+    Vẫn giữ tap highlight đã bỏ ở rule trước.
+  */
+  .kj-header .kj-main-nav-links a,
+  .kj-header .kj-category-nav-main-link,
+  .kj-header .kj-category-dropdown a,
+  .kj-header .kj-category-nav-toggle,
+  .kj-header .kj-mobile-nav-actions a,
+  .kj-header .kj-mobile-nav-actions button {
+    touch-action: auto !important;
+  }
+
+  /*
+    Không sticky, không fixed title.
+    Category đi theo flow bình thường.
+  */
+  .kj-header .kj-category-nav-item.is-mobile-open
+    > .kj-category-nav-main-link,
+  .kj-header .kj-category-nav-item.is-mobile-open
+    > .kj-category-nav-toggle {
+    position: relative !important;
+    top: auto !important;
+  }
+
+  /*
+    Đảm bảo shell không cắt panel menu.
+  */
+  .kj-header .kj-header-shell {
+    overflow: visible !important;
+  }
+
+  /*
+    Chừa đáy để item cuối không bị social/floating button hoặc safe-area che.
+  */
+  .kj-header .kj-main-nav.open {
+    padding-bottom:
+      max(
+        24px,
+        env(safe-area-inset-bottom, 0px)
+      ) !important;
+  }
+}
+
+
+/* =========================================================
+   MOBILE <= 720px
+   ========================================================= */
+@media (max-width: 720px) {
+
+  .kj-header .kj-main-nav.open {
+    max-height:
+      calc(
+        100dvh
+        - 76px
+        - env(safe-area-inset-bottom, 0px)
+      ) !important;
+
+    overflow-y: scroll !important;
+
+    -webkit-overflow-scrolling: touch !important;
+
+    touch-action: auto !important;
+  }
+}
+
+
+/* =========================================================
+   PHONE NHỎ <= 430px
+   ========================================================= */
+@media (max-width: 430px) {
+
+  .kj-header .kj-main-nav.open {
+    max-height:
+      calc(
+        100dvh
+        - 72px
+        - env(safe-area-inset-bottom, 0px)
+      ) !important;
+  }
+}
+
+
+/* =========================================================
+   FALLBACK SAFARI CŨ
+   ========================================================= */
+@supports not (height: 100dvh) {
+
+  @media (max-width: 1080px) {
+    .kj-header .kj-main-nav.open {
+      max-height:
+        calc(
+          100vh
+          - 92px
+          - env(safe-area-inset-bottom, 0px)
+        ) !important;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .kj-header .kj-main-nav.open {
+      max-height:
+        calc(
+          100vh
+          - 76px
+          - env(safe-area-inset-bottom, 0px)
+        ) !important;
+    }
+  }
+}
+
+
+/* =========================================================
+   MOUSE / TRACKPAD TRONG DEVTOOLS MOBILE EMULATION
+   ========================================================= */
+@media (max-width: 1080px) {
+  .kj-header .kj-main-nav.open {
+    scroll-behavior: auto !important;
+  }
+
+  .kj-header .kj-main-nav.open::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .kj-header .kj-main-nav.open::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: rgba(37, 48, 101, 0.22);
+  }
+}
+/* =========================================================
+   KING JADES HEADER — FINAL CARD EFFECT
+   2026-09-25
+
+   - Bỏ toàn bộ line/chấm ở menu
+   - Hover tới item nào -> item đó popup
+   - Glass / blur nhẹ
+   - Mobile iOS + Android
+   - Menu mobile vẫn scroll tự nhiên
+========================================================= */
+
+
+/* =========================================================
+   1. REMOVE ALL NAV LINES
+========================================================= */
+
+.kj-header .kj-header-shell,
+.kj-header .kj-main-nav {
+  border-top: 0 !important;
+}
+
+.kj-header .kj-main-nav-links > a::before,
+.kj-header .kj-main-nav-links > a::after,
+.kj-header .kj-category-nav-item > a::before,
+.kj-header .kj-category-nav-item > a::after,
+.kj-header .kj-category-nav-main-link::before,
+.kj-header .kj-category-nav-main-link::after {
+  content: none !important;
+
+  display: none !important;
+
+  width: 0 !important;
+  height: 0 !important;
+
+  opacity: 0 !important;
+
+  border: 0 !important;
+}
+
+
+/* =========================================================
+   2. DESKTOP / LAPTOP
+========================================================= */
+
+@media (min-width: 1081px) {
+
+  /*
+    Menu bình thường.
+    Không có viền/line.
+  */
+  .kj-header .kj-main-nav-links > a,
+  .kj-header .kj-category-nav-item > a,
+  .kj-header .kj-category-nav-main-link {
+    position: relative;
+
+    z-index: 1;
+
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+
+    border: 0 !important;
+    outline: 0;
+
+    border-radius: 999px;
+
+    background: transparent;
+
+    box-shadow: none;
+
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+    transition:
+      color 180ms ease,
+      background 200ms ease,
+      box-shadow 220ms ease,
+      transform 220ms cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+      opacity 180ms ease;
+  }
+
+
+  /* =====================================================
+     HOVER CARD
+     rê chuột tới đâu popup tới đó
+  ===================================================== */
+
+  .kj-header .kj-main-nav-links > a:hover,
+  .kj-header .kj-category-nav-item:hover
+    > .kj-category-nav-main-link,
+  .kj-header .kj-category-nav-item:focus-within
+    > .kj-category-nav-main-link {
+
+    z-index: 30;
+
+    color:
+      var(
+        --kj-navy,
+        #253065
+      ) !important;
+
+    background:
+      linear-gradient(
+        145deg,
+        rgba(
+          255,
+          255,
+          255,
+          0.82
+        ),
+        rgba(
+          255,
+          253,
+          248,
+          0.48
+        )
+      ) !important;
+
+    box-shadow:
+      0 14px 32px
+        rgba(
+          28,
+          32,
+          66,
+          0.12
+        ),
+
+      0 4px 10px
+        rgba(
+          28,
+          32,
+          66,
+          0.055
+        ),
+
+      inset
+        0
+        1px
+        0
+        rgba(
+          255,
+          255,
+          255,
+          0.92
+        );
+
+    -webkit-backdrop-filter:
+      blur(15px)
+      saturate(1.1);
+
+    backdrop-filter:
+      blur(15px)
+      saturate(1.1);
+
+    transform:
+      translateY(-4px)
+      scale(1.035);
+  }
+
+
+  /*
+    Active page:
+    chỉ sáng nhẹ.
+    KHÔNG line / chấm.
+  */
+
+  .kj-header .kj-main-nav-links > a.active,
+  .kj-header .kj-category-nav-main-link.active {
+
+    color:
+      var(
+        --kj-navy,
+        #253065
+      ) !important;
+
+    background:
+      rgba(
+        255,
+        255,
+        255,
+        0.32
+      );
+
+    box-shadow:
+      0 5px 15px
+        rgba(
+          28,
+          32,
+          66,
+          0.055
+        );
+
+    transform: none;
+  }
+
+
+  /*
+    Active + hover vẫn popup bình thường.
+  */
+
+  .kj-header .kj-main-nav-links > a.active:hover,
+  .kj-header .kj-category-nav-item:hover
+    > .kj-category-nav-main-link.active {
+
+    background:
+      rgba(
+        255,
+        255,
+        255,
+        0.84
+      ) !important;
+
+    box-shadow:
+      0 14px 32px
+        rgba(
+          28,
+          32,
+          66,
+          0.12
+        );
+
+    transform:
+      translateY(-4px)
+      scale(1.035);
+  }
+}
+
+
+/* =========================================================
+   3. MOBILE / TABLET
+   iOS + Android
+========================================================= */
+
+@media (max-width: 1080px) {
+
+  /*
+    Header safe-area
+    iPhone tai thỏ / Dynamic Island.
+  */
+
+  .kj-header {
+    top:
+      max(
+        8px,
+        env(
+          safe-area-inset-top,
+          0px
+        )
+      );
+
+    padding-left:
+      max(
+        8px,
+        env(
+          safe-area-inset-left,
+          0px
+        )
+      );
+
+    padding-right:
+      max(
+        8px,
+        env(
+          safe-area-inset-right,
+          0px
+        )
+      );
+  }
+
+
+  /*
+    Không cắt menu dropdown.
+  */
+
+  .kj-header .kj-header-shell {
+    overflow: visible !important;
+  }
+
+
+  /* =====================================================
+     MAIN MOBILE MENU SCROLL
+  ===================================================== */
+
+  .kj-header .kj-main-nav.open {
+
+    display: flex !important;
+
+    height: auto !important;
+
+    min-height: 0 !important;
+
+    max-height:
+      calc(
+        100dvh
+        - 92px
+        - env(
+          safe-area-inset-bottom,
+          0px
+        )
+      ) !important;
+
+
+    overflow-x:
+      hidden !important;
+
+    overflow-y:
+      auto !important;
+
+
+    -webkit-overflow-scrolling:
+      touch;
+
+
+    /*
+      Để browser xử lý gesture tự nhiên.
+      Không lock vuốt.
+    */
+
+    touch-action:
+      auto !important;
+
+
+    overscroll-behavior-y:
+      contain;
+
+
+    padding-bottom:
+      max(
+        22px,
+        env(
+          safe-area-inset-bottom,
+          0px
+        )
+      ) !important;
+
+
+    scrollbar-width:
+      thin;
+  }
+
+
+  .kj-header
+  .kj-main-nav.open::-webkit-scrollbar {
+    width: 5px;
+  }
+
+
+  .kj-header
+  .kj-main-nav.open::-webkit-scrollbar-thumb {
+    border-radius:
+      999px;
+
+    background:
+      rgba(
+        37,
+        48,
+        101,
+        0.2
+      );
+  }
+
+
+  /* =====================================================
+     MENU CARD
+  ===================================================== */
+
+  .kj-header .kj-main-nav-links > a,
+  .kj-header .kj-category-nav-item {
+
+    min-height:
+      46px;
+
+    border:
+      0 !important;
+
+    outline:
+      0;
+
+    -webkit-tap-highlight-color:
+      transparent;
+
+    touch-action:
+      manipulation;
+
+    transition:
+      background
+        160ms ease,
+      box-shadow
+        180ms ease,
+      transform
+        180ms
+        cubic-bezier(
+          0.22,
+          1,
+          0.36,
+          1
+        ),
+      color
+        160ms ease;
+  }
+
+
+  .kj-header
+  .kj-main-nav-links > a {
+
+    border-radius:
+      14px;
+  }
+
+
+  /* =====================================================
+     TOUCH POPUP
+  ===================================================== */
+
+  .kj-header
+  .kj-main-nav-links
+  > a:active,
+
+  .kj-header
+  .kj-main-nav-links
+  > a:focus-visible {
+
+    z-index: 10;
+
+    color:
+      var(
+        --kj-navy,
+        #253065
+      ) !important;
+
+    background:
+      rgba(
+        255,
+        255,
+        255,
+        0.78
+      ) !important;
+
+    box-shadow:
+      0 11px 24px
+        rgba(
+          28,
+          32,
+          66,
+          0.11
+        ),
+
+      inset
+        0
+        1px
+        0
+        rgba(
+          255,
+          255,
+          255,
+          0.86
+        );
+
+    -webkit-backdrop-filter:
+      blur(12px)
+      saturate(1.07);
+
+    backdrop-filter:
+      blur(12px)
+      saturate(1.07);
+
+    transform:
+      translateY(-2px)
+      scale(1.018);
+  }
+
+
+  /*
+    Active không giữ popup quá mạnh,
+    tránh tất cả thẻ nhìn như đang nổi.
+  */
+
+  .kj-header
+  .kj-main-nav-links
+  > a.active {
+
+    color:
+      var(
+        --kj-navy,
+        #253065
+      ) !important;
+
+    background:
+      rgba(
+        255,
+        255,
+        255,
+        0.42
+      );
+
+    box-shadow:
+      0 5px 14px
+        rgba(
+          28,
+          32,
+          66,
+          0.06
+        );
+
+    transform:
+      none;
+  }
+
+
+  /* =====================================================
+     CATEGORY CARD
+  ===================================================== */
+
+  .kj-header
+  .kj-category-nav-item {
+
+    overflow:
+      visible !important;
+
+    border-radius:
+      14px;
+
+    transform:
+      none;
+  }
+
+
+  /*
+    Khi category đang xổ.
+  */
+
+  .kj-header
+  .kj-category-nav-item.is-mobile-open {
+
+    border:
+      0 !important;
+
+    background:
+      linear-gradient(
+        145deg,
+        rgba(
+          255,
+          255,
+          255,
+          0.76
+        ),
+        rgba(
+          248,
+          209,
+          105,
+          0.07
+        )
+      ) !important;
+
+    box-shadow:
+      0 11px 26px
+        rgba(
+          28,
+          32,
+          66,
+          0.09
+        ),
+
+      inset
+        0
+        1px
+        0
+        rgba(
+          255,
+          255,
+          255,
+          0.82
+        );
+
+    -webkit-backdrop-filter:
+      blur(12px);
+
+    backdrop-filter:
+      blur(12px);
+  }
+
+
+  /* =====================================================
+     CATEGORY MAIN LINK
+  ===================================================== */
+
+  .kj-header
+  .kj-category-nav-item
+  > .kj-category-nav-main-link {
+
+    min-height:
+      46px;
+
+    border:
+      0 !important;
+
+    background:
+      transparent;
+
+    -webkit-tap-highlight-color:
+      transparent;
+
+    touch-action:
+      manipulation;
+  }
+
+
+  .kj-header
+  .kj-category-nav-item
+  > .kj-category-nav-main-link:active {
+
+    background:
+      rgba(
+        255,
+        255,
+        255,
+        0.58
+      ) !important;
+
+    box-shadow:
+      0 8px 18px
+        rgba(
+          28,
+          32,
+          66,
+          0.08
+        );
+
+    transform:
+      translateY(-1px)
+      scale(1.01);
+  }
+
+
+  /* =====================================================
+     CATEGORY ARROW
+  ===================================================== */
+
+  .kj-header
+  .kj-category-nav-toggle {
+
+    min-width:
+      44px !important;
+
+    min-height:
+      44px !important;
+
+    border:
+      0 !important;
+
+    /*
+      BỎ LINE ngăn giữa tên category và mũi tên.
+    */
+
+    border-left:
+      0 !important;
+
+    -webkit-tap-highlight-color:
+      transparent;
+
+    touch-action:
+      manipulation;
+  }
+
+
+  .kj-header
+  .kj-category-nav-toggle:active {
+
+    background:
+      rgba(
+        255,
+        255,
+        255,
+        0.62
+      );
+
+    border-radius:
+      12px;
+
+    transform:
+      scale(0.96);
+  }
+
+
+  /* =====================================================
+     CATEGORY DROPDOWN
+  ===================================================== */
+
+  .kj-header
+  .kj-category-dropdown,
+
+  .kj-header
+  .kj-category-dropdown--flat,
+
+  .kj-header
+  .kj-category-dropdown--mega {
+
+    height:
+      auto !important;
+
+    max-height:
+      none !important;
+
+    overflow:
+      visible !important;
+
+    /*
+      bỏ line phía trên dropdown
+    */
+
+    border:
+      0 !important;
+
+    border-top:
+      0 !important;
+
+    box-shadow:
+      none !important;
+
+    touch-action:
+      auto !important;
+  }
+
+
+  /*
+    Không sticky category.
+    Đây chính là chỗ trước đó dễ làm menu mobile bị khóa.
+  */
+
+  .kj-header
+  .kj-category-nav-item.is-mobile-open
+  > .kj-category-nav-main-link,
+
+  .kj-header
+  .kj-category-nav-item.is-mobile-open
+  > .kj-category-nav-toggle {
+
+    position:
+      relative !important;
+
+    top:
+      auto !important;
+
+    z-index:
+      2 !important;
+  }
+
+
+  /* =====================================================
+     SUB CATEGORY
+  ===================================================== */
+
+  .kj-header
+  .kj-category-dropdown a {
+
+    border:
+      0 !important;
+
+    border-radius:
+      10px;
+
+    -webkit-tap-highlight-color:
+      transparent;
+
+    touch-action:
+      manipulation;
+
+    transition:
+      background
+        150ms ease,
+      transform
+        150ms ease,
+      box-shadow
+        150ms ease;
+  }
+
+
+  .kj-header
+  .kj-category-dropdown a:active {
+
+    background:
+      rgba(
+        255,
+        255,
+        255,
+        0.76
+      ) !important;
+
+    box-shadow:
+      0 6px 14px
+        rgba(
+          28,
+          32,
+          66,
+          0.07
+        );
+
+    transform:
+      translateX(2px)
+      scale(1.005);
+  }
+
+
+  /* =====================================================
+     MOBILE ACTIONS
+  ===================================================== */
+
+  .kj-header
+  .kj-mobile-nav-actions {
+
+    border-top:
+      0 !important;
+  }
+
+
+  .kj-header
+  .kj-mobile-nav-actions
+  button,
+
+  .kj-header
+  .kj-mobile-nav-actions
+  a {
+
+    min-height:
+      46px;
+
+    -webkit-tap-highlight-color:
+      transparent;
+
+    touch-action:
+      manipulation;
+  }
+
+
+  .kj-header
+  .kj-mobile-nav-actions
+  button:active,
+
+  .kj-header
+  .kj-mobile-nav-actions
+  a:active {
+
+    background:
+      rgba(
+        255,
+        255,
+        255,
+        0.84
+      );
+
+    box-shadow:
+      0 8px 18px
+        rgba(
+          28,
+          32,
+          66,
+          0.09
+        );
+
+    transform:
+      translateY(-1px)
+      scale(1.01);
+  }
+}
+
+
+/* =========================================================
+   4. MOBILE <= 720px
+========================================================= */
+
+@media (max-width: 720px) {
+
+  .kj-header
+  .kj-main-nav.open {
+
+    max-height:
+      calc(
+        100dvh
+        - 76px
+        - env(
+          safe-area-inset-bottom,
+          0px
+        )
+      ) !important;
+  }
+
+
+  .kj-header
+  .kj-main-nav-links > a,
+
+  .kj-header
+  .kj-category-nav-item
+  > .kj-category-nav-main-link {
+
+    min-height:
+      46px;
+  }
+}
+
+
+/* =========================================================
+   5. PHONE <= 430px
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .kj-header {
+
+    padding-left:
+      max(
+        6px,
+        env(
+          safe-area-inset-left,
+          0px
+        )
+      );
+
+    padding-right:
+      max(
+        6px,
+        env(
+          safe-area-inset-right,
+          0px
+        )
+      );
+  }
+
+
+  .kj-header
+  .kj-main-nav.open {
+
+    max-height:
+      calc(
+        100dvh
+        - 72px
+        - env(
+          safe-area-inset-bottom,
+          0px
+        )
+      ) !important;
+  }
+}
+
+
+/* =========================================================
+   6. OLD SAFARI FALLBACK
+========================================================= */
+
+@supports not (height: 100dvh) {
+
+  @media (max-width: 1080px) {
+
+    .kj-header
+    .kj-main-nav.open {
+
+      max-height:
+        calc(
+          100vh
+          - 92px
+          - env(
+            safe-area-inset-bottom,
+            0px
+          )
+        ) !important;
+    }
+  }
+
+
+  @media (max-width: 720px) {
+
+    .kj-header
+    .kj-main-nav.open {
+
+      max-height:
+        calc(
+          100vh
+          - 76px
+          - env(
+            safe-area-inset-bottom,
+            0px
+          )
+        ) !important;
+    }
+  }
+}
+
+
+/* =========================================================
+   7. REDUCE MOTION
+========================================================= */
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+
+  .kj-header
+  .kj-main-nav-links > a,
+
+  .kj-header
+  .kj-category-nav-main-link,
+
+  .kj-header
+  .kj-category-nav-item,
+
+  .kj-header
+  .kj-category-nav-toggle,
+
+  .kj-header
+  .kj-category-dropdown a {
+
+    transition:
+      none !important;
+  }
+
+
+  .kj-header
+  .kj-main-nav-links > a:hover,
+
+  .kj-header
+  .kj-main-nav-links > a:active,
+
+  .kj-header
+  .kj-category-nav-main-link:hover,
+
+  .kj-header
+  .kj-category-nav-main-link:active {
+
+    transform:
+      none !important;
+  }
+}
+/* =========================================================
+   MOBILE MENU SCROLL — 2026-10-03
+   Nội dung phải bắt đầu từ trên cùng, kể cả khi dài hơn panel.
+   Header.tsx đo chiều cao thực tế qua --kj-mobile-menu-height.
+========================================================= */
+
+@media (max-width: 1080px) {
+  .kj-header {
+    --kj-mobile-menu-offset: 96px;
+  }
+
+  /* Ghi rõ cả .open để thắng các max-height !important cũ phía trên. */
+  .kj-header .kj-main-nav,
+  .kj-header .kj-main-nav.open {
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: calc(
+      var(--kj-mobile-menu-height,
+        calc(100vh - var(--kj-mobile-menu-offset) - env(safe-area-inset-top, 0px)))
+      - env(safe-area-inset-bottom, 0px)
+    ) !important;
+    display: none !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain !important;
+    overflow-anchor: none;
+    touch-action: pan-y pinch-zoom !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 14px !important;
+    padding-bottom: max(14px, env(safe-area-inset-bottom, 0px)) !important;
+    border-radius: 22px !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    contain: none !important;
+  }
+
+  .kj-header .kj-main-nav.open {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+
+    /* center đẩy phần đầu ra ngoài vùng cuộn khi nội dung quá dài. */
+    justify-content: flex-start !important;
+  }
+
+  /* Chỉ panel bên ngoài cuộn; nội dung con giữ nguyên chiều cao. */
+  .kj-header .kj-main-nav.open > .kj-main-nav-links,
+  .kj-header .kj-main-nav.open > .kj-mobile-nav-actions {
+    flex: 0 0 auto !important;
+    min-height: 0 !important;
+  }
+
+  .kj-header .kj-main-nav-links {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .kj-header .kj-category-nav-item,
+  .kj-header .kj-category-nav-item.is-mobile-open {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .kj-header .kj-category-dropdown,
+  .kj-header .kj-category-dropdown--flat,
+  .kj-header .kj-category-dropdown--mega {
+    position: static !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .kj-header .kj-category-nav-item.is-mobile-open > .kj-category-dropdown,
+  .kj-header .kj-category-dropdown.is-mobile-open {
+    display: grid !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .kj-header {
+    --kj-mobile-menu-offset: 88px;
+  }
+}
+
+/* Fallback theo viewport khi effect chưa chạy; Safari cũ dùng 100vh ở trên. */
+@supports (height: 100dvh) {
+  @media (max-width: 1080px) {
+    .kj-header .kj-main-nav,
+    .kj-header .kj-main-nav.open {
+      max-height: calc(
+        var(--kj-mobile-menu-height,
+          calc(100dvh - var(--kj-mobile-menu-offset) - env(safe-area-inset-top, 0px)))
+        - env(safe-area-inset-bottom, 0px)
+      ) !important;
+    }
+  }
+}
+
+
+/* =========================================================
+   KING JADES — MOBILE MENU: BỎ CTA TRÙNG / TĂNG CỠ CHỮ
+   - Chỉ ẩn "Liên hệ" trong menu mobile (giữ desktop)
+   - Nút Tư vấn trong menu dưới đã được xóa khỏi JSX
+   - Giữ nút TƯ VẤN vàng ở header, cho chữ dễ đọc hơn
+   ========================================================= */
+@media (max-width: 1080px) {
+  .kj-header .kj-main-nav-links > .kj-mobile-nav-contact-link {
+    display: none !important;
+  }
+
+  .kj-header .kj-mobile-nav-actions > .kj-mobile-nav-knowledge {
+    min-height: 52px;
+    font-size: clamp(15px, 1.9vw, 17px) !important;
+    font-weight: 800;
+    line-height: 1.25;
+    text-align: center;
+  }
+}
+
+@media (max-width: 720px) {
+  .kj-header .kj-header-consult {
+    min-width: 82px;
+    min-height: 42px;
+    padding-inline: 9px;
+    font-size: clamp(13px, 3.8vw, 15px) !important;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .kj-header .kj-mobile-nav-actions > .kj-mobile-nav-knowledge {
+    font-size: clamp(16px, 4.4vw, 18px) !important;
+  }
+}

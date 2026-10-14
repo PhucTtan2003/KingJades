@@ -1,0 +1,1680 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap");
+:root {
+  --kj-contact-navy: #142543;
+  --kj-contact-navy-deep: #091733;
+  --kj-contact-gold: #d5af34;
+  --kj-contact-gold-light: #e3c359;
+  --kj-contact-gold-dark: #a7832e;
+  --kj-contact-cream: #f7f2e7;
+  --kj-contact-ivory: #fcfaf5;
+  --kj-contact-white: #fffdf8;
+  --kj-contact-muted: #6d6b64;
+  --kj-contact-border: rgba(20, 37, 67, 0.12);
+  --kj-contact-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --kj-contact-body: "Inter", "Segoe UI", Arial, sans-serif;
+  --kj-contact-condensed: "Barlow Condensed", "Arial Narrow", sans-serif;
+}
+
+.kj-contact-page,
+.kj-contact-page *,
+.kj-contact-page *::before,
+.kj-contact-page *::after {
+  box-sizing: border-box;
+}
+
+.kj-contact-page {
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--kj-contact-ivory);
+  color: var(--kj-contact-navy);
+  font-family: var(--kj-contact-body);
+}
+
+.kj-contact-page img {
+  display: block;
+  max-width: 100%;
+}
+
+.kj-contact-page a {
+  text-decoration: none;
+}
+
+.kj-contact-page button,
+.kj-contact-page input,
+.kj-contact-page select,
+.kj-contact-page textarea {
+  font: inherit;
+}
+
+.kj-contact-shell {
+  width: min(1380px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.kj-contact-eyebrow {
+  display: inline-block;
+  color: var(--kj-contact-gold-dark);
+  font-family: var(--kj-contact-condensed);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/* Hero */
+.kj-contact-hero {
+  position: relative;
+  min-height: 860px;
+  overflow: hidden;
+  padding: 148px 0 94px;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(180, 218, 196, 0.34), transparent 29%),
+    radial-gradient(circle at 90% 12%, rgba(235, 209, 128, 0.36), transparent 28%),
+    linear-gradient(145deg, #fffef9 0%, #f6efdf 55%, #f2ead8 100%);
+}
+
+.kj-contact-hero__pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.045;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: 520px auto;
+  pointer-events: none;
+}
+
+.kj-contact-hero__glow {
+  position: absolute;
+  width: 430px;
+  height: 430px;
+  border-radius: 50%;
+  opacity: 0.28;
+  filter: blur(90px);
+  pointer-events: none;
+}
+
+.kj-contact-hero__glow--left {
+  left: -210px;
+  bottom: 50px;
+  background: #b9d7c2;
+}
+
+.kj-contact-hero__glow--right {
+  right: -170px;
+  top: 70px;
+  background: #e6c969;
+}
+
+.kj-contact-hero__inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(520px, 1.05fr);
+  align-items: stretch;
+  gap: clamp(36px, 5vw, 72px);
+}
+
+.kj-contact-visual {
+  position: relative;
+  min-height: 640px;
+}
+
+.kj-contact-visual__image {
+  position: absolute;
+  inset: 0 54px 92px 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 34px;
+  background: #dfd7c8;
+  box-shadow:
+    0 32px 78px rgba(20, 37, 67, 0.17),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78);
+}
+
+.kj-contact-visual__image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgba(9, 23, 51, 0.44), transparent 52%),
+    linear-gradient(125deg, rgba(255, 255, 255, 0.2), transparent 36%);
+  pointer-events: none;
+}
+
+.kj-contact-visual__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.kj-contact-visual__badge {
+  position: absolute;
+  z-index: 2;
+  top: 22px;
+  left: 22px;
+  min-width: 174px;
+  padding: 13px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 17px;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 253, 248, 0.78);
+  color: var(--kj-contact-navy);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 12px 28px rgba(9, 23, 51, 0.1);
+}
+
+.kj-contact-visual__badge span {
+  color: var(--kj-contact-gold-dark);
+  font-family: var(--kj-contact-condensed);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.kj-contact-visual__badge strong {
+  margin-top: 4px;
+  font-family: var(--kj-contact-display);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.kj-contact-guidance-card {
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  bottom: 0;
+  width: min(470px, 80%);
+  padding: 28px;
+  border: 1px solid rgba(213, 175, 52, 0.34);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(213, 175, 52, 0.16), transparent 36%),
+    linear-gradient(145deg, rgba(9, 23, 51, 0.98), rgba(20, 37, 67, 0.97));
+  color: rgba(255, 253, 248, 0.72);
+  box-shadow: 0 30px 64px rgba(9, 23, 51, 0.29);
+}
+
+.kj-contact-guidance-card .kj-contact-eyebrow {
+  color: var(--kj-contact-gold-light);
+}
+
+.kj-contact-guidance-title {
+  margin: 13px 0 12px;
+  color: var(--kj-contact-white);
+  font-family: var(--kj-contact-display);
+  font-size: clamp(36px, 3.6vw, 50px);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+
+.kj-contact-guidance-card p {
+  margin: 0;
+  color: rgba(255, 253, 248, 0.66);
+  font-size: 13px;
+  line-height: 1.72;
+}
+
+.kj-contact-visual__quick-actions {
+  margin-top: 22px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+
+.kj-contact-visual__quick-actions a {
+  min-height: 42px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--kj-contact-white);
+  font-family: var(--kj-contact-condensed);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.kj-contact-visual__quick-actions a:first-child {
+  border-color: rgba(213, 175, 52, 0.45);
+  background: linear-gradient(
+    135deg,
+    var(--kj-contact-gold-light),
+    var(--kj-contact-gold)
+  );
+  color: var(--kj-contact-navy-deep);
+}
+
+.kj-contact-visual__quick-actions a:hover {
+  transform: translateY(-2px);
+  border-color: rgba(227, 195, 89, 0.65);
+}
+
+.kj-contact-visual__quick-actions svg,
+.kj-contact-methods svg,
+.kj-contact-submit svg,
+.kj-contact-zalo__button svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Form */
+.kj-contact-form-card {
+  align-self: center;
+  padding: clamp(26px, 3vw, 42px);
+  border: 1px solid rgba(20, 37, 67, 0.11);
+  border-radius: 30px;
+  background: rgba(255, 253, 248, 0.94);
+  box-shadow:
+    0 30px 76px rgba(20, 37, 67, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(15px);
+}
+
+.kj-contact-form-card__heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.kj-contact-form-card__heading h2 {
+  margin: 10px 0 8px;
+  color: var(--kj-contact-navy);
+  font-family: var(--kj-contact-display);
+  font-size: clamp(39px, 4vw, 54px);
+  font-weight: 600;
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+}
+
+.kj-contact-form-card__heading p {
+  max-width: 500px;
+  margin: 0;
+  color: var(--kj-contact-muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.kj-contact-product-reference {
+  width: min(210px, 38%);
+  padding: 13px 14px;
+  border: 1px solid rgba(213, 175, 52, 0.28);
+  border-radius: 17px;
+  background: #fff9e9;
+}
+
+.kj-contact-product-reference span {
+  display: block;
+  color: var(--kj-contact-gold-dark);
+  font-family: var(--kj-contact-condensed);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.kj-contact-product-reference a,
+.kj-contact-product-reference strong {
+  display: -webkit-box;
+  overflow: hidden;
+  margin-top: 5px;
+  color: var(--kj-contact-navy);
+  font-family: var(--kj-contact-display);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.05;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.kj-contact-alert {
+  margin-bottom: 18px;
+  padding: 13px 15px;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.kj-contact-alert--success {
+  border: 1px solid rgba(48, 125, 87, 0.25);
+  background: #edf8f1;
+  color: #245f43;
+}
+
+.kj-contact-alert--error {
+  border: 1px solid rgba(166, 61, 61, 0.25);
+  background: #fff1ee;
+  color: #9d3535;
+}
+
+.kj-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.kj-contact-form__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+/* Contact form: sau khi ẩn Email, cho "Nhu cầu tư vấn" chiếm trọn hàng */
+.kj-contact-field--full {
+  grid-column: 1 / -1;
+}
+
+.kj-contact-field {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.kj-contact-field > span,
+.kj-contact-channel legend {
+  color: #52565f;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.kj-contact-field b {
+  color: var(--kj-contact-gold-dark);
+}
+
+.kj-contact-field input,
+.kj-contact-field select,
+.kj-contact-field textarea {
+  width: 100%;
+  border: 1px solid rgba(20, 37, 67, 0.12);
+  border-radius: 14px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--kj-contact-navy);
+  font-size: 13px;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.kj-contact-field input,
+.kj-contact-field select {
+  min-height: 49px;
+  padding: 0 14px;
+}
+
+.kj-contact-field textarea {
+  min-height: 126px;
+  padding: 13px 14px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.kj-contact-field input::placeholder,
+.kj-contact-field textarea::placeholder {
+  color: #aaa69d;
+}
+
+.kj-contact-field input:focus,
+.kj-contact-field select:focus,
+.kj-contact-field textarea:focus {
+  border-color: rgba(213, 175, 52, 0.68);
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(213, 175, 52, 0.1);
+}
+
+.kj-contact-channel {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.kj-contact-channel legend {
+  margin-bottom: 8px;
+}
+
+.kj-contact-channel > div {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.kj-contact-channel label {
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid rgba(20, 37, 67, 0.11);
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.74);
+  color: #66665f;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.kj-contact-channel label:has(input:checked) {
+  border-color: rgba(213, 175, 52, 0.58);
+  background: #fff7dd;
+  color: var(--kj-contact-navy);
+}
+
+.kj-contact-channel input {
+  accent-color: var(--kj-contact-gold-dark);
+}
+
+.kj-contact-submit {
+  min-height: 51px;
+  padding: 0 22px;
+  border: 1px solid rgba(167, 131, 46, 0.32);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(
+    135deg,
+    var(--kj-contact-gold-light),
+    var(--kj-contact-gold),
+    var(--kj-contact-gold-dark)
+  );
+  color: var(--kj-contact-navy-deep);
+  cursor: pointer;
+  font-family: var(--kj-contact-condensed);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  box-shadow: 0 15px 30px rgba(167, 131, 46, 0.22);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.kj-contact-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(167, 131, 46, 0.3);
+}
+
+.kj-contact-submit:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.kj-contact-privacy-note {
+  margin: -2px 0 0;
+  color: #97938a;
+  font-size: 10px;
+  line-height: 1.55;
+  text-align: center;
+}
+
+/* Methods */
+.kj-contact-methods {
+  padding: 58px 0 64px;
+  background: var(--kj-contact-ivory);
+}
+
+.kj-contact-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.kj-contact-section-heading h2,
+.kj-contact-zalo h2 {
+  max-width: 620px;
+  margin: 8px 0 0;
+  color: var(--kj-contact-navy);
+  font-family: var(--kj-contact-display);
+  font-size: clamp(38px, 3.5vw, 50px);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+
+.kj-contact-section-heading > p {
+  max-width: 440px;
+  margin: 0;
+  color: var(--kj-contact-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.kj-contact-methods__grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.kj-contact-methods article {
+  min-height: 215px;
+  padding: 21px 22px;
+  border: 1px solid rgba(20, 37, 67, 0.1);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(227, 195, 89, 0.16), transparent 42%),
+    linear-gradient(145deg, #fffefb, #f7f1e6);
+  color: var(--kj-contact-navy);
+  box-shadow: 0 12px 30px rgba(20, 37, 67, 0.055);
+  transition:
+    transform 190ms ease,
+    border-color 190ms ease,
+    box-shadow 190ms ease;
+}
+
+.kj-contact-methods article:hover {
+  transform: translateY(-4px);
+  border-color: rgba(213, 175, 52, 0.42);
+  box-shadow: 0 20px 42px rgba(20, 37, 67, 0.1);
+}
+
+.kj-contact-methods__icon {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(213, 175, 52, 0.35);
+  border-radius: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff8df;
+  color: var(--kj-contact-gold-dark);
+}
+
+.kj-contact-methods__icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.kj-contact-methods small {
+  margin-top: 16px;
+  color: var(--kj-contact-gold-dark);
+  font-family: var(--kj-contact-condensed);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.kj-contact-methods h3 {
+  margin: 6px 0 7px;
+  color: var(--kj-contact-navy);
+  font-family: var(--kj-contact-display);
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.kj-contact-methods p {
+  margin: 0;
+  color: #77736a;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.kj-contact-methods a {
+  margin-top: auto;
+  padding-top: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--kj-contact-navy);
+  font-family: var(--kj-contact-condensed);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.kj-contact-methods a svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* Customer stories */
+.kj-customer-stories {
+  position: relative;
+  overflow: hidden;
+  padding: 96px 0 108px;
+  background:
+    radial-gradient(circle at 8% 5%, rgba(227, 195, 89, 0.16), transparent 24%),
+    radial-gradient(circle at 92% 90%, rgba(180, 218, 196, 0.25), transparent 28%),
+    linear-gradient(150deg, #fffdf8 0%, #f7f2e7 52%, #f1ecdf 100%);
+}
+
+.kj-customer-stories__heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.kj-customer-stories__heading h2 {
+  max-width: 760px;
+  margin: 10px 0 0;
+  color: var(--kj-contact-navy);
+  font-family: var(--kj-contact-display);
+  font-size: clamp(42px, 4.8vw, 64px);
+  font-weight: 600;
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+}
+
+.kj-customer-stories__heading > p {
+  max-width: 500px;
+  margin: 0;
+  color: var(--kj-contact-muted);
+  font-size: 14px;
+  line-height: 1.78;
+}
+
+.kj-customer-stories__grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.kj-customer-story-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(20, 37, 67, 0.1);
+  border-radius: 28px;
+  background: rgba(255, 253, 248, 0.96);
+  box-shadow: 0 18px 44px rgba(20, 37, 67, 0.08);
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+.kj-customer-story-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(213, 175, 52, 0.42);
+  box-shadow: 0 28px 58px rgba(20, 37, 67, 0.13);
+}
+
+.kj-customer-story-card__media {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  margin: 0;
+  overflow: hidden;
+  background: #e8e2d7;
+}
+
+.kj-customer-story-card__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to top, rgba(9, 23, 51, 0.2), transparent 34%),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.08), transparent 36%);
+}
+
+.kj-customer-story-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 520ms ease;
+}
+
+.kj-customer-story-card:hover .kj-customer-story-card__media img {
+  transform: scale(1.025);
+}
+
+.kj-customer-story-card__number {
+  position: absolute;
+  z-index: 2;
+  top: 16px;
+  left: 16px;
+  min-width: 42px;
+  min-height: 34px;
+  padding: 0 11px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 253, 248, 0.82);
+  color: var(--kj-contact-navy);
+  font-family: var(--kj-contact-condensed);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 22px rgba(9, 23, 51, 0.12);
+}
+
+.kj-customer-story-card__content {
+  padding: 23px 23px 25px;
+}
+
+.kj-customer-story-card__content > span {
+  color: var(--kj-contact-gold-dark);
+  font-family: var(--kj-contact-condensed);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.kj-customer-story-card__content h3 {
+  margin: 9px 0 9px;
+  color: var(--kj-contact-navy);
+  font-family: var(--kj-contact-display);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.03;
+  letter-spacing: -0.025em;
+}
+
+.kj-customer-story-card__content p {
+  margin: 0;
+  color: #716f68;
+  font-size: 12px;
+  line-height: 1.72;
+}
+
+/* Responsive */
+@media (max-width: 1120px) {
+  .kj-customer-stories__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .kj-contact-hero__inner {
+    grid-template-columns: 1fr;
+  }
+  .kj-contact-visual {
+    width: min(820px, 100%);
+    min-height: 590px;
+    margin: 0 auto;
+  }
+  .kj-contact-form-card {
+    width: min(820px, 100%);
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 840px) {
+  .kj-contact-hero {
+    padding-top: 132px;
+  }
+  .kj-contact-section-heading,
+  .kj-contact-zalo__inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .kj-contact-methods__grid {
+    grid-template-columns: 1fr;
+  }
+  .kj-contact-methods article {
+    min-height: 240px;
+  }
+}
+
+@media (max-width: 680px) {
+  .kj-customer-stories {
+    padding: 76px 0 84px;
+  }
+  .kj-customer-stories__heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .kj-customer-stories__heading h2 {
+    font-size: clamp(38px, 11vw, 50px);
+  }
+  .kj-customer-stories__heading > p {
+    font-size: 13px;
+  }
+  .kj-customer-stories__grid {
+    margin-top: 28px;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .kj-customer-story-card {
+    border-radius: 23px;
+  }
+  .kj-customer-story-card__content {
+    padding: 19px 18px 21px;
+  }
+  .kj-customer-story-card__content h3 {
+    font-size: 27px;
+  }
+  .kj-contact-shell {
+    width: min(100% - 28px, 1380px);
+  }
+  .kj-contact-hero {
+    padding: 116px 0 68px;
+  }
+  .kj-contact-visual {
+    min-height: 545px;
+  }
+  .kj-contact-visual__image {
+    inset: 0 0 124px;
+    border-radius: 26px;
+  }
+  .kj-contact-guidance-card {
+    left: 12px;
+    right: 12px;
+    bottom: 0;
+    width: auto;
+    padding: 22px;
+    border-radius: 21px;
+  }
+  .kj-contact-guidance-title {
+    font-size: 39px;
+  }
+  .kj-contact-form-card {
+    padding: 24px 18px;
+    border-radius: 24px;
+  }
+  .kj-contact-form-card__heading {
+    flex-direction: column;
+  }
+  .kj-contact-product-reference {
+    width: 100%;
+  }
+  .kj-contact-form__grid {
+    grid-template-columns: 1fr;
+  }
+  .kj-contact-channel > div {
+    grid-template-columns: 1fr;
+  }
+  .kj-contact-methods {
+    padding: 78px 0;
+  }
+}
+
+@media (max-width: 450px) {
+  .kj-customer-stories {
+    padding: 64px 0 74px;
+  }
+  .kj-customer-story-card__number {
+    top: 12px;
+    left: 12px;
+  }
+  .kj-contact-shell {
+    width: min(100% - 22px, 1380px);
+  }
+  .kj-contact-visual {
+    min-height: 575px;
+  }
+  .kj-contact-visual__quick-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .kj-contact-visual__quick-actions a {
+    justify-content: center;
+  }
+}
+
+/* Compact contact methods responsive */
+@media (max-width: 840px) {
+  .kj-contact-methods {
+    padding: 52px 0 56px;
+  }
+  .kj-contact-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .kj-contact-methods__grid {
+    margin-top: 20px;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .kj-contact-methods article {
+    min-height: 190px;
+  }
+}
+
+@media (max-width: 680px) {
+  .kj-contact-methods {
+    padding: 46px 0 50px;
+  }
+  .kj-contact-section-heading h2 {
+    font-size: clamp(34px, 10vw, 42px);
+  }
+  .kj-contact-section-heading > p {
+    font-size: 12px;
+  }
+  .kj-contact-methods__grid {
+    margin-top: 20px;
+    gap: 11px;
+  }
+  .kj-contact-methods article {
+    min-height: 0;
+    padding: 18px;
+    border-radius: 18px;
+  }
+  .kj-contact-methods__icon {
+    width: 39px;
+    height: 39px;
+    border-radius: 12px;
+  }
+  .kj-contact-methods small {
+    margin-top: 13px;
+  }
+  .kj-contact-methods h3 {
+    font-size: 25px;
+  }
+  .kj-contact-methods a {
+    padding-top: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kj-contact-page *,
+  .kj-contact-page *::before,
+  .kj-contact-page *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* =========================================================
+   CONTACT HERO — VISUAL FIX V3
+   2026-10-02
+   Mục tiêu:
+   - Box xanh nhỏ thật trên PC + iOS + Android.
+   - Không để box cao/ốm và che gần hết ảnh.
+   - Khung ảnh có khoảng trái/phải bằng nhau.
+   - Ảnh luôn căn giữa trong khung.
+   ========================================================= */
+/* -------------------------
+   DESKTOP / LAPTOP
+   ------------------------- */
+@media (min-width: 1121px) {
+  .kj-contact-visual {
+    min-height: 610px;
+  }
+  .kj-contact-visual__image {
+    /* Hai bên bằng nhau => khung ảnh nằm giữa thật */
+    inset: 0 22px 82px 22px;
+  }
+  .kj-contact-visual__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+  .kj-contact-guidance-card {
+    right: 22px;
+    bottom: 12px;
+    width: min(360px, 58%);
+    padding: 18px 20px;
+    border-radius: 20px;
+  }
+  .kj-contact-guidance-card .kj-contact-eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.14em;
+  }
+  .kj-contact-guidance-title {
+    margin: 9px 0 8px;
+    font-size: clamp(29px, 2.25vw, 37px);
+    line-height: 0.98;
+    letter-spacing: -0.03em;
+  }
+  .kj-contact-guidance-card p {
+    font-size: 10.5px;
+    line-height: 1.5;
+  }
+  .kj-contact-visual__quick-actions {
+    margin-top: 13px;
+    gap: 7px;
+  }
+  .kj-contact-visual__quick-actions a {
+    min-height: 35px;
+    padding: 0 11px;
+    font-size: 10px;
+  }
+  .kj-contact-visual__quick-actions svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+/* -------------------------
+   TABLET / SMALL LAPTOP
+   ------------------------- */
+@media (min-width: 681px) and (max-width: 1120px) {
+  .kj-contact-visual {
+    width: min(760px, 100%);
+    min-height: 560px;
+  }
+  .kj-contact-visual__image {
+    inset: 0 20px 86px 20px;
+  }
+  .kj-contact-visual__image img {
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+  .kj-contact-guidance-card {
+    right: 20px;
+    bottom: 10px;
+    width: min(350px, 56%);
+    padding: 17px 19px;
+    border-radius: 19px;
+  }
+  .kj-contact-guidance-card .kj-contact-eyebrow {
+    font-size: 9px;
+  }
+  .kj-contact-guidance-title {
+    margin: 8px 0;
+    font-size: clamp(28px, 4vw, 35px);
+    line-height: 0.98;
+  }
+  .kj-contact-guidance-card p {
+    font-size: 10.5px;
+    line-height: 1.5;
+  }
+  .kj-contact-visual__quick-actions {
+    margin-top: 12px;
+    gap: 7px;
+  }
+  .kj-contact-visual__quick-actions a {
+    min-height: 35px;
+    padding: 0 10px;
+    font-size: 10px;
+  }
+}
+
+/* -------------------------
+   MOBILE — iOS / Android
+   ------------------------- */
+@media (max-width: 680px) {
+  .kj-contact-visual {
+    width: 100%;
+    min-height: 505px;
+  }
+  .kj-contact-visual__image {
+    /* Khung ảnh cân đều 2 bên */
+    top: 0;
+    left: 10px;
+    right: 10px;
+    bottom: auto;
+    height: 390px;
+    border-radius: 24px;
+  }
+  .kj-contact-visual__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Căn đúng tâm ảnh, không kéo lệch trái/phải */
+    object-position: 50% 50%;
+  }
+  .kj-contact-visual__badge {
+    top: 14px;
+    left: 14px;
+    min-width: 0;
+    padding: 10px 12px;
+    border-radius: 15px;
+  }
+  .kj-contact-visual__badge span {
+    font-size: 8px;
+  }
+  .kj-contact-visual__badge strong {
+    margin-top: 3px;
+    font-size: 18px;
+  }
+  .kj-contact-guidance-card {
+    left: auto;
+    right: 16px;
+    bottom: 0;
+    /* Nhỏ thật, không còn full gần hết màn hình */
+    width: min(315px, calc(100% - 42px));
+    padding: 16px 17px;
+    border-radius: 18px;
+  }
+  .kj-contact-guidance-card .kj-contact-eyebrow {
+    font-size: 8px;
+    letter-spacing: 0.12em;
+  }
+  .kj-contact-guidance-title {
+    margin: 8px 0 8px;
+    /* Giảm chữ để box không bị cao */
+    font-size: clamp(27px, 8vw, 31px);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+  }
+  .kj-contact-guidance-card p {
+    font-size: 9.5px;
+    line-height: 1.48;
+  }
+  .kj-contact-visual__quick-actions {
+    margin-top: 11px;
+    gap: 6px;
+  }
+  .kj-contact-visual__quick-actions a {
+    min-height: 34px;
+    padding: 0 10px;
+    font-size: 9.5px;
+  }
+  .kj-contact-visual__quick-actions svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Điện thoại nhỏ: iPhone mini / Android ~360px */
+@media (max-width: 450px) {
+  .kj-contact-visual {
+    min-height: 500px;
+  }
+  .kj-contact-visual__image {
+    left: 8px;
+    right: 8px;
+    height: 370px;
+  }
+  .kj-contact-guidance-card {
+    right: 12px;
+    width: min(300px, calc(100% - 32px));
+    padding: 15px 16px;
+  }
+  .kj-contact-guidance-title {
+    font-size: clamp(25px, 7.6vw, 29px);
+  }
+  /* Giữ 2 CTA gọn hơn, không làm box cao quá */
+  .kj-contact-visual__quick-actions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .kj-contact-visual__quick-actions a {
+    flex: 1 1 130px;
+    justify-content: center;
+  }
+}
+
+/* =========================================================
+   CONTACT GUIDANCE — ISOLATED FROM GLOBAL TYPOGRAPHY
+   GlobalTypography.css uses #root h1 + !important.
+   These selectors are intentionally more specific so this
+   ContactPage H1 can have its own responsive size.
+   ========================================================= */
+#root .kj-contact-page .kj-contact-guidance-title {
+  font-family: var(--kj-contact-display) !important;
+  font-size: clamp(29px, 2.25vw, 37px) !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.03em !important;
+}
+
+@media (min-width: 681px) and (max-width: 1120px) {
+  #root .kj-contact-page .kj-contact-guidance-title {
+    font-size: clamp(28px, 4vw, 35px) !important;
+    line-height: 0.98 !important;
+  }
+}
+
+@media (max-width: 680px) {
+  #root .kj-contact-page .kj-contact-guidance-title {
+    font-size: clamp(27px, 8vw, 31px) !important;
+    line-height: 0.98 !important;
+    letter-spacing: -0.025em !important;
+  }
+}
+
+@media (max-width: 450px) {
+  #root .kj-contact-page .kj-contact-guidance-title {
+    font-size: clamp(25px, 7.6vw, 29px) !important;
+  }
+}
+
+/* =========================================================
+   CONTACT PHONE — COUNTRY CODE + PHONE NUMBER
+   ========================================================= */
+.kj-contact-phone-control {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 8px;
+}
+
+.kj-contact-phone-code,
+.kj-contact-phone-number {
+  min-width: 0;
+}
+
+.kj-contact-phone-code {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.kj-contact-phone-hint {
+  margin-top: 1px;
+  color: #8b877f;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+@media (max-width: 680px) {
+  .kj-contact-phone-control {
+    grid-template-columns: 112px minmax(0, 1fr);
+    gap: 7px;
+  }
+  .kj-contact-phone-hint {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 380px) {
+  .kj-contact-phone-control {
+    grid-template-columns: 104px minmax(0, 1fr);
+  }
+}
+
+/* =========================================================
+   CONTACT GUIDANCE — SMALLER V4
+   Final local override: làm card nhỏ thật trên mọi màn hình.
+   ========================================================= */
+/* PC / laptop */
+@media (min-width: 1121px) {
+  #root .kj-contact-page .kj-contact-guidance-card {
+    width: 320px !important;
+    max-width: 52% !important;
+    right: 22px !important;
+    bottom: 16px !important;
+    padding: 15px 17px !important;
+    border-radius: 18px !important;
+  }
+  #root .kj-contact-page .kj-contact-guidance-title {
+    margin: 7px 0 7px !important;
+    font-size: 27px !important;
+    line-height: 0.98 !important;
+  }
+  #root .kj-contact-page .kj-contact-guidance-card p {
+    font-size: 9.5px !important;
+    line-height: 1.45 !important;
+  }
+  #root .kj-contact-page .kj-contact-guidance-card .kj-contact-eyebrow {
+    font-size: 8px !important;
+  }
+  #root .kj-contact-page .kj-contact-visual__quick-actions {
+    margin-top: 10px !important;
+    gap: 6px !important;
+  }
+  #root .kj-contact-page .kj-contact-visual__quick-actions a {
+    min-height: 31px !important;
+    padding: 0 9px !important;
+    font-size: 9px !important;
+  }
+}
+
+/* Tablet / laptop nhỏ */
+@media (min-width: 681px) and (max-width: 1120px) {
+  #root .kj-contact-page .kj-contact-guidance-card {
+    width: 300px !important;
+    max-width: 50% !important;
+    right: 18px !important;
+    bottom: 12px !important;
+    padding: 14px 16px !important;
+    border-radius: 17px !important;
+  }
+  #root .kj-contact-page .kj-contact-guidance-title {
+    margin: 7px 0 6px !important;
+    font-size: 25px !important;
+    line-height: 0.98 !important;
+  }
+  #root .kj-contact-page .kj-contact-guidance-card p {
+    font-size: 9px !important;
+    line-height: 1.42 !important;
+  }
+  #root .kj-contact-page .kj-contact-guidance-card .kj-contact-eyebrow {
+    font-size: 8px !important;
+  }
+  #root .kj-contact-page .kj-contact-visual__quick-actions {
+    margin-top: 9px !important;
+    gap: 6px !important;
+  }
+  #root .kj-contact-page .kj-contact-visual__quick-actions a {
+    min-height: 30px !important;
+    padding: 0 8px !important;
+    font-size: 8.5px !important;
+  }
+}
+
+/* iOS / Android */
+@media (max-width: 680px) {
+  #root .kj-contact-page .kj-contact-guidance-card {
+    left: auto !important;
+    right: 12px !important;
+    bottom: 4px !important;
+    width: min(260px, calc(100% - 66px)) !important;
+    max-width: none !important;
+    padding: 13px 14px !important;
+    border-radius: 16px !important;
+  }
+  #root .kj-contact-page .kj-contact-guidance-title {
+    margin: 6px 0 6px !important;
+    font-size: 22px !important;
+    line-height: 1 !important;
+    letter-spacing: -0.02em !important;
+  }
+  #root .kj-contact-page .kj-contact-guidance-card p {
+    font-size: 8.5px !important;
+    line-height: 1.4 !important;
+  }
+  #root .kj-contact-page .kj-contact-guidance-card .kj-contact-eyebrow {
+    font-size: 7.5px !important;
+    letter-spacing: 0.11em !important;
+  }
+  #root .kj-contact-page .kj-contact-visual__quick-actions {
+    margin-top: 9px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 5px !important;
+  }
+  #root .kj-contact-page .kj-contact-visual__quick-actions a {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    min-height: 29px !important;
+    padding: 0 7px !important;
+    justify-content: center !important;
+    font-size: 8px !important;
+    white-space: nowrap !important;
+  }
+  #root .kj-contact-page .kj-contact-visual__quick-actions svg {
+    width: 12px !important;
+    height: 12px !important;
+  }
+  /* Khung hình vẫn cân giữa */
+  #root .kj-contact-page .kj-contact-visual__image {
+    left: 10px !important;
+    right: 10px !important;
+  }
+  #root .kj-contact-page .kj-contact-visual__image img {
+    object-position: 17% 50% !important;
+  }
+}
+
+/* Mobile nhỏ */
+@media (max-width: 390px) {
+  #root .kj-contact-page .kj-contact-guidance-card {
+    width: min(245px, calc(100% - 54px)) !important;
+    right: 10px !important;
+    padding: 12px 13px !important;
+  }
+  #root .kj-contact-page .kj-contact-guidance-title {
+    font-size: 20px !important;
+  }
+  #root .kj-contact-page .kj-contact-visual__quick-actions a {
+    font-size: 7.5px !important;
+    padding: 0 6px !important;
+  }
+}
+
+/* =========================================================
+   CONTACT HERO IMAGE — LEFT CROP FINAL
+   Lấy phần bên trái của ảnh nhiều hơn.
+   ========================================================= */
+#root .kj-contact-page .kj-contact-visual__image img {
+  object-position: 17% 50% !important;
+}
+
+@media (max-width: 680px) {
+  #root .kj-contact-page .kj-contact-visual__image img {
+    object-position: 20% 50% !important;
+  }
+}
+
+/* =========================================================
+   CONTACT PHONE — MOBILE COMPACT COUNTRY CODE
+   - Ô chọn đóng: chỉ hiện +84, +1, +44...
+   - Mở danh sách: native select giữ mã + tên quốc gia đầy đủ.
+   - Không thay đổi value, validation, API hay giao diện desktop.
+   ========================================================= */
+.kj-contact-phone-code-wrap {
+  position: relative;
+  min-width: 0;
+}
+
+.kj-contact-phone-code-wrap > .kj-contact-phone-code {
+  display: block;
+  width: 100%;
+}
+
+.kj-contact-phone-code-value {
+  display: none;
+}
+
+@media (max-width: 680px) {
+  /* Ẩn duy nhất chữ của select khi chưa mở, vẫn giữ select tương tác. */
+  #root .kj-contact-page .kj-contact-phone-code-wrap > .kj-contact-phone-code {
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+    text-shadow: none !important;
+  }
+  /* Danh sách native vẫn đọc được đầy đủ tên quốc gia trên iOS/Android. */
+  #root .kj-contact-page .kj-contact-phone-code-wrap > .kj-contact-phone-code option {
+    color: #142543 !important;
+    -webkit-text-fill-color: #142543 !important;
+  }
+  /* Hiển thị mã đang chọn riêng bên trên, không chặn thao tác chạm. */
+  #root .kj-contact-page .kj-contact-phone-code-value {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 14px;
+    display: flex;
+    align-items: center;
+    max-width: calc(100% - 34px);
+    color: var(--kj-contact-navy);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+  }
+}
+
+@media (max-width: 380px) {
+  #root .kj-contact-page .kj-contact-phone-code-value {
+    left: 12px;
+  }
+}
+
+@media (max-width: 680px) {
+  .kj-contact-phone-control {
+    grid-template-columns: 85px minmax(0, 1fr) !important;
+    gap: 8px;
+  }
+  .kj-contact-phone-code {
+    min-width: 0;
+    padding-inline: 8px !important;
+    text-align: center;
+  }
+}
+
+/* MOBILE - Thu gọn ô mã quốc gia */
+@media (max-width: 680px) {
+  #root .kj-contact-page .kj-contact-phone-control {
+    grid-template-columns: 70px minmax(0, 1fr) !important;
+    gap: 8px !important;
+  }
+  #root .kj-contact-page .kj-contact-phone-code {
+    width: 85% !important;
+    min-width: 0 !important;
+    padding: 0 4px !important;
+    appearance: none;
+    -webkit-appearance: none;
+    text-align: center !important;
+    text-align-last: center !important;
+    cursor: pointer;
+  }
+}
+
+/* =========================================================
+   KING JADES EXPERIENCE - CUSTOMER STORIES (RESPONSIVE)
+   3 cards: desktop | 2: tablet | 1: mobile
+   Full titles and testimonials - never crop headings or force nowrap.
+   ========================================================= */
+.kj-contact-page .kj-customer-stories {
+  padding-block: clamp(68px, 6vw, 100px);
+}
+.kj-contact-page .kj-customer-stories__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 1.8vw, 26px);
+  align-items: stretch;
+  margin-top: clamp(26px, 3vw, 40px);
+}
+.kj-contact-page .kj-customer-story-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+}
+.kj-contact-page .kj-customer-story-card__media {
+  flex: none;
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  overflow: hidden;
+}
+.kj-contact-page .kj-customer-story-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+.kj-contact-page .kj-customer-story-card__content {
+  flex: 1;
+  min-width: 0;
+  padding: clamp(19px, 1.65vw, 26px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.kj-contact-page .kj-customer-story-card__content > span {
+  line-height: 1.4;
+}
+/* The #root specificity counters global heading typography overrides. */
+#root .kj-contact-page .kj-customer-story-card__content h3 {
+  width: 100%;
+  min-width: 0;
+  min-height: 2.32em;
+  margin: 10px 0 12px;
+  font-family: var(--kj-contact-display) !important;
+  font-size: clamp(23px, 1.7vw, 28px) !important;
+  font-weight: 600;
+  line-height: 1.16 !important;
+  letter-spacing: -0.025em;
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  text-wrap: pretty;
+}
+@media (min-width: 1121px) and (max-width: 1370px) {
+  #root .kj-contact-page .kj-customer-story-card__content h3 {
+    min-height: 3.48em;
+  }
+}
+.kj-contact-page .kj-customer-story-card__content p {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.76;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+@media (max-width: 1120px) {
+  .kj-contact-page .kj-customer-stories__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  #root .kj-contact-page .kj-customer-story-card__content h3 {
+    min-height: 0;
+    font-size: clamp(22px, 2.5vw, 27px) !important;
+  }
+}
+@media (max-width: 680px) {
+  .kj-contact-page .kj-customer-stories {
+    padding-block: 62px 74px;
+  }
+  .kj-contact-page .kj-customer-stories__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+    margin-top: 26px;
+  }
+  .kj-contact-page .kj-customer-story-card {
+    border-radius: 22px;
+  }
+  .kj-contact-page .kj-customer-story-card__media {
+    aspect-ratio: 1 / 1;
+  }
+  .kj-contact-page .kj-customer-story-card__content {
+    padding: 19px 19px 22px;
+  }
+  #root .kj-contact-page .kj-customer-story-card__content h3 {
+    min-height: 0;
+    margin: 9px 0 11px;
+    font-size: clamp(23px, 5.8vw, 27px) !important;
+    line-height: 1.16 !important;
+  }
+  .kj-contact-page .kj-customer-story-card__content p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+}
+@media (max-width: 380px) {
+  .kj-contact-page .kj-customer-story-card__content {
+    padding: 17px 16px 20px;
+  }
+  #root .kj-contact-page .kj-customer-story-card__content h3 {
+    font-size: 22px !important;
+  }
+}
+@media (hover: none) {
+  .kj-contact-page .kj-customer-story-card:hover {
+    transform: none;
+  }
+  .kj-contact-page .kj-customer-story-card:hover .kj-customer-story-card__media img {
+    transform: none;
+  }
+}
+
+/* FOTO 04–06: giữ ngắt đoạn do biên tập viên chỉ định,
+   không thay font chữ, kích cỡ hoặc các card FOTO 01–03. */
+.kj-contact-page .kj-customer-story-card:nth-child(n + 4) .kj-customer-story-card__content p {
+  white-space: pre-line;
+}

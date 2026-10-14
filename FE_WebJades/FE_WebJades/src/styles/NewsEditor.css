@@ -1,0 +1,410 @@
+/* ======================================================
+   KING JADES NEWS EDITOR - BRAND SYNC LOADED
+   File này được import trực tiếp trong NewsEditor.tsx.
+   Chỉ đổi màu/style, không đổi logic.
+====================================================== */
+
+.news-editor-page {
+  --ne-navy: #253065;
+  --ne-royal: #1c2042;
+  --ne-gold: #d9b21d;
+  --ne-gold-light: #f8d169;
+  --ne-pearl: #fbf8f4;
+  --ne-porcelain: #f2ede0;
+  --ne-white: #ffffff;
+  --ne-ink: #111111;
+  --ne-muted: #706d65;
+  --ne-line: rgba(37, 48, 101, 0.12);
+  --ne-body: "SVN-GILROY", "Gilroy", "Poppins", "Inter", "Segoe UI", Arial, sans-serif;
+  --ne-display: "Warbler", "Cormorant Garamond", Georgia, "Times New Roman", serif;
+
+  min-height: 100vh !important;
+  background:
+    radial-gradient(circle at 8% 4%, rgba(205, 229, 215, 0.2), transparent 26%),
+    radial-gradient(circle at 96% 0%, rgba(248, 209, 105, 0.24), transparent 30%),
+    linear-gradient(180deg, var(--ne-pearl) 0%, var(--ne-porcelain) 56%, var(--ne-pearl) 100%) !important;
+  color: var(--ne-royal) !important;
+  font-family: var(--ne-body) !important;
+}
+
+.news-editor-page *,
+.news-editor-page *::before,
+.news-editor-page *::after {
+  box-sizing: border-box;
+}
+
+.news-editor-page button,
+.news-editor-page input,
+.news-editor-page textarea,
+.news-editor-page select {
+  font-family: var(--ne-body) !important;
+}
+
+/* Topbar */
+.news-editor-page .news-editor-topbar {
+  border: 1px solid rgba(217, 178, 29, 0.24) !important;
+  border-radius: 28px !important;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(248, 209, 105, 0.15), transparent 34%),
+    linear-gradient(145deg, var(--ne-royal), var(--ne-navy)) !important;
+  color: rgba(251, 248, 244, 0.78) !important;
+  box-shadow: 0 28px 78px rgba(28, 32, 66, 0.16) !important;
+}
+
+.news-editor-page .news-editor-topbar span,
+.news-editor-page .news-label {
+  color: var(--ne-gold) !important;
+  font-family: var(--ne-body) !important;
+  font-size: 10px !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+}
+
+.news-editor-page .news-editor-topbar h1 {
+  color: var(--ne-pearl) !important;
+  font-family: var(--ne-display) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.035em !important;
+}
+
+.news-editor-page .news-back {
+  border: 1px solid rgba(251, 248, 244, 0.2) !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: var(--ne-pearl) !important;
+}
+
+.news-editor-page .news-back:hover {
+  border-color: rgba(248, 209, 105, 0.5) !important;
+  background: rgba(255, 255, 255, 0.11) !important;
+}
+
+/* Action buttons */
+.news-editor-page .news-top-actions b,
+.news-editor-page .news-status {
+  border: 1px solid rgba(217, 178, 29, 0.28) !important;
+  background: rgba(248, 209, 105, 0.16) !important;
+  color: var(--ne-royal) !important;
+}
+
+.news-editor-page .news-editor-topbar .news-status {
+  color: var(--ne-gold-light) !important;
+}
+
+.news-editor-page .news-top-actions button {
+  border: 1px solid rgba(37, 48, 101, 0.13) !important;
+  background: rgba(255, 255, 255, 0.86) !important;
+  color: var(--ne-royal) !important;
+  font-weight: 800 !important;
+}
+
+.news-editor-page .news-editor-topbar .news-top-actions button {
+  border-color: rgba(251, 248, 244, 0.18) !important;
+  background: rgba(255, 255, 255, 0.07) !important;
+  color: var(--ne-pearl) !important;
+}
+
+.news-editor-page .news-top-actions button.primary,
+.news-editor-page .news-top-actions .primary {
+  border-color: rgba(217, 178, 29, 0.5) !important;
+  background: linear-gradient(135deg, var(--ne-gold-light), var(--ne-gold)) !important;
+  color: var(--ne-royal) !important;
+  box-shadow: 0 14px 32px rgba(217, 178, 29, 0.2) !important;
+}
+
+.news-editor-page .news-top-actions button.warning,
+.news-editor-page .news-top-actions .warning {
+  border-color: rgba(166, 61, 61, 0.24) !important;
+  background: #fff1ee !important;
+  color: #9d3535 !important;
+}
+
+/* Layout/cards */
+.news-editor-page .news-editor-layout {
+  color: var(--ne-royal) !important;
+}
+
+.news-editor-page .news-card {
+  border: 1px solid rgba(37, 48, 101, 0.11) !important;
+  border-radius: 24px !important;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(248, 209, 105, 0.08), transparent 34%),
+    rgba(255, 253, 248, 0.96) !important;
+  color: var(--ne-royal) !important;
+  box-shadow: 0 22px 54px rgba(28, 32, 66, 0.08) !important;
+}
+
+.news-editor-page .news-card h2,
+.news-editor-page .news-card summary,
+.news-editor-page .news-preview-title h1 {
+  color: var(--ne-royal) !important;
+  font-family: var(--ne-display) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.03em !important;
+}
+
+.news-editor-page .news-section-head > span,
+.news-editor-page .news-section-head b {
+  color: var(--ne-royal) !important;
+}
+
+/* Form */
+.news-editor-page label {
+  color: rgba(28, 32, 66, 0.86) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+}
+
+.news-editor-page input,
+.news-editor-page textarea,
+.news-editor-page select {
+  border: 1px solid rgba(37, 48, 101, 0.14) !important;
+  border-radius: 14px !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: var(--ne-royal) !important;
+  outline: none !important;
+  box-shadow: 0 8px 18px rgba(28, 32, 66, 0.035) !important;
+}
+
+.news-editor-page input:hover,
+.news-editor-page textarea:hover,
+.news-editor-page select:hover {
+  border-color: rgba(217, 178, 29, 0.36) !important;
+}
+
+.news-editor-page input:focus,
+.news-editor-page textarea:focus,
+.news-editor-page select:focus {
+  border-color: rgba(217, 178, 29, 0.8) !important;
+  background: var(--ne-white) !important;
+  box-shadow:
+    0 0 0 4px rgba(248, 209, 105, 0.16),
+    0 12px 26px rgba(28, 32, 66, 0.06) !important;
+}
+
+.news-editor-page input::placeholder,
+.news-editor-page textarea::placeholder {
+  color: rgba(112, 109, 101, 0.58) !important;
+}
+
+/* Palette, upload, schedule */
+.news-editor-page .news-palette button,
+.news-editor-page .news-upload span,
+.news-editor-page .news-card .schedule {
+  border: 1px solid rgba(37, 48, 101, 0.13) !important;
+  border-radius: 14px !important;
+  background: rgba(255, 255, 255, 0.88) !important;
+  color: var(--ne-royal) !important;
+  font-weight: 800 !important;
+}
+
+.news-editor-page .news-palette button:hover,
+.news-editor-page .news-upload:hover span {
+  border-color: rgba(217, 178, 29, 0.5) !important;
+  background: rgba(248, 209, 105, 0.17) !important;
+  color: var(--ne-royal) !important;
+}
+
+.news-editor-page .news-card .schedule {
+  background: linear-gradient(135deg, var(--ne-gold-light), var(--ne-gold)) !important;
+  color: var(--ne-royal) !important;
+}
+
+/* Layout options */
+.news-editor-page .news-layout-scroll {
+  scrollbar-color:
+    rgba(217, 178, 29, 0.58)
+    rgba(37, 48, 101, 0.08) !important;
+}
+
+.news-editor-page .news-layout-scroll::-webkit-scrollbar-track {
+  background: rgba(37, 48, 101, 0.08) !important;
+}
+
+.news-editor-page .news-layout-scroll::-webkit-scrollbar-thumb {
+  background: rgba(217, 178, 29, 0.58) !important;
+}
+
+.news-editor-page .news-layout-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(217, 178, 29, 0.82) !important;
+}
+
+.news-editor-page .news-layout-option {
+  border: 1px solid rgba(37, 48, 101, 0.12) !important;
+  background: rgba(255, 255, 255, 0.84) !important;
+  color: var(--ne-royal) !important;
+}
+
+.news-editor-page .news-layout-option:hover {
+  border-color: rgba(217, 178, 29, 0.52) !important;
+  background: rgba(248, 209, 105, 0.14) !important;
+}
+
+.news-editor-page .news-layout-option.saved {
+  border-color: rgba(217, 178, 29, 0.34) !important;
+  background: #fff8df !important;
+}
+
+.news-editor-page .news-layout-number {
+  background: rgba(248, 209, 105, 0.22) !important;
+  color: var(--ne-gold) !important;
+}
+
+.news-editor-page .news-layout-information strong {
+  color: var(--ne-royal) !important;
+}
+
+.news-editor-page .news-layout-information small {
+  color: rgba(112, 109, 101, 0.82) !important;
+}
+
+.news-editor-page .news-layout-information em,
+.news-editor-page .news-layout-divider {
+  color: var(--ne-gold) !important;
+}
+
+.news-editor-page .news-layout-divider {
+  background: rgba(251, 248, 244, 0.96) !important;
+}
+
+/* Checks */
+.news-editor-page .news-checks label {
+  border: 1px solid rgba(37, 48, 101, 0.1) !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.72) !important;
+  color: var(--ne-royal) !important;
+}
+
+.news-editor-page .news-checks input {
+  accent-color: var(--ne-gold) !important;
+}
+
+/* Empty/block/editor inner */
+.news-editor-page .news-empty {
+  border: 1px dashed rgba(37, 48, 101, 0.22) !important;
+  border-radius: 20px !important;
+  background: rgba(255, 255, 255, 0.56) !important;
+  color: rgba(112, 109, 101, 0.9) !important;
+}
+
+.news-editor-page .news-block-list,
+.news-editor-page .news-block-card,
+.news-editor-page .news-block-editor,
+.news-editor-page .news-block-row {
+  color: var(--ne-royal) !important;
+}
+
+.news-editor-page .news-block-card,
+.news-editor-page .news-block-editor,
+.news-editor-page .news-block-row {
+  border-color: rgba(37, 48, 101, 0.1) !important;
+  background: rgba(255, 255, 255, 0.78) !important;
+}
+
+.news-editor-page .news-block-card button,
+.news-editor-page .news-block-editor button,
+.news-editor-page .news-block-row button {
+  border-color: rgba(37, 48, 101, 0.12) !important;
+  background: rgba(255, 255, 255, 0.84) !important;
+  color: var(--ne-royal) !important;
+}
+
+/* Preview */
+.news-editor-page .news-preview {
+  border-left-color: rgba(37, 48, 101, 0.1) !important;
+}
+
+.news-editor-page .news-preview header {
+  border: 1px solid rgba(37, 48, 101, 0.1) !important;
+  border-radius: 22px !important;
+  background: rgba(255, 253, 248, 0.94) !important;
+  box-shadow: 0 22px 54px rgba(28, 32, 66, 0.08) !important;
+}
+
+.news-editor-page .news-preview header strong {
+  color: var(--ne-gold) !important;
+  font-size: 10px !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.16em !important;
+}
+
+.news-editor-page .news-preview header button {
+  border: 1px solid rgba(37, 48, 101, 0.1) !important;
+  background: rgba(255, 255, 255, 0.84) !important;
+  color: var(--ne-royal) !important;
+}
+
+.news-editor-page .news-preview header button.active,
+.news-editor-page .news-preview header button:hover {
+  border-color: rgba(217, 178, 29, 0.46) !important;
+  background: var(--ne-royal) !important;
+  color: var(--ne-pearl) !important;
+}
+
+.news-editor-page .news-preview-frame {
+  border: 1px solid rgba(37, 48, 101, 0.1) !important;
+  border-radius: 24px !important;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(248, 209, 105, 0.14), transparent 34%),
+    linear-gradient(180deg, var(--ne-pearl), var(--ne-porcelain)) !important;
+  box-shadow: 0 22px 54px rgba(28, 32, 66, 0.08) !important;
+}
+
+.news-editor-page .news-preview-frame article {
+  background: rgba(255, 253, 248, 0.96) !important;
+  color: var(--ne-royal) !important;
+}
+
+.news-editor-page .news-preview-cover {
+  background:
+    radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.78), transparent 45%),
+    linear-gradient(145deg, #efe8d9, #ded4c2) !important;
+}
+
+.news-editor-page .news-preview-cover.empty {
+  color: var(--ne-gold) !important;
+  font-family: var(--ne-display) !important;
+}
+
+.news-editor-page .news-preview-title span {
+  color: var(--ne-gold) !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.13em !important;
+  text-transform: uppercase !important;
+}
+
+.news-editor-page .news-preview-title h1 {
+  color: var(--ne-royal) !important;
+}
+
+.news-editor-page .news-preview-title p {
+  color: rgba(112, 109, 101, 0.88) !important;
+}
+
+/* Drag handle */
+.news-editor-page .news-preview-sortable-block.drag-over-before,
+.news-editor-page .news-preview-sortable-block.drag-over-after {
+  border-color: rgba(217, 178, 29, 0.55) !important;
+  background: rgba(248, 209, 105, 0.09) !important;
+}
+
+.news-editor-page .news-preview-drag-handle {
+  border: 1px solid rgba(37, 48, 101, 0.1) !important;
+  background: rgba(255, 255, 255, 0.88) !important;
+  color: var(--ne-royal) !important;
+}
+
+.news-editor-page .news-preview-drag-handle:hover {
+  border-color: rgba(217, 178, 29, 0.46) !important;
+  background: rgba(248, 209, 105, 0.14) !important;
+}
+
+/* Loading */
+.news-loading {
+  background:
+    radial-gradient(circle at 100% 0%, rgba(248, 209, 105, 0.16), transparent 34%),
+    linear-gradient(145deg, #fbf8f4, #f2ede0) !important;
+  color: #1c2042 !important;
+  font-family: "SVN-GILROY", "Gilroy", "Poppins", "Inter", "Segoe UI", Arial, sans-serif !important;
+  font-weight: 800 !important;
+}
